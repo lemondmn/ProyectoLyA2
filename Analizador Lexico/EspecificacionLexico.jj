@@ -1,0 +1,41 @@
+PARSER_BEGIN (Lexico)
+	public class Lexico {
+		public static void main (String[] args) throws ParseException {
+			Lexico anLex = new Lexico(System.in);
+			anLex.unaExpresion();
+			System.out.println("\nOfuscacion completada!");
+		}
+	}
+	PARSER_END (Lexico)
+
+TOKEN:
+	{
+		<COMMENT: ["/"]["/"](~["\n"])* >
+		|
+    <SUMA : ["+"] >
+    |
+    <RESTA : ["-"] >
+    |
+    <MULTI : ["*"] >
+    |
+    <DIVI : ["/"] >
+    |
+    <IGUAL : ["="] >
+		|
+		<ANGLEBRACKETOPEN : ["<"] >
+		|
+		<ANGLEBRACKETCLOSE : [">"] >
+		
+	}
+
+SKIP:
+	{
+		" " | "\t" | "\n" | "\r"
+		|
+		<~[]>
+	}
+
+void unaExpresion() : {}
+	{
+		
+	}
