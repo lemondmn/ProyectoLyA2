@@ -8,24 +8,67 @@ PARSER_BEGIN (Lexico)
 	}
 	PARSER_END (Lexico)
 
+
+// Keywords
+
 TOKEN:
 	{
-		<COMMENT: ["/"]["/"](~["\n"])* >
+		< INT : ["int"] >
 		|
-    <SUMA : ["+"] >
-    |
-    <RESTA : ["-"] >
-    |
-    <MULTI : ["*"] >
-    |
-    <DIVI : ["/"] >
-    |
-    <IGUAL : ["="] >
+		< FLOAT : ["float"] >
 		|
-		<ANGLEBRACKETOPEN : ["<"] >
+		< CHAR : ["char"] >
 		|
-		<ANGLEBRACKETCLOSE : [">"] >
-		
+		< RETURN : ["return"] >
+		|
+		< VOID : ["void"] >
+		|
+		< IF : ["if"] >
+		|
+		< ELSE : ["else"] >
+		|
+		< WHILE : ["while"] >
+	}
+
+// Special Symbols
+
+TOKEN:
+	{
+    <	SUM : ["+"] >
+    |
+    <	SUB : ["-"] >
+    |
+    <	MULT : ["*"] >
+    |
+    <	DIV : ["/"] >
+    |
+    <	EQUALS : ["="] >
+		|
+		<	PERCENT : ["%"] >
+		|
+		<	BRACKETOPEN : ["("] >
+		|
+		<	BRACKETCLOSE : [")"] >
+		|
+		<	SQUAREBRACKETOPEN : ["["] >
+		|
+		<	SQUAREBRACKETCLOSE : ["]"] >
+		|
+		<	CURLYBRACKETOPEN : ["{"] >
+		|
+		<	CURLYBRACKETCLOSE : ["}"] >
+		|
+		<	ANGLEBRACKETOPEN : ["<"] >
+		|
+		<	ANGLEBRACKETCLOSE : [">"] >
+		|
+		<	SEMICOLON : [";"] >
+		|
+		<	COMMA : [","] >
+		|
+		<	COMMENTOPEN : ["\*"] >
+		|
+		<	COMMENTCLOSE : ["*\"] >
 	}
 
 SKIP:
