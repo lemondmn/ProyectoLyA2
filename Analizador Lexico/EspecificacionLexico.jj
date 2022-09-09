@@ -30,21 +30,21 @@ TOKEN:
 		< WHILE : ["while"] >
 	}
 
-// Special Symbols
+// operators
 
 TOKEN:
 	{
-    <	SUM : ["+"] >
-    |
-    <	SUB : ["-"] >
-    |
-    <	MULT : ["*"] >
-    |
-    <	DIV : ["/"] >
-    |
-    <	EQUALS : ["="] >
+	    <	SUM : ["+"] >
+	    |
+	    <	SUB : ["-"] >
+	    |
+	    <	MULT : ["*"] >
+	    |
+	    <	DIV : ["/"] >
+	    |
+	    <	EQUALS : ["="] >
 		|
-		<	PERCENT : ["%"] >
+		<	MOD : ["%"] >
 		|
 		<	BRACKETOPEN : ["("] >
 		|
@@ -69,6 +69,17 @@ TOKEN:
 		<	COMMENTOPEN : ["\*"] >
 		|
 		<	COMMENTCLOSE : ["*\"] >
+	}
+
+// Regular Expresions
+
+TOKEN:
+	{
+		<ID: ["a"-"z", "A"-"Z"] ( ["a"-"z", "A"-"Z"] | ["0"-"9"] | ["_"] )* >
+		|
+		<NUMENT: ["0"-"9"](["0"-"9"])*>
+		|
+		<NUMREAL: ["0"-"9"](["0"-"9"])*["."]["0"-"9"](["0"-"9"])*>
 	}
 
 SKIP:
