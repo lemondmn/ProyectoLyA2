@@ -1,0 +1,141 @@
+Declaracion int: int
+Identificador: gcd
+Parentesis incial: (
+Declaracion int: int
+Identificador: v
+Coma: ,
+Declaracion int: int
+Identificador: h
+Parentesis final: )
+Llave incial: {
+Declaracion if: if
+Parentesis incial: (
+Identificador: v
+Operador igual igual: ==
+Numero entero: 0
+Parentesis final: )
+Declaracion return: return
+Identificador: u
+Punto y Coma: ;
+Declaracion else: else
+Declaracion return: return
+Identificador: gcd
+Parentesis incial: (
+Identificador: v
+Coma: ,
+Identificador: u
+Operador resta: -
+Identificador: u
+Operador division: /
+Identificador: v
+Operador multiplicacion: *
+Identificador: v
+Parentesis final: )
+Punto y Coma: ;
+Llave final: }
+Declaracion float: float
+Identificador: suma
+Parentesis incial: (
+Declaracion float: float
+Identificador: p
+Parentesis final: )
+Llave incial: {
+Declaracion if: if
+Parentesis incial: (
+Identificador: p
+Operador igual igual: ==
+Numero entero: 0
+Parentesis final: )
+Declaracion return: return
+Identificador: p
+Punto y Coma: ;
+Declaracion else: else
+Declaracion return: return
+Identificador: p
+Operador suma: +
+Numero real: 8.5
+Punto y Coma: ;
+Llave final: }
+Declaracion void: void
+Identificador: main
+Parentesis incial: (
+Declaracion void: void
+Parentesis final: )
+Llave incial: {
+Declaracion float: float
+Identificador: i
+Punto y Coma: ;
+Declaracion int: int
+Identificador: h
+Punto y Coma: ;
+Declaracion int: int
+Identificador: x
+Corchete incial: [
+Numero entero: 10
+Corchete final: ]
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Numero entero: 5
+Punto y Coma: ;
+Declaracion while: while
+Parentesis incial: (
+Identificador: i
+Operador menor que: <
+Numero entero: 10
+Parentesis final: )
+Llave incial: {
+Identificador: i
+Operador igual: =
+Identificador: i
+Operador suma: +
+Numero real: 0.2
+Operador suma: +
+Numero real: 0.3
+Operador suma: +
+Numero real: 8.9
+Punto y Coma: ;
+Identificador: h
+Operador igual: =
+Numero entero: 9
+Operador division: /
+Numero entero: 3
+Operador multiplicacion: *
+Identificador: h
+Operador suma: +
+Identificador: x
+Corchete incial: [
+Numero entero: 4
+Corchete final: ]
+Punto y Coma: ;
+Llave final: }
+Identificador: x
+Corchete incial: [
+Numero entero: 6
+Corchete final: ]
+Operador igual: =
+Numero entero: 8
+Punto y Coma: ;
+Identificador: h
+Operador igual: =
+Numero entero: 7
+Punto y Coma: ;
+Identificador: h
+Operador igual: =
+Identificador: gcd
+Parentesis incial: (
+Numero entero: 5
+Coma: ,
+Numero entero: 6
+Parentesis final: )
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Identificador: suma
+Parentesis incial: (
+Numero real: 9.3
+Parentesis final: )
+Punto y Coma: ;
+Llave final: }
+
+Analisis Lexico terminado!

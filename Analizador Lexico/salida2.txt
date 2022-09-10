@@ -1,0 +1,241 @@
+Declaracion int: int
+Identificador: x
+Corchete incial: [
+Numero entero: 10
+Corchete final: ]
+Punto y Coma: ;
+Declaracion int: int
+Identificador: minloc
+Parentesis incial: (
+Declaracion int: int
+Identificador: a
+Corchete incial: [
+Corchete final: ]
+Coma: ,
+Declaracion int: int
+Identificador: low
+Coma: ,
+Declaracion int: int
+Identificador: high
+Parentesis final: )
+Llave incial: {
+Declaracion int: int
+Identificador: i
+Punto y Coma: ;
+Declaracion int: int
+Identificador: x
+Punto y Coma: ;
+Declaracion int: int
+Identificador: k
+Punto y Coma: ;
+Identificador: k
+Operador igual: =
+Identificador: low
+Punto y Coma: ;
+Identificador: x
+Operador igual: =
+Identificador: a
+Corchete incial: [
+Identificador: low
+Corchete final: ]
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Identificador: low
+Operador suma: +
+Numero entero: 1
+Punto y Coma: ;
+Declaracion while: while
+Parentesis incial: (
+Identificador: i
+Operador menor que: <
+Identificador: high
+Parentesis final: )
+Llave incial: {
+Declaracion if: if
+Parentesis incial: (
+Identificador: a
+Corchete incial: [
+Identificador: i
+Corchete final: ]
+Operador menor que: <
+Identificador: x
+Parentesis final: )
+Llave incial: {
+Identificador: x
+Operador igual: =
+Identificador: a
+Corchete incial: [
+Identificador: i
+Corchete final: ]
+Punto y Coma: ;
+Identificador: k
+Operador igual: =
+Identificador: i
+Punto y Coma: ;
+Llave final: }
+Identificador: i
+Operador igual: =
+Identificador: i
+Operador suma: +
+Numero entero: 1
+Punto y Coma: ;
+Llave final: }
+Declaracion return: return
+Identificador: k
+Punto y Coma: ;
+Llave final: }
+Declaracion void: void
+Identificador: sort
+Parentesis incial: (
+Declaracion int: int
+Identificador: a
+Corchete incial: [
+Corchete final: ]
+Coma: ,
+Declaracion int: int
+Identificador: low
+Coma: ,
+Declaracion int: int
+Identificador: high
+Parentesis final: )
+Llave incial: {
+Declaracion int: int
+Identificador: i
+Punto y Coma: ;
+Declaracion int: int
+Identificador: k
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Identificador: low
+Punto y Coma: ;
+Declaracion while: while
+Parentesis incial: (
+Identificador: i
+Operador menor que: <
+Identificador: high
+Operador resta: -
+Numero entero: 1
+Parentesis final: )
+Llave incial: {
+Declaracion int: int
+Identificador: t
+Punto y Coma: ;
+Identificador: k
+Operador igual: =
+Identificador: minloc
+Parentesis incial: (
+Identificador: a
+Coma: ,
+Identificador: i
+Coma: ,
+Identificador: high
+Parentesis final: )
+Punto y Coma: ;
+Identificador: t
+Operador igual: =
+Identificador: a
+Corchete incial: [
+Identificador: k
+Corchete final: ]
+Punto y Coma: ;
+Identificador: a
+Corchete incial: [
+Identificador: k
+Corchete final: ]
+Operador igual: =
+Identificador: a
+Corchete incial: [
+Identificador: i
+Corchete final: ]
+Punto y Coma: ;
+Identificador: a
+Corchete incial: [
+Identificador: i
+Corchete final: ]
+Operador igual: =
+Identificador: t
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Identificador: i
+Operador suma: +
+Numero entero: 1
+Punto y Coma: ;
+Llave final: }
+Llave final: }
+Declaracion void: void
+Identificador: main
+Parentesis incial: (
+Declaracion void: void
+Parentesis final: )
+Llave incial: {
+Declaracion int: int
+Identificador: i
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Numero entero: 0
+Punto y Coma: ;
+Declaracion while: while
+Parentesis incial: (
+Identificador: i
+Operador menor que: <
+Numero entero: 10
+Parentesis final: )
+Llave incial: {
+Identificador: x
+Corchete incial: [
+Identificador: i
+Corchete final: ]
+Operador igual: =
+Sentencia input: input
+Parentesis incial: (
+Parentesis final: )
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Identificador: i
+Operador suma: +
+Numero entero: 1
+Punto y Coma: ;
+Llave final: }
+Identificador: sort
+Parentesis incial: (
+Identificador: x
+Coma: ,
+Numero entero: 0
+Coma: ,
+Numero entero: 10
+Parentesis final: )
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Numero entero: 0
+Punto y Coma: ;
+Declaracion while: while
+Parentesis incial: (
+Identificador: i
+Operador menor que: <
+Numero entero: 10
+Parentesis final: )
+Llave incial: {
+Sentencia output: output
+Parentesis incial: (
+Identificador: x
+Corchete incial: [
+Identificador: i
+Corchete final: ]
+Parentesis final: )
+Punto y Coma: ;
+Identificador: i
+Operador igual: =
+Identificador: i
+Operador suma: +
+Numero entero: 1
+Punto y Coma: ;
+Llave final: }
+Llave final: }
+
+Analisis Lexico terminado!

@@ -1,0 +1,140 @@
+PARSER_BEGIN (Lexico)
+	public class Lexico {
+		public static void main (String[] args) throws ParseException {
+			Lexico anLex = new Lexico(System.in);
+			anLex.unaExpresion();
+			System.out.println("\nAnalisis Lexico terminado!");
+		}
+	}
+	PARSER_END (Lexico)
+
+
+// Keywords
+
+TOKEN:
+	{
+		< INT : "int" >
+			{System.out.print("Declaracion int: ");System.out.println(image);}
+		|
+		< FLOAT : "float" >
+			{System.out.print("Declaracion float: ");System.out.println(image);}
+		|
+		< CHAR : "char" >
+			{System.out.print("Declaracion char: ");System.out.println(image);}
+		|
+		< RETURN : "return" >
+			{System.out.print("Declaracion return: ");System.out.println(image);}
+		|
+		< VOID : "void" >
+			{System.out.print("Declaracion void: ");System.out.println(image);}
+		|
+		< IF : "if" >
+			{System.out.print("Declaracion if: ");System.out.println(image);}
+		|
+		< ELSE : "else" >
+			{System.out.print("Declaracion else: ");System.out.println(image);}
+		|
+		< WHILE : "while" >
+			{System.out.print("Declaracion while: ");System.out.println(image);}
+		|
+		< INPUT : "input" >
+			{System.out.print("Sentencia input: ");System.out.println(image);}
+		|
+		< OUTPUT : "output" >
+			{System.out.print("Sentencia output: ");System.out.println(image);}
+	}
+
+// operators
+
+TOKEN:
+	{
+	    <	SUM : ["+"] >
+	    	{System.out.print("Operador suma: ");System.out.println(image);}
+	    |
+	    <	SUB : ["-"] >
+	    	{System.out.print("Operador resta: ");System.out.println(image);}
+	    |
+	    <	MULT : ["*"] >
+	    	{System.out.print("Operador multiplicacion: ");System.out.println(image);}
+	    |
+	    <	DIV : ["/"] >
+	    	{System.out.print("Operador division: ");System.out.println(image);}
+	    |
+		<	MOD : ["%"] >
+			{System.out.print("Operador modulo: ");System.out.println(image);}
+		|
+		<	BRACKETOPEN : ["("] >
+			{System.out.print("Parentesis incial: ");System.out.println(image);}
+		|
+		<	BRACKETCLOSE : [")"] >
+			{System.out.print("Parentesis final: ");System.out.println(image);}
+		|
+		<	SQUAREBRACKETOPEN : ["["] >
+			{System.out.print("Corchete incial: ");System.out.println(image);}
+		|
+		<	SQUAREBRACKETCLOSE : ["]"] >
+			{System.out.print("Corchete final: ");System.out.println(image);}
+		|
+		<	CURLYBRACKETOPEN : ["{"] >
+			{System.out.print("Llave incial: ");System.out.println(image);}
+		|
+		<	CURLYBRACKETCLOSE : ["}"] >
+			{System.out.print("Llave final: ");System.out.println(image);}
+		|
+		<	LESSEQUAL : "<=" >
+	    	{System.out.print("Operador menor o igual: ");System.out.println(image);}
+		|
+		<	MOREEQUAL : ">=" >
+	    	{System.out.print("Operador mayor o igual: ");System.out.println(image);}
+		|
+		<	EQUALS : "==" >
+	    	{System.out.print("Operador igual igual: ");System.out.println(image);}
+		|
+		<	ANGLEBRACKETOPEN : ["<"] >
+			{System.out.print("Operador menor que: ");System.out.println(image);}
+		|
+		<	ANGLEBRACKETCLOSE : [">"] >
+			{System.out.print("Operador mayor que: ");System.out.println(image);}
+		|
+		<	EQUIVALENCE : ["="] >
+	    	{System.out.print("Operador igual: ");System.out.println(image);}
+		|
+		<	SEMICOLON : [";"] >
+			{System.out.print("Punto y Coma: ");System.out.println(image);}
+		|
+		<	COMMA : [","] >
+			{System.out.print("Coma: ");System.out.println(image);}
+	}
+
+// Regular Expresions
+
+TOKEN:
+	{
+		<ID: ["a"-"z", "A"-"Z"] ( ["a"-"z", "A"-"Z"] | ["0"-"9"] | ["_"] )* >
+			{System.out.print("Identificador: ");System.out.println(image);}
+		|
+		<NUMENT: ["0"-"9"](["0"-"9"])*>
+			{System.out.print("Numero entero: ");System.out.println(image);}
+		|
+		<NUMREAL: ["0"-"9"](["0"-"9"])*["."]["0"-"9"](["0"-"9"])*>
+			{System.out.print("Numero real: ");System.out.println(image);}
+		|
+		<SIMPLECHAR: ["\'"](~["\'"])["\'"]>
+			{System.out.print("Caracter tipo Char: ");System.out.println(image);}
+	}
+
+SKIP:
+	{
+		<"/*" (~["*"])* "*" (~["*","/"] (~["*"])* "*" | "*")* "/">
+		|
+		<["/"]["/"](~["\n"])*>
+		|
+		" " | "\t" | "\n" | "\r"
+		|
+		<~[]>
+	}
+
+void unaExpresion() : {}
+	{
+		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID> | <IF> | <ELSE> | <WHILE> | <INPUT> | <OUTPUT> | <SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL> | <EQUALS> | <MOD> | <BRACKETOPEN> | <BRACKETCLOSE> | <SQUAREBRACKETOPEN> | <SQUAREBRACKETCLOSE> | <CURLYBRACKETOPEN> | <CURLYBRACKETCLOSE>| <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> | <NUMREAL> | <SIMPLECHAR>)+ <EOF>
+	}
