@@ -33,37 +33,43 @@ public interface LexicoConstants {
   /** RegularExpression Id. */
   int DIV = 12;
   /** RegularExpression Id. */
-  int EQUALS = 13;
+  int MOD = 13;
   /** RegularExpression Id. */
-  int MOD = 14;
+  int BRACKETOPEN = 14;
   /** RegularExpression Id. */
-  int BRACKETOPEN = 15;
+  int BRACKETCLOSE = 15;
   /** RegularExpression Id. */
-  int BRACKETCLOSE = 16;
+  int SQUAREBRACKETOPEN = 16;
   /** RegularExpression Id. */
-  int SQUAREBRACKETOPEN = 17;
+  int SQUAREBRACKETCLOSE = 17;
   /** RegularExpression Id. */
-  int SQUAREBRACKETCLOSE = 18;
+  int CURLYBRACKETOPEN = 18;
   /** RegularExpression Id. */
-  int CURLYBRACKETOPEN = 19;
+  int CURLYBRACKETCLOSE = 19;
   /** RegularExpression Id. */
-  int CURLYBRACKETCLOSE = 20;
+  int LESSEQUAL = 20;
   /** RegularExpression Id. */
-  int ANGLEBRACKETOPEN = 21;
+  int MOREEQUAL = 21;
   /** RegularExpression Id. */
-  int ANGLEBRACKETCLOSE = 22;
+  int EQUALS = 22;
   /** RegularExpression Id. */
-  int SEMICOLON = 23;
+  int ANGLEBRACKETOPEN = 23;
   /** RegularExpression Id. */
-  int COMMA = 24;
+  int ANGLEBRACKETCLOSE = 24;
   /** RegularExpression Id. */
-  int ID = 25;
+  int EQUIVALENCE = 25;
   /** RegularExpression Id. */
-  int NUMENT = 26;
+  int SEMICOLON = 26;
   /** RegularExpression Id. */
-  int NUMREAL = 27;
+  int COMMA = 27;
   /** RegularExpression Id. */
-  int SIMPLECHAR = 28;
+  int ID = 28;
+  /** RegularExpression Id. */
+  int NUMENT = 29;
+  /** RegularExpression Id. */
+  int NUMREAL = 30;
+  /** RegularExpression Id. */
+  int SIMPLECHAR = 31;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -83,7 +89,6 @@ public interface LexicoConstants {
     "<SUB>",
     "<MULT>",
     "<DIV>",
-    "<EQUALS>",
     "<MOD>",
     "<BRACKETOPEN>",
     "<BRACKETCLOSE>",
@@ -91,21 +96,25 @@ public interface LexicoConstants {
     "<SQUAREBRACKETCLOSE>",
     "<CURLYBRACKETOPEN>",
     "<CURLYBRACKETCLOSE>",
+    "\"<=\"",
+    "\">=\"",
+    "\"==\"",
     "<ANGLEBRACKETOPEN>",
     "<ANGLEBRACKETCLOSE>",
+    "<EQUIVALENCE>",
     "<SEMICOLON>",
     "<COMMA>",
     "<ID>",
     "<NUMENT>",
     "<NUMREAL>",
     "<SIMPLECHAR>",
-    "<token of kind 29>",
-    "<token of kind 30>",
+    "<token of kind 32>",
+    "<token of kind 33>",
     "\" \"",
     "\"\\t\"",
     "\"\\n\"",
     "\"\\r\"",
-    "<token of kind 35>",
+    "<token of kind 38>",
   };
 
 }

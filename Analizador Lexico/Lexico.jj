@@ -14,28 +14,28 @@ PARSER_BEGIN (Lexico)
 TOKEN:
 	{
 		< INT : "int" >
-			{System.out.print("INT: ");System.out.println(image);}
+			{System.out.print("Declaracion int: ");System.out.println(image);}
 		|
 		< FLOAT : "float" >
-			{System.out.print("FLOAT: ");System.out.println(image);}
+			{System.out.print("Declaracion float: ");System.out.println(image);}
 		|
 		< CHAR : "char" >
-			{System.out.print("CHAR: ");System.out.println(image);}
+			{System.out.print("Declaracion char: ");System.out.println(image);}
 		|
 		< RETURN : "return" >
-			{System.out.print("RETURN: ");System.out.println(image);}
+			{System.out.print("Declaracion return: ");System.out.println(image);}
 		|
 		< VOID : "void" >
-			{System.out.print("VOID: ");System.out.println(image);}
+			{System.out.print("Declaracion void: ");System.out.println(image);}
 		|
 		< IF : "if" >
-			{System.out.print("IF: ");System.out.println(image);}
+			{System.out.print("Declaracion if: ");System.out.println(image);}
 		|
 		< ELSE : "else" >
-			{System.out.print("ELSE: ");System.out.println(image);}
+			{System.out.print("Declaracion else: ");System.out.println(image);}
 		|
 		< WHILE : "while" >
-			{System.out.print("WHILE: ");System.out.println(image);}
+			{System.out.print("Declaracion while: ");System.out.println(image);}
 	}
 
 // operators
@@ -43,52 +43,61 @@ TOKEN:
 TOKEN:
 	{
 	    <	SUM : ["+"] >
-	    	{System.out.print("SUMA: ");System.out.println(image);}
+	    	{System.out.print("Operador suma: ");System.out.println(image);}
 	    |
 	    <	SUB : ["-"] >
-	    	{System.out.print("RESTA: ");System.out.println(image);}
+	    	{System.out.print("Operador resta: ");System.out.println(image);}
 	    |
 	    <	MULT : ["*"] >
-	    	{System.out.print("MULTIPLICACION: ");System.out.println(image);}
+	    	{System.out.print("Operador multiplicacion: ");System.out.println(image);}
 	    |
 	    <	DIV : ["/"] >
-	    	{System.out.print("DIVISION: ");System.out.println(image);}
+	    	{System.out.print("Operador division: ");System.out.println(image);}
 	    |
-	    <	EQUALS : ["="] >
-	    	{System.out.print("IGUAL: ");System.out.println(image);}
-		|
 		<	MOD : ["%"] >
-			{System.out.print("MODULO: ");System.out.println(image);}
+			{System.out.print("Operador modulo: ");System.out.println(image);}
 		|
 		<	BRACKETOPEN : ["("] >
-			{System.out.print("PARENTESIS INICAL: ");System.out.println(image);}
+			{System.out.print("Parentesis incial: ");System.out.println(image);}
 		|
 		<	BRACKETCLOSE : [")"] >
-			{System.out.print("PARENTESIS FINAL: ");System.out.println(image);}
+			{System.out.print("Parentesis final: ");System.out.println(image);}
 		|
 		<	SQUAREBRACKETOPEN : ["["] >
-			{System.out.print("CORCHETE INICAL: ");System.out.println(image);}
+			{System.out.print("Corchete incial: ");System.out.println(image);}
 		|
 		<	SQUAREBRACKETCLOSE : ["]"] >
-			{System.out.print("CORCHETE FINAL: ");System.out.println(image);}
+			{System.out.print("Corchete final: ");System.out.println(image);}
 		|
 		<	CURLYBRACKETOPEN : ["{"] >
-			{System.out.print("LLAVE INICIAL: ");System.out.println(image);}
+			{System.out.print("Llave incial: ");System.out.println(image);}
 		|
 		<	CURLYBRACKETCLOSE : ["}"] >
-			{System.out.print("LLAVE FINAL: ");System.out.println(image);}
+			{System.out.print("Llave final: ");System.out.println(image);}
+		|
+		<	LESSEQUAL : "<=" >
+	    	{System.out.print("Operador menor o igual: ");System.out.println(image);}
+		|
+		<	MOREEQUAL : ">=" >
+	    	{System.out.print("Operador mayor o igual: ");System.out.println(image);}
+		|
+		<	EQUALS : "==" >
+	    	{System.out.print("Operador igual igual: ");System.out.println(image);}
 		|
 		<	ANGLEBRACKETOPEN : ["<"] >
-			{System.out.print("MENOR QUE: ");System.out.println(image);}
+			{System.out.print("Operador menor que: ");System.out.println(image);}
 		|
 		<	ANGLEBRACKETCLOSE : [">"] >
-			{System.out.print("MAYOR QUE: ");System.out.println(image);}
+			{System.out.print("Operador mayor que: ");System.out.println(image);}
+		|
+		<	EQUIVALENCE : ["="] >
+	    	{System.out.print("Operador igual: ");System.out.println(image);}
 		|
 		<	SEMICOLON : [";"] >
-			{System.out.print("PUNTO Y COMA: ");System.out.println(image);}
+			{System.out.print("Punto y Coma: ");System.out.println(image);}
 		|
 		<	COMMA : [","] >
-			{System.out.print("COMA: ");System.out.println(image);}
+			{System.out.print("Coma: ");System.out.println(image);}
 	}
 
 // Regular Expresions
@@ -96,16 +105,16 @@ TOKEN:
 TOKEN:
 	{
 		<ID: ["a"-"z", "A"-"Z"] ( ["a"-"z", "A"-"Z"] | ["0"-"9"] | ["_"] )* >
-			{System.out.print("FIN COMENTARIO: ");System.out.println(image);}
+			{System.out.print("Identificador: ");System.out.println(image);}
 		|
 		<NUMENT: ["0"-"9"](["0"-"9"])*>
-			{System.out.print("FIN COMENTARIO: ");System.out.println(image);}
+			{System.out.print("Numero entero: ");System.out.println(image);}
 		|
 		<NUMREAL: ["0"-"9"](["0"-"9"])*["."]["0"-"9"](["0"-"9"])*>
-			{System.out.print("FIN COMENTARIO: ");System.out.println(image);}
+			{System.out.print("Numero real: ");System.out.println(image);}
 		|
 		<SIMPLECHAR: ["\'"](~["\'"])["\'"]>
-			{System.out.print("FIN COMENTARIO: ");System.out.println(image);}
+			{System.out.print("Caracter tipo Char: ");System.out.println(image);}
 	}
 
 SKIP:
@@ -121,5 +130,5 @@ SKIP:
 
 void unaExpresion() : {}
 	{
-		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID> | <IF> | <ELSE> | <WHILE> | <SUM> | <SUB> | <MULT> | <DIV> | <EQUALS> | <MOD> | <BRACKETOPEN> | <BRACKETCLOSE> | <SQUAREBRACKETOPEN> | <SQUAREBRACKETCLOSE> | <CURLYBRACKETOPEN> | <CURLYBRACKETCLOSE>| <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> | <NUMREAL> | <SIMPLECHAR>)+ <EOF>
+		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID> | <IF> | <ELSE> | <WHILE> | <SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL> | <EQUALS> | <MOD> | <BRACKETOPEN> | <BRACKETCLOSE> | <SQUAREBRACKETOPEN> | <SQUAREBRACKETCLOSE> | <CURLYBRACKETOPEN> | <CURLYBRACKETCLOSE>| <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> | <NUMREAL> | <SIMPLECHAR>)+ <EOF>
 	}

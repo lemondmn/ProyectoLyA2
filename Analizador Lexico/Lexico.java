@@ -46,6 +46,12 @@
       case DIV:
         jj_consume_token(DIV);
         break;
+      case LESSEQUAL:
+        jj_consume_token(LESSEQUAL);
+        break;
+      case MOREEQUAL:
+        jj_consume_token(MOREEQUAL);
+        break;
       case EQUALS:
         jj_consume_token(EQUALS);
         break;
@@ -75,6 +81,9 @@
         break;
       case ANGLEBRACKETCLOSE:
         jj_consume_token(ANGLEBRACKETCLOSE);
+        break;
+      case EQUIVALENCE:
+        jj_consume_token(EQUIVALENCE);
         break;
       case SEMICOLON:
         jj_consume_token(SEMICOLON);
@@ -112,7 +121,6 @@
       case SUB:
       case MULT:
       case DIV:
-      case EQUALS:
       case MOD:
       case BRACKETOPEN:
       case BRACKETCLOSE:
@@ -120,8 +128,12 @@
       case SQUAREBRACKETCLOSE:
       case CURLYBRACKETOPEN:
       case CURLYBRACKETCLOSE:
+      case LESSEQUAL:
+      case MOREEQUAL:
+      case EQUALS:
       case ANGLEBRACKETOPEN:
       case ANGLEBRACKETCLOSE:
+      case EQUIVALENCE:
       case SEMICOLON:
       case COMMA:
       case ID:
@@ -156,7 +168,7 @@
       jj_la1_init_1();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x1ffffffe,0x1ffffffe,};
+      jj_la1_0 = new int[] {0xfffffffe,0xfffffffe,};
    }
    private static void jj_la1_init_1() {
       jj_la1_1 = new int[] {0x0,0x0,};
@@ -297,7 +309,7 @@
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[36];
+    boolean[] la1tokens = new boolean[39];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -314,7 +326,7 @@
         }
       }
     }
-    for (int i = 0; i < 36; i++) {
+    for (int i = 0; i < 39; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;
