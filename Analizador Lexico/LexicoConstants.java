@@ -25,51 +25,55 @@ public interface LexicoConstants {
   /** RegularExpression Id. */
   int WHILE = 8;
   /** RegularExpression Id. */
-  int SUM = 9;
+  int INPUT = 9;
   /** RegularExpression Id. */
-  int SUB = 10;
+  int OUTPUT = 10;
   /** RegularExpression Id. */
-  int MULT = 11;
+  int SUM = 11;
   /** RegularExpression Id. */
-  int DIV = 12;
+  int SUB = 12;
   /** RegularExpression Id. */
-  int MOD = 13;
+  int MULT = 13;
   /** RegularExpression Id. */
-  int BRACKETOPEN = 14;
+  int DIV = 14;
   /** RegularExpression Id. */
-  int BRACKETCLOSE = 15;
+  int MOD = 15;
   /** RegularExpression Id. */
-  int SQUAREBRACKETOPEN = 16;
+  int BRACKETOPEN = 16;
   /** RegularExpression Id. */
-  int SQUAREBRACKETCLOSE = 17;
+  int BRACKETCLOSE = 17;
   /** RegularExpression Id. */
-  int CURLYBRACKETOPEN = 18;
+  int SQUAREBRACKETOPEN = 18;
   /** RegularExpression Id. */
-  int CURLYBRACKETCLOSE = 19;
+  int SQUAREBRACKETCLOSE = 19;
   /** RegularExpression Id. */
-  int LESSEQUAL = 20;
+  int CURLYBRACKETOPEN = 20;
   /** RegularExpression Id. */
-  int MOREEQUAL = 21;
+  int CURLYBRACKETCLOSE = 21;
   /** RegularExpression Id. */
-  int EQUALS = 22;
+  int LESSEQUAL = 22;
   /** RegularExpression Id. */
-  int ANGLEBRACKETOPEN = 23;
+  int MOREEQUAL = 23;
   /** RegularExpression Id. */
-  int ANGLEBRACKETCLOSE = 24;
+  int EQUALS = 24;
   /** RegularExpression Id. */
-  int EQUIVALENCE = 25;
+  int ANGLEBRACKETOPEN = 25;
   /** RegularExpression Id. */
-  int SEMICOLON = 26;
+  int ANGLEBRACKETCLOSE = 26;
   /** RegularExpression Id. */
-  int COMMA = 27;
+  int EQUIVALENCE = 27;
   /** RegularExpression Id. */
-  int ID = 28;
+  int SEMICOLON = 28;
   /** RegularExpression Id. */
-  int NUMENT = 29;
+  int COMMA = 29;
   /** RegularExpression Id. */
-  int NUMREAL = 30;
+  int ID = 30;
   /** RegularExpression Id. */
-  int SIMPLECHAR = 31;
+  int NUMENT = 31;
+  /** RegularExpression Id. */
+  int NUMREAL = 32;
+  /** RegularExpression Id. */
+  int SIMPLECHAR = 33;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -85,6 +89,8 @@ public interface LexicoConstants {
     "\"if\"",
     "\"else\"",
     "\"while\"",
+    "\"input\"",
+    "\"output\"",
     "<SUM>",
     "<SUB>",
     "<MULT>",
@@ -108,13 +114,13 @@ public interface LexicoConstants {
     "<NUMENT>",
     "<NUMREAL>",
     "<SIMPLECHAR>",
-    "<token of kind 32>",
-    "<token of kind 33>",
+    "<token of kind 34>",
+    "<token of kind 35>",
     "\" \"",
     "\"\\t\"",
     "\"\\n\"",
     "\"\\r\"",
-    "<token of kind 38>",
+    "<token of kind 40>",
   };
 
 }

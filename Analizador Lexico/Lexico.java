@@ -34,6 +34,12 @@
       case WHILE:
         jj_consume_token(WHILE);
         break;
+      case INPUT:
+        jj_consume_token(INPUT);
+        break;
+      case OUTPUT:
+        jj_consume_token(OUTPUT);
+        break;
       case SUM:
         jj_consume_token(SUM);
         break;
@@ -117,6 +123,8 @@
       case IF:
       case ELSE:
       case WHILE:
+      case INPUT:
+      case OUTPUT:
       case SUM:
       case SUB:
       case MULT:
@@ -171,7 +179,7 @@
       jj_la1_0 = new int[] {0xfffffffe,0xfffffffe,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x0,0x0,};
+      jj_la1_1 = new int[] {0x3,0x3,};
    }
 
   /** Constructor with InputStream. */
@@ -309,7 +317,7 @@
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[39];
+    boolean[] la1tokens = new boolean[41];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -326,7 +334,7 @@
         }
       }
     }
-    for (int i = 0; i < 39; i++) {
+    for (int i = 0; i < 41; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

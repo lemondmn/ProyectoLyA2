@@ -36,6 +36,12 @@ TOKEN:
 		|
 		< WHILE : "while" >
 			{System.out.print("Declaracion while: ");System.out.println(image);}
+		|
+		< INPUT : "input" >
+			{System.out.print("Sentencia input: ");System.out.println(image);}
+		|
+		< OUTPUT : "output" >
+			{System.out.print("Sentencia output: ");System.out.println(image);}
 	}
 
 // operators
@@ -130,5 +136,5 @@ SKIP:
 
 void unaExpresion() : {}
 	{
-		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID> | <IF> | <ELSE> | <WHILE> | <SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL> | <EQUALS> | <MOD> | <BRACKETOPEN> | <BRACKETCLOSE> | <SQUAREBRACKETOPEN> | <SQUAREBRACKETCLOSE> | <CURLYBRACKETOPEN> | <CURLYBRACKETCLOSE>| <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> | <NUMREAL> | <SIMPLECHAR>)+ <EOF>
+		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID> | <IF> | <ELSE> | <WHILE> | <INPUT> | <OUTPUT> | <SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL> | <EQUALS> | <MOD> | <BRACKETOPEN> | <BRACKETCLOSE> | <SQUAREBRACKETOPEN> | <SQUAREBRACKETCLOSE> | <CURLYBRACKETOPEN> | <CURLYBRACKETCLOSE>| <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> | <NUMREAL> | <SIMPLECHAR>)+ <EOF>
 	}

@@ -47,17 +47,17 @@ Identificador: y
 Punto y Coma: ;
 Identificador: x
 Operador igual: =
-Identificador: input
+Sentencia input: input
 Parentesis incial: (
 Parentesis final: )
 Punto y Coma: ;
 Identificador: y
 Operador igual: =
-Identificador: input
+Sentencia input: input
 Parentesis incial: (
 Parentesis final: )
 Punto y Coma: ;
-Identificador: output
+Sentencia output: output
 Parentesis incial: (
 Identificador: gcd
 Parentesis incial: (
