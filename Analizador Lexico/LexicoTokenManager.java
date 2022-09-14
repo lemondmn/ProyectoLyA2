@@ -699,6 +699,9 @@ static final long[] jjtoToken = {
 static final long[] jjtoSkip = {
    0x1fc00000000L, 
 };
+static final long[] jjtoSpecial = {
+   0x10000000000L, 
+};
 static protected SimpleCharStream input_stream;
 static private final int[] jjrounds = new int[35];
 static private final int[] jjstateSet = new int[70];
@@ -801,6 +804,7 @@ public static Token getNextToken()
    {        
       jjmatchedKind = 0;
       matchedToken = jjFillToken();
+      matchedToken.specialToken = specialToken;
       return matchedToken;
    }
    image = null;
@@ -825,11 +829,26 @@ public static Token getNextToken()
       if ((jjtoToken[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L)
       {
          matchedToken = jjFillToken();
+         matchedToken.specialToken = specialToken;
          TokenLexicalActions(matchedToken);
          return matchedToken;
       }
       else
       {
+         if ((jjtoSpecial[jjmatchedKind >> 6] & (1L << (jjmatchedKind & 077))) != 0L)
+         {
+            matchedToken = jjFillToken();
+            if (specialToken == null)
+               specialToken = matchedToken;
+            else
+            {
+               matchedToken.specialToken = specialToken;
+               specialToken = (specialToken.next = matchedToken);
+            }
+            SkipLexicalActions(matchedToken);
+         }
+         else 
+            SkipLexicalActions(null);
          continue EOFLoop;
       }
    }
@@ -856,6 +875,20 @@ public static Token getNextToken()
   }
 }
 
+static void SkipLexicalActions(Token matchedToken)
+{
+   switch(jjmatchedKind)
+   {
+      case 40 :
+         if (image == null)
+            image = new StringBuffer();
+         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
+               System.out.println("(Error) Token desconocido en la linea:" + matchedToken.beginLine );
+         break;
+      default :
+         break;
+   }
+}
 static void TokenLexicalActions(Token matchedToken)
 {
    switch(jjmatchedKind)
@@ -865,211 +898,211 @@ static void TokenLexicalActions(Token matchedToken)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[1]);
         lengthOfMatch = jjstrLiteralImages[1].length();
-                         System.out.print("Declaracion int: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion int: " + image );
          break;
       case 2 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[2]);
         lengthOfMatch = jjstrLiteralImages[2].length();
-                         System.out.print("Declaracion float: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion float: " + image );
          break;
       case 3 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[3]);
         lengthOfMatch = jjstrLiteralImages[3].length();
-                         System.out.print("Declaracion char: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion char: " + image );
          break;
       case 4 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[4]);
         lengthOfMatch = jjstrLiteralImages[4].length();
-                         System.out.print("Declaracion return: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion return: " + image );
          break;
       case 5 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[5]);
         lengthOfMatch = jjstrLiteralImages[5].length();
-                         System.out.print("Declaracion void: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion void: " + image );
          break;
       case 6 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[6]);
         lengthOfMatch = jjstrLiteralImages[6].length();
-                         System.out.print("Declaracion if: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion if: " + image );
          break;
       case 7 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[7]);
         lengthOfMatch = jjstrLiteralImages[7].length();
-                         System.out.print("Declaracion else: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion else: " + image );
          break;
       case 8 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[8]);
         lengthOfMatch = jjstrLiteralImages[8].length();
-                         System.out.print("Declaracion while: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion while: " + image );
          break;
       case 9 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[9]);
         lengthOfMatch = jjstrLiteralImages[9].length();
-                         System.out.print("Sentencia input: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Sentencia input: " + image );
          break;
       case 10 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[10]);
         lengthOfMatch = jjstrLiteralImages[10].length();
-                         System.out.print("Sentencia output: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Sentencia output: " + image );
          break;
       case 11 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                 System.out.print("Operador suma: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador suma: " + image );
          break;
       case 12 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                 System.out.print("Operador resta: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador resta: " + image );
          break;
       case 13 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                 System.out.print("Operador multiplicacion: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador multiplicacion: " + image );
          break;
       case 14 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                 System.out.print("Operador division: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador division: " + image );
          break;
       case 15 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Operador modulo: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Operador modulo: " + image );
          break;
       case 16 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Parentesis incial: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Parentesis incial: " + image );
          break;
       case 17 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Parentesis final: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Parentesis final: " + image );
          break;
       case 18 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Corchete incial: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Corchete incial: " + image );
          break;
       case 19 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Corchete final: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Corchete final: " + image );
          break;
       case 20 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Llave incial: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Llave incial: " + image );
          break;
       case 21 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Llave final: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Llave final: " + image );
          break;
       case 22 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[22]);
         lengthOfMatch = jjstrLiteralImages[22].length();
-                 System.out.print("Operador menor o igual: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador menor o igual: " + image );
          break;
       case 23 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[23]);
         lengthOfMatch = jjstrLiteralImages[23].length();
-                 System.out.print("Operador mayor o igual: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador mayor o igual: " + image );
          break;
       case 24 :
         if (image == null)
             image = new StringBuffer();
         image.append(jjstrLiteralImages[24]);
         lengthOfMatch = jjstrLiteralImages[24].length();
-                 System.out.print("Operador igual igual: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador igual igual: " + image );
          break;
       case 25 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Operador menor que: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Operador menor que: " + image );
          break;
       case 26 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Operador mayor que: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Operador mayor que: " + image );
          break;
       case 27 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                 System.out.print("Operador igual: ");System.out.println(image);
+                 System.out.println( "No. linea: " + matchedToken.beginLine + " Operador igual: " + image );
          break;
       case 28 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Punto y Coma: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Punto y Coma: " + image );
          break;
       case 29 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Coma: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Coma: " + image );
          break;
       case 30 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Identificador: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Identificador: " + image );
          break;
       case 31 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Numero entero: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Numero entero: " + image );
          break;
       case 32 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Numero real: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Numero real: " + image );
          break;
       case 33 :
         if (image == null)
             image = new StringBuffer();
         image.append(input_stream.GetSuffix(jjimageLen + (lengthOfMatch = jjmatchedPos + 1)));
-                         System.out.print("Caracter tipo Char: ");System.out.println(image);
+                         System.out.println( "No. linea: " + matchedToken.beginLine + " Caracter tipo Char: " + image );
          break;
       default : 
          break;

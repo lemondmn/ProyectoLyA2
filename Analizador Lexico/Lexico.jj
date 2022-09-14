@@ -14,34 +14,34 @@ PARSER_BEGIN (Lexico)
 TOKEN:
 	{
 		< INT : "int" >
-			{System.out.print("Declaracion int: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion int: " + image );}
 		|
 		< FLOAT : "float" >
-			{System.out.print("Declaracion float: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion float: " + image );}
 		|
 		< CHAR : "char" >
-			{System.out.print("Declaracion char: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion char: " + image );}
 		|
 		< RETURN : "return" >
-			{System.out.print("Declaracion return: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion return: " + image );}
 		|
 		< VOID : "void" >
-			{System.out.print("Declaracion void: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion void: " + image );}
 		|
 		< IF : "if" >
-			{System.out.print("Declaracion if: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion if: " + image );}
 		|
 		< ELSE : "else" >
-			{System.out.print("Declaracion else: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion else: " + image );}
 		|
 		< WHILE : "while" >
-			{System.out.print("Declaracion while: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion while: " + image );}
 		|
 		< INPUT : "input" >
-			{System.out.print("Sentencia input: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Sentencia input: " + image );}
 		|
 		< OUTPUT : "output" >
-			{System.out.print("Sentencia output: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Sentencia output: " + image );}
 	}
 
 // operators
@@ -49,61 +49,61 @@ TOKEN:
 TOKEN:
 	{
 	    <	SUM : ["+"] >
-	    	{System.out.print("Operador suma: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador suma: " + image );}
 	    |
 	    <	SUB : ["-"] >
-	    	{System.out.print("Operador resta: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador resta: " + image );}
 	    |
 	    <	MULT : ["*"] >
-	    	{System.out.print("Operador multiplicacion: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador multiplicacion: " + image );}
 	    |
 	    <	DIV : ["/"] >
-	    	{System.out.print("Operador division: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador division: " + image );}
 	    |
 		<	MOD : ["%"] >
-			{System.out.print("Operador modulo: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador modulo: " + image );}
 		|
 		<	BRACKETOPEN : ["("] >
-			{System.out.print("Parentesis incial: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Parentesis incial: " + image );}
 		|
 		<	BRACKETCLOSE : [")"] >
-			{System.out.print("Parentesis final: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Parentesis final: " + image );}
 		|
 		<	SQUAREBRACKETOPEN : ["["] >
-			{System.out.print("Corchete incial: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Corchete incial: " + image );}
 		|
 		<	SQUAREBRACKETCLOSE : ["]"] >
-			{System.out.print("Corchete final: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Corchete final: " + image );}
 		|
 		<	CURLYBRACKETOPEN : ["{"] >
-			{System.out.print("Llave incial: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Llave incial: " + image );}
 		|
 		<	CURLYBRACKETCLOSE : ["}"] >
-			{System.out.print("Llave final: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Llave final: " + image );}
 		|
 		<	LESSEQUAL : "<=" >
-	    	{System.out.print("Operador menor o igual: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador menor o igual: " + image );}
 		|
 		<	MOREEQUAL : ">=" >
-	    	{System.out.print("Operador mayor o igual: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador mayor o igual: " + image );}
 		|
 		<	EQUALS : "==" >
-	    	{System.out.print("Operador igual igual: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador igual igual: " + image );}
 		|
 		<	ANGLEBRACKETOPEN : ["<"] >
-			{System.out.print("Operador menor que: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador menor que: " + image );}
 		|
 		<	ANGLEBRACKETCLOSE : [">"] >
-			{System.out.print("Operador mayor que: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador mayor que: " + image );}
 		|
 		<	EQUIVALENCE : ["="] >
-	    	{System.out.print("Operador igual: ");System.out.println(image);}
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador igual: " + image );}
 		|
 		<	SEMICOLON : [";"] >
-			{System.out.print("Punto y Coma: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Punto y Coma: " + image );}
 		|
 		<	COMMA : [","] >
-			{System.out.print("Coma: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Coma: " + image );}
 	}
 
 // Regular Expresions
@@ -111,16 +111,16 @@ TOKEN:
 TOKEN:
 	{
 		<ID: ["a"-"z", "A"-"Z"] ( ["a"-"z", "A"-"Z"] | ["0"-"9"] | ["_"] )* >
-			{System.out.print("Identificador: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Identificador: " + image );}
 		|
 		<NUMENT: ["0"-"9"](["0"-"9"])*>
-			{System.out.print("Numero entero: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Numero entero: " + image );}
 		|
 		<NUMREAL: ["0"-"9"](["0"-"9"])*["."]["0"-"9"](["0"-"9"])*>
-			{System.out.print("Numero real: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Numero real: " + image );}
 		|
 		<SIMPLECHAR: ["\'"](~["\'"])["\'"]>
-			{System.out.print("Caracter tipo Char: ");System.out.println(image);}
+			{System.out.println( "No. linea: " + matchedToken.beginLine + " Caracter tipo Char: " + image );}
 	}
 
 SKIP:
@@ -130,11 +130,22 @@ SKIP:
 		<["/"]["/"](~["\n"])*>
 		|
 		" " | "\t" | "\n" | "\r"
-		|
-		<~[]>
 	}
+
+SPECIAL_TOKEN: {
+	<~[]> {System.out.println("(Error) Token desconocido en la linea:" + matchedToken.beginLine );}
+}
+
+// Faltan errores para identificadores no validos y floats a los que les hace falta una parte decimal
 
 void unaExpresion() : {}
 	{
-		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID> | <IF> | <ELSE> | <WHILE> | <INPUT> | <OUTPUT> | <SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL> | <EQUALS> | <MOD> | <BRACKETOPEN> | <BRACKETCLOSE> | <SQUAREBRACKETOPEN> | <SQUAREBRACKETCLOSE> | <CURLYBRACKETOPEN> | <CURLYBRACKETCLOSE>| <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> | <NUMREAL> | <SIMPLECHAR>)+ <EOF>
+		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID>
+		| <IF> | <ELSE> | <WHILE> | <INPUT> | <OUTPUT> |
+		<SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL>
+		|<EQUALS> | <MOD> | <BRACKETOPEN> | <BRACKETCLOSE> |
+		<SQUAREBRACKETOPEN> | <SQUAREBRACKETCLOSE> | <CURLYBRACKETOPEN> |
+		<CURLYBRACKETCLOSE>| <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> |
+		<EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> |
+		<NUMREAL> | <SIMPLECHAR>) + <EOF>
 	}
