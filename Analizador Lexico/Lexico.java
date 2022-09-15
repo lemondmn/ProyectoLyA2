@@ -6,6 +6,7 @@
                         System.out.println("\nAnalisis Lexico terminado!");
                 }
 
+// Faltan errores para identificadores no validos y floats a los que les hace falta una parte decimal
   static final public void unaExpresion() throws ParseException {
     label_1:
     while (true) {
@@ -317,7 +318,7 @@
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[41];
+    boolean[] la1tokens = new boolean[45];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -334,7 +335,7 @@
         }
       }
     }
-    for (int i = 0; i < 41; i++) {
+    for (int i = 0; i < 45; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

@@ -133,6 +133,18 @@ SKIP:
 	}
 
 SPECIAL_TOKEN: {
+	<["0"-"9"](["0"-"9"])*["."](["."])*["0"-"9"](["0"-"9"])*>
+		{System.out.println("(Error) Demasiados puntos en numero decimal en la linea:" + matchedToken.beginLine );}
+	|
+	<["."]["0"-"9"](["0"-"9"])*>
+		{System.out.println("(Error) Error de escritura en numero decimal en la linea:" + matchedToken.beginLine );}
+	|
+	<["0"-"9"](["0"-"9"])*["."]>
+		{System.out.println("(Error) Error de escritura en numero decimal en la linea:" + matchedToken.beginLine );}
+	|
+	<(["0"-"9"] | ["."]) ( ["a"-"z", "A"-"Z"] | ["0"-"9"] | ["_"] )* >
+		{System.out.println("(Error) Identificador invalido en la linea:" + matchedToken.beginLine );}
+	|
 	<~[]> {System.out.println("(Error) Token desconocido en la linea:" + matchedToken.beginLine );}
 }
 

@@ -1,0 +1,141 @@
+No. linea: 1 Declaracion int: int
+No. linea: 1 Identificador: gcd
+No. linea: 1 Parentesis incial: (
+No. linea: 1 Declaracion int: int
+No. linea: 1 Identificador: v
+No. linea: 1 Coma: ,
+No. linea: 1 Declaracion int: int
+No. linea: 1 Identificador: h
+No. linea: 1 Parentesis final: )
+No. linea: 2 Llave incial: {
+No. linea: 3 Declaracion if: if
+No. linea: 3 Parentesis incial: (
+No. linea: 3 Identificador: v
+No. linea: 3 Operador igual igual: ==
+No. linea: 3 Numero entero: 0
+No. linea: 3 Parentesis final: )
+No. linea: 3 Declaracion return: return
+No. linea: 3 Identificador: u
+No. linea: 3 Punto y Coma: ;
+No. linea: 4 Declaracion else: else
+No. linea: 4 Declaracion return: return
+No. linea: 4 Identificador: gcd
+No. linea: 4 Parentesis incial: (
+No. linea: 4 Identificador: v
+No. linea: 4 Coma: ,
+No. linea: 4 Identificador: u
+No. linea: 4 Operador resta: -
+No. linea: 4 Identificador: u
+No. linea: 4 Operador division: /
+No. linea: 4 Identificador: v
+No. linea: 4 Operador multiplicacion: *
+No. linea: 4 Identificador: v
+No. linea: 4 Parentesis final: )
+No. linea: 4 Punto y Coma: ;
+No. linea: 5 Llave final: }
+No. linea: 6 Declaracion float: float
+No. linea: 6 Identificador: suma
+No. linea: 6 Parentesis incial: (
+No. linea: 6 Declaracion float: float
+No. linea: 6 Identificador: p
+No. linea: 6 Parentesis final: )
+No. linea: 7 Llave incial: {
+No. linea: 8 Declaracion if: if
+No. linea: 8 Parentesis incial: (
+No. linea: 8 Identificador: p
+No. linea: 8 Operador igual igual: ==
+No. linea: 8 Numero entero: 0
+No. linea: 8 Parentesis final: )
+No. linea: 8 Declaracion return: return
+No. linea: 8 Identificador: p
+No. linea: 8 Punto y Coma: ;
+No. linea: 9 Declaracion else: else
+No. linea: 9 Declaracion return: return
+No. linea: 9 Identificador: p
+No. linea: 9 Operador suma: +
+No. linea: 9 Numero real: 8.5
+No. linea: 9 Punto y Coma: ;
+No. linea: 10 Llave final: }
+No. linea: 12 Declaracion void: void
+No. linea: 12 Identificador: main
+No. linea: 12 Parentesis incial: (
+No. linea: 12 Declaracion void: void
+No. linea: 12 Parentesis final: )
+No. linea: 13 Llave incial: {
+No. linea: 14 Declaracion float: float
+No. linea: 14 Identificador: i
+No. linea: 14 Punto y Coma: ;
+No. linea: 15 Declaracion int: int
+No. linea: 15 Identificador: h
+No. linea: 15 Punto y Coma: ;
+No. linea: 16 Declaracion int: int
+No. linea: 16 Identificador: x
+No. linea: 16 Corchete incial: [
+No. linea: 16 Numero entero: 10
+No. linea: 16 Corchete final: ]
+No. linea: 16 Punto y Coma: ;
+No. linea: 18 Identificador: i
+No. linea: 18 Operador igual: =
+No. linea: 18 Numero entero: 5
+No. linea: 18 Punto y Coma: ;
+No. linea: 19 Declaracion while: while
+No. linea: 19 Parentesis incial: (
+No. linea: 19 Identificador: i
+No. linea: 19 Operador menor que: <
+No. linea: 19 Numero entero: 10
+No. linea: 19 Parentesis final: )
+No. linea: 20 Llave incial: {
+No. linea: 21 Identificador: i
+No. linea: 21 Operador igual: =
+No. linea: 21 Identificador: i
+No. linea: 21 Operador suma: +
+No. linea: 21 Numero real: 0.2
+No. linea: 21 Operador suma: +
+No. linea: 21 Numero real: 0.3
+No. linea: 21 Operador suma: +
+No. linea: 21 Numero real: 8.9
+No. linea: 21 Punto y Coma: ;
+No. linea: 22 Identificador: h
+No. linea: 22 Operador igual: =
+No. linea: 22 Numero entero: 9
+No. linea: 22 Operador division: /
+No. linea: 22 Numero entero: 3
+No. linea: 22 Operador multiplicacion: *
+No. linea: 22 Identificador: h
+No. linea: 22 Operador suma: +
+No. linea: 22 Identificador: x
+No. linea: 22 Corchete incial: [
+No. linea: 22 Numero entero: 4
+No. linea: 22 Corchete final: ]
+No. linea: 22 Punto y Coma: ;
+No. linea: 23 Llave final: }
+No. linea: 24 Identificador: x
+No. linea: 24 Corchete incial: [
+No. linea: 24 Numero entero: 6
+No. linea: 24 Corchete final: ]
+No. linea: 24 Operador igual: =
+No. linea: 24 Numero entero: 8
+No. linea: 24 Punto y Coma: ;
+No. linea: 25 Identificador: h
+No. linea: 25 Operador igual: =
+No. linea: 25 Numero entero: 7
+No. linea: 25 Punto y Coma: ;
+No. linea: 26 Identificador: h
+No. linea: 26 Operador igual: =
+No. linea: 26 Identificador: gcd
+No. linea: 26 Parentesis incial: (
+No. linea: 26 Numero entero: 5
+No. linea: 26 Coma: ,
+No. linea: 26 Numero entero: 6
+No. linea: 26 Parentesis final: )
+No. linea: 26 Punto y Coma: ;
+No. linea: 27 Identificador: i
+No. linea: 27 Operador igual: =
+No. linea: 27 Identificador: suma
+No. linea: 27 Parentesis incial: (
+No. linea: 27 Numero real: 9.3
+No. linea: 27 Parentesis final: )
+No. linea: 27 Punto y Coma: ;
+No. linea: 29 Llave final: }
+
+Analisis Lexico terminado!

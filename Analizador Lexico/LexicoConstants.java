@@ -121,6 +121,10 @@ public interface LexicoConstants {
     "\"\\n\"",
     "\"\\r\"",
     "<token of kind 40>",
+    "<token of kind 41>",
+    "<token of kind 42>",
+    "<token of kind 43>",
+    "<token of kind 44>",
   };
 
 }

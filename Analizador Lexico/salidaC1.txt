@@ -1,0 +1,29 @@
+No. linea: 1 Declaracion int: int
+No. linea: 1 Identificador: holiwis
+No. linea: 1 Operador igual: =
+No. linea: 1 Numero entero: 12
+No. linea: 1 Punto y Coma: ;
+No. linea: 2 Declaracion float: float
+No. linea: 2 Identificador: a
+No. linea: 2 Operador igual: =
+(Error) Demasiados puntos en numero decimal en la linea:2
+No. linea: 2 Punto y Coma: ;
+No. linea: 3 Identificador: a
+No. linea: 3 Operador igual: =
+(Error) Error de escritura en numero decimal en la linea:3
+No. linea: 3 Operador multiplicacion: *
+No. linea: 3 Numero real: 23.565
+No. linea: 3 Punto y Coma: ;
+No. linea: 4 Declaracion float: float
+No. linea: 4 Identificador: b
+No. linea: 4 Operador igual: =
+No. linea: 4 Numero entero: 0123
+No. linea: 4 Punto y Coma: ;
+No. linea: 5 Identificador: b
+No. linea: 5 Operador igual: =
+No. linea: 5 Numero real: 23.56
+No. linea: 5 Operador suma: +
+(Error) Error de escritura en numero decimal en la linea:5
+No. linea: 5 Punto y Coma: ;
+
+Analisis Lexico terminado!
