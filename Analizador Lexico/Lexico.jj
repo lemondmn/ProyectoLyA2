@@ -2,7 +2,7 @@ PARSER_BEGIN (Lexico)
 	public class Lexico {
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
-			anLex.unaExpresion();
+			anLex.analzar();
 			System.out.println("\nAnalisis Lexico terminado!");
 		}
 	}
@@ -133,24 +133,27 @@ SKIP:
 	}
 
 SPECIAL_TOKEN: {
+	// Muchos puntos decimales en el float
 	<["0"-"9"](["0"-"9"])*["."](["."])*["0"-"9"](["0"-"9"])*>
 		{System.out.println("(Error) Demasiados puntos en numero decimal en la linea:" + matchedToken.beginLine );}
 	|
+	// Falta la parte entera en el float
 	<["."]["0"-"9"](["0"-"9"])*>
-		{System.out.println("(Error) Error de escritura en numero decimal en la linea:" + matchedToken.beginLine );}
+		{System.out.println( "(Error) Error de escritura en numero decimal en la linea:" + matchedToken.beginLine );}
 	|
+	// Falta la parte decimal en el float
 	<["0"-"9"](["0"-"9"])*["."]>
 		{System.out.println("(Error) Error de escritura en numero decimal en la linea:" + matchedToken.beginLine );}
 	|
+	// Identificador invalido
 	<(["0"-"9"] | ["."]) ( ["a"-"z", "A"-"Z"] | ["0"-"9"] | ["_"] )* >
 		{System.out.println("(Error) Identificador invalido en la linea:" + matchedToken.beginLine );}
 	|
-	<~[]> {System.out.println("(Error) Token desconocido en la linea:" + matchedToken.beginLine );}
+	// Token invalido
+	<~[]> {System.out.println( "(Error) Token desconocido en la linea:" + matchedToken.beginLine );}
 }
 
-// Faltan errores para identificadores no validos y floats a los que les hace falta una parte decimal
-
-void unaExpresion() : {}
+void analzar() : {}
 	{
 		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID>
 		| <IF> | <ELSE> | <WHILE> | <INPUT> | <OUTPUT> |

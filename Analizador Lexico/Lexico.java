@@ -2,12 +2,12 @@
         public class Lexico implements LexicoConstants {
                 public static void main (String[] args) throws ParseException {
                         Lexico anLex = new Lexico(System.in);
-                        anLex.unaExpresion();
+                        anLex.analzar();
                         System.out.println("\nAnalisis Lexico terminado!");
                 }
 
 // Faltan errores para identificadores no validos y floats a los que les hace falta una parte decimal
-  static final public void unaExpresion() throws ParseException {
+  static final public void analzar() throws ParseException {
     label_1:
     while (true) {
       switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
