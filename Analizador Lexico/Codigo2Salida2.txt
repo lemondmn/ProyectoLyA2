@@ -1,0 +1,242 @@
+No. linea: 4 Declaracion int: int
+No. linea: 4 Identificador: x
+No. linea: 4 Corchete incial: [
+No. linea: 4 Numero entero: 10
+No. linea: 4 Corchete final: ]
+No. linea: 4 Punto y Coma: ;
+No. linea: 6 Declaracion int: int
+No. linea: 6 Identificador: minloc
+No. linea: 6 Parentesis incial: (
+No. linea: 6 Declaracion int: int
+No. linea: 6 Identificador: a
+No. linea: 6 Corchete incial: [
+No. linea: 6 Corchete final: ]
+No. linea: 6 Coma: ,
+No. linea: 6 Declaracion int: int
+No. linea: 6 Identificador: low
+No. linea: 6 Coma: ,
+No. linea: 6 Declaracion int: int
+No. linea: 6 Identificador: high
+No. linea: 6 Parentesis final: )
+No. linea: 7 Llave incial: {
+No. linea: 8 Declaracion int: int
+No. linea: 8 Identificador: i
+No. linea: 8 Punto y Coma: ;
+No. linea: 8 Declaracion int: int
+No. linea: 8 Identificador: x
+No. linea: 8 Punto y Coma: ;
+No. linea: 8 Declaracion int: int
+No. linea: 8 Identificador: k
+No. linea: 8 Punto y Coma: ;
+No. linea: 10 Identificador: k
+No. linea: 10 Operador igual: =
+No. linea: 10 Identificador: low
+No. linea: 10 Punto y Coma: ;
+No. linea: 11 Identificador: x
+No. linea: 11 Operador igual: =
+No. linea: 11 Identificador: a
+No. linea: 11 Corchete incial: [
+No. linea: 11 Identificador: low
+No. linea: 11 Corchete final: ]
+No. linea: 11 Punto y Coma: ;
+No. linea: 12 Identificador: i
+No. linea: 12 Operador igual: =
+No. linea: 12 Identificador: low
+No. linea: 12 Operador suma: +
+No. linea: 12 Numero entero: 1
+No. linea: 12 Punto y Coma: ;
+No. linea: 14 Declaracion while: while
+No. linea: 14 Parentesis incial: (
+No. linea: 14 Identificador: i
+No. linea: 14 Operador menor que: <
+(Error) Identificador invalido en la linea:14
+No. linea: 14 Parentesis final: )
+No. linea: 15 Llave incial: {
+No. linea: 16 Declaracion if: if
+No. linea: 16 Parentesis incial: (
+No. linea: 16 Identificador: a
+No. linea: 16 Corchete incial: [
+No. linea: 16 Identificador: i
+No. linea: 16 Corchete final: ]
+No. linea: 16 Operador menor que: <
+No. linea: 16 Identificador: x
+No. linea: 16 Parentesis final: )
+No. linea: 17 Llave incial: {
+No. linea: 18 Identificador: x
+No. linea: 18 Operador igual: =
+No. linea: 18 Identificador: a
+No. linea: 18 Corchete incial: [
+No. linea: 18 Identificador: i
+No. linea: 18 Corchete final: ]
+No. linea: 18 Punto y Coma: ;
+No. linea: 19 Identificador: k
+No. linea: 19 Operador igual: =
+No. linea: 19 Identificador: i
+No. linea: 19 Punto y Coma: ;
+No. linea: 20 Llave final: }
+No. linea: 22 Identificador: i
+No. linea: 22 Operador igual: =
+No. linea: 22 Identificador: i
+No. linea: 22 Operador suma: +
+(Error) Error de escritura en numero decimal en la linea:22
+No. linea: 22 Punto y Coma: ;
+No. linea: 23 Llave final: }
+No. linea: 25 Declaracion return: return
+No. linea: 25 Identificador: k
+No. linea: 25 Punto y Coma: ;
+No. linea: 26 Llave final: }
+No. linea: 29 Declaracion void: void
+No. linea: 29 Identificador: sort
+No. linea: 29 Parentesis incial: (
+No. linea: 29 Declaracion int: int
+No. linea: 29 Identificador: a
+No. linea: 29 Corchete incial: [
+No. linea: 29 Corchete final: ]
+No. linea: 29 Coma: ,
+No. linea: 29 Declaracion int: int
+No. linea: 29 Identificador: low
+No. linea: 29 Coma: ,
+No. linea: 29 Declaracion int: int
+No. linea: 29 Identificador: high
+No. linea: 29 Parentesis final: )
+No. linea: 30 Llave incial: {
+No. linea: 31 Declaracion int: int
+No. linea: 31 Identificador: i
+No. linea: 31 Punto y Coma: ;
+No. linea: 32 Declaracion int: int
+No. linea: 32 Identificador: k
+No. linea: 32 Punto y Coma: ;
+No. linea: 34 Identificador: i
+No. linea: 34 Operador igual: =
+No. linea: 34 Identificador: low
+No. linea: 34 Punto y Coma: ;
+No. linea: 35 Declaracion while: while
+No. linea: 35 Parentesis incial: (
+No. linea: 35 Identificador: i
+No. linea: 35 Operador menor que: <
+No. linea: 35 Identificador: high
+No. linea: 35 Operador resta: -
+No. linea: 35 Numero entero: 1
+No. linea: 35 Parentesis final: )
+No. linea: 36 Llave incial: {
+No. linea: 37 Declaracion int: int
+No. linea: 37 Identificador: t
+No. linea: 37 Punto y Coma: ;
+No. linea: 38 Identificador: k
+No. linea: 38 Operador igual: =
+No. linea: 38 Identificador: minloc
+No. linea: 38 Parentesis incial: (
+No. linea: 38 Identificador: a
+No. linea: 38 Coma: ,
+No. linea: 38 Identificador: i
+No. linea: 38 Coma: ,
+No. linea: 38 Identificador: high
+No. linea: 38 Parentesis final: )
+No. linea: 38 Punto y Coma: ;
+No. linea: 39 Identificador: t
+No. linea: 39 Operador igual: =
+No. linea: 39 Identificador: a
+No. linea: 39 Corchete incial: [
+No. linea: 39 Identificador: k
+No. linea: 39 Corchete final: ]
+No. linea: 39 Punto y Coma: ;
+No. linea: 40 Identificador: a
+No. linea: 40 Corchete incial: [
+No. linea: 40 Identificador: k
+No. linea: 40 Corchete final: ]
+No. linea: 40 Operador igual: =
+No. linea: 40 Identificador: a
+No. linea: 40 Corchete incial: [
+No. linea: 40 Identificador: i
+No. linea: 40 Corchete final: ]
+No. linea: 40 Punto y Coma: ;
+No. linea: 41 Identificador: a
+No. linea: 41 Corchete incial: [
+No. linea: 41 Identificador: i
+No. linea: 41 Corchete final: ]
+No. linea: 41 Operador igual: =
+No. linea: 41 Identificador: t
+No. linea: 41 Punto y Coma: ;
+No. linea: 42 Identificador: i
+No. linea: 42 Operador igual: =
+No. linea: 42 Identificador: i
+No. linea: 42 Operador suma: +
+(Error) Error de escritura en numero decimal en la linea:42
+No. linea: 42 Punto y Coma: ;
+No. linea: 43 Llave final: }
+No. linea: 44 Llave final: }
+No. linea: 47 Declaracion void: void
+No. linea: 47 Identificador: main
+No. linea: 47 Parentesis incial: (
+No. linea: 47 Declaracion void: void
+No. linea: 47 Parentesis final: )
+No. linea: 48 Llave incial: {
+No. linea: 49 Declaracion int: int
+No. linea: 49 Identificador: i
+No. linea: 49 Punto y Coma: ;
+No. linea: 51 Identificador: i
+No. linea: 51 Operador igual: =
+No. linea: 51 Numero entero: 0
+No. linea: 51 Punto y Coma: ;
+No. linea: 52 Declaracion while: while
+(Error) Token desconocido en la linea:52
+No. linea: 52 Parentesis incial: (
+No. linea: 52 Identificador: i
+No. linea: 52 Operador menor que: <
+No. linea: 52 Numero entero: 10
+No. linea: 52 Parentesis final: )
+No. linea: 53 Llave incial: {
+No. linea: 54 Identificador: x
+No. linea: 54 Corchete incial: [
+No. linea: 54 Identificador: i
+No. linea: 54 Corchete final: ]
+No. linea: 54 Operador igual: =
+No. linea: 54 Sentencia input: input
+No. linea: 54 Parentesis incial: (
+No. linea: 54 Parentesis final: )
+No. linea: 54 Punto y Coma: ;
+No. linea: 55 Identificador: i
+No. linea: 55 Operador igual: =
+No. linea: 55 Identificador: i
+No. linea: 55 Operador suma: +
+No. linea: 55 Numero entero: 1
+No. linea: 55 Punto y Coma: ;
+No. linea: 56 Llave final: }
+No. linea: 58 Identificador: sort
+No. linea: 58 Parentesis incial: (
+No. linea: 58 Identificador: x
+No. linea: 58 Coma: ,
+No. linea: 58 Numero entero: 0
+No. linea: 58 Coma: ,
+No. linea: 58 Numero entero: 10
+No. linea: 58 Parentesis final: )
+No. linea: 58 Punto y Coma: ;
+No. linea: 60 Identificador: i
+No. linea: 60 Operador igual: =
+No. linea: 60 Numero entero: 0
+No. linea: 60 Punto y Coma: ;
+No. linea: 61 Declaracion while: while
+No. linea: 61 Parentesis incial: (
+No. linea: 61 Identificador: i
+No. linea: 61 Operador menor que: <
+No. linea: 61 Numero entero: 10
+No. linea: 61 Parentesis final: )
+No. linea: 62 Llave incial: {
+No. linea: 63 Sentencia output: output
+No. linea: 63 Parentesis incial: (
+No. linea: 63 Identificador: x
+No. linea: 63 Corchete incial: [
+No. linea: 63 Identificador: i
+No. linea: 63 Corchete final: ]
+No. linea: 63 Parentesis final: )
+No. linea: 63 Punto y Coma: ;
+No. linea: 64 Identificador: i
+No. linea: 64 Operador igual: =
+No. linea: 64 Identificador: i
+No. linea: 64 Operador suma: +
+No. linea: 64 Numero entero: 1
+No. linea: 64 Punto y Coma: ;
+No. linea: 65 Llave final: }
+No. linea: 66 Llave final: }
+
+Analisis Lexico terminado!

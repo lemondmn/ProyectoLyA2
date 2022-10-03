@@ -2,7 +2,7 @@ PARSER_BEGIN (Lexico)
 	public class Lexico {
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
-			anLex.analzar();
+			anLex.analizar();
 			System.out.println("\nAnalisis Lexico terminado!");
 		}
 	}
@@ -90,6 +90,9 @@ TOKEN:
 		<	EQUALS : "==" >
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador igual igual: " + image );}
 		|
+		<	NOTEQUALS : "!=" >
+	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador desigualdad: " + image );}
+		|
 		<	ANGLEBRACKETOPEN : ["<"] >
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador menor que: " + image );}
 		|
@@ -105,6 +108,12 @@ TOKEN:
 		<	COMMA : [","] >
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Coma: " + image );}
 	}
+
+TOKEN: 
+{
+	<NUMCONTRO : (["M"]|["C"])?(["0"-"9"]{2})(["120"]|["121"])(["0"-"9"]{3})>
+	{System.out.println( "No. linea: " + matchedToken.beginLine + " Numero de Control: " + image );}
+}
 
 // Regular Expresions
 
@@ -153,8 +162,10 @@ SPECIAL_TOKEN: {
 	<~[]> {System.out.println( "(Error) Token desconocido en la linea:" + matchedToken.beginLine );}
 }
 
-void analzar() : {}
+void analizar() : {}
 	{
+		)
+
 		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID>
 		| <IF> | <ELSE> | <WHILE> | <INPUT> | <OUTPUT> |
 		<SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL>
@@ -164,3 +175,279 @@ void analzar() : {}
 		<EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> |
 		<NUMREAL> | <SIMPLECHAR>) + <EOF>
 	}
+
+// Analizador sintactico
+
+void sintactico() : {}
+{
+	(program()) + <EOF>
+}
+
+// 1
+
+void program() : {} 
+{
+	declarationList()
+}
+
+// 2
+
+declarationList() : {}
+{
+	declaration() declarationListPrime()
+}
+
+declarationListPrime() : {}
+{
+	declaration() declarationListPrime() | {}
+}
+
+// 3
+
+declaration() : {}
+{
+	varDeclaration() | funDeclaration()
+}
+
+// 4
+
+varDeclaration() : {}
+{
+	typeSpecifier() <ID> varDeclarationPrime()
+}
+
+varDeclarationPrime() : {}
+{
+	<SEMICOLON> | <NUMENT> <SEMICOLON>
+}
+
+// 5
+
+typeSpecifier() : {}
+{
+	<INT> | <FLOAT> | <CHAR> | <VOID>
+}
+
+// 6
+
+funDeclaration() : {}
+{
+	typeSpecifier() <ID> <BRACKETOPEN> params() <BRACKETCLOSE> compoundStmt()
+}
+
+// 7
+
+params() : {}
+{
+	paramList() | <VOID>
+}
+
+
+// 8
+
+paramList() : {}
+{
+	param() paramListPrime()
+}
+
+paramListPrime() : {}
+{
+	<COMMA> param() paramListPrime() | {}
+}
+
+// 9
+
+param() : {}
+{
+	typeSpecifier() <ID> paramPrime()
+}
+
+paramPrime() : {}
+{
+	<SQUAREBRACKETOPEN> <SQUAREBRACKETCLOSE> | {}
+}
+
+// 10
+
+compoundStmt() : {}
+{
+	<CURLYBRACKETOPEN> localDeclarations() statementList() <CURLYBRACKETCLOSE>
+}
+
+// 11
+
+localDeclarations() : {}
+{
+	varDeclaration() localDeclarations() {}
+}
+
+localDeclarationsPrime() : {}
+{
+	varDeclaration() localDeclarationsPrime() | {}
+}
+
+// 12
+
+statementList() : {}
+{
+	{} statementListPrime()
+}
+
+statementListPrime() : {}
+{
+	statement() statementListPrime() | {}
+}
+
+// 13
+
+statement() : {}
+{
+	expressionStmt() | compoundStmt() | selectionStmt() | iterationStmt() | returnStmt()
+}
+
+// 14
+
+expressionStmt() : {}
+{
+	expression() <SEMICOLON> | <SEMICOLON>
+}
+
+// 15
+
+selectionStmt() : {}
+{
+	<IF> <BRACKETOPEN> expression() <BRACKETCLOSE> statement() selectionStmtPrime()
+}
+
+selectionStmtPrime() : {}
+{
+	<ELSE> statement() | {}
+}
+
+// 16
+
+iterationStmt() : {}
+{
+	<WHILE> <BRACKETOPEN> expression() <BRACKETCLOSE> statement()
+}
+
+// 17
+
+returnStmt() : {}
+{
+	<RETURN> returnStmtPrime()
+}
+
+returnStmtPrime() : {}
+{
+	<SEMICOLON> | expression() <SEMICOLON>
+}
+
+// 18
+
+expression() : {}
+{
+	var() <EQUIVALENCE> expression() | simpleExpression()
+}
+
+// 19
+
+var() : {}
+{
+	<ID> varPrime()
+}
+
+varPrime() : {}
+{
+	<SQUAREBRACKETOPEN> expression() <SQUAREBRACKETCLOSE> | {}
+}
+
+// 20
+
+simpleExpression() : {}
+{
+	additiveExpression() simpleExpressionPrime()
+}
+
+simpleExpressionPrime() : {}
+{
+	relop() additiveExpression() | {}
+}
+
+// 21
+
+relop() : {}
+{
+	<EQUALS> | <LESSEQUAL> | <MOREEQUAL> | <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <NOTEQUALS>
+}
+
+// 22
+
+additiveExpression() : {}
+{
+	term() additiveExpressionPrime()
+}
+
+additiveExpressionPrime() : {}
+{
+	addop() term() additiveExpressionPrime() | {}
+}
+
+// 23
+
+addop() : {}
+{
+	<SUM> | <SUB>
+}
+
+// 24
+
+term() : {}
+{
+	factor() termPrime()
+}
+
+termPrime() : {}
+{
+	mulop() factor() termPrime() | {}
+}
+
+// 25
+
+mulop() : {}
+{
+	<MULT> | <DIV> | <MOD>
+}
+
+// 26
+
+factor() : {}
+{
+	<BRACKETOPEN> expression() <BRACKETCLOSE> | var() | call() | <NUMENT> | <NUMREAL> | <SIMPLECHAR>
+}
+
+// 27
+
+call() : {}
+{
+	<ID> <BRACKETOPEN> args() <BRACKETCLOSE>
+}
+
+// 28
+
+args() : {}
+{
+	argList() | {}
+}
+
+// 29
+
+argList() : {}
+{
+	expression() argListPrime()
+}
+
+argListPrime() : {}
+{
+	<COMMA> expression() argListPrime() | {}
+}
