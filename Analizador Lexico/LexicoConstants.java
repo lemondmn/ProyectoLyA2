@@ -9,17 +9,17 @@ public interface LexicoConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int INT = 1;
+  int IF = 1;
   /** RegularExpression Id. */
-  int FLOAT = 2;
+  int INT = 2;
   /** RegularExpression Id. */
-  int CHAR = 3;
+  int FLOAT = 3;
   /** RegularExpression Id. */
-  int RETURN = 4;
+  int CHAR = 4;
   /** RegularExpression Id. */
-  int VOID = 5;
+  int RETURN = 5;
   /** RegularExpression Id. */
-  int IF = 6;
+  int VOID = 6;
   /** RegularExpression Id. */
   int ELSE = 7;
   /** RegularExpression Id. */
@@ -57,23 +57,25 @@ public interface LexicoConstants {
   /** RegularExpression Id. */
   int EQUALS = 24;
   /** RegularExpression Id. */
-  int ANGLEBRACKETOPEN = 25;
+  int NOTEQUALS = 25;
   /** RegularExpression Id. */
-  int ANGLEBRACKETCLOSE = 26;
+  int ANGLEBRACKETOPEN = 26;
   /** RegularExpression Id. */
-  int EQUIVALENCE = 27;
+  int ANGLEBRACKETCLOSE = 27;
   /** RegularExpression Id. */
-  int SEMICOLON = 28;
+  int EQUIVALENCE = 28;
   /** RegularExpression Id. */
-  int COMMA = 29;
+  int SEMICOLON = 29;
   /** RegularExpression Id. */
-  int ID = 30;
+  int COMMA = 30;
   /** RegularExpression Id. */
-  int NUMENT = 31;
+  int ID = 31;
   /** RegularExpression Id. */
-  int NUMREAL = 32;
+  int NUMENT = 32;
   /** RegularExpression Id. */
-  int SIMPLECHAR = 33;
+  int NUMREAL = 33;
+  /** RegularExpression Id. */
+  int SIMPLECHAR = 34;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -81,12 +83,12 @@ public interface LexicoConstants {
   /** Literal token values. */
   String[] tokenImage = {
     "<EOF>",
+    "\"if\"",
     "\"int\"",
     "\"float\"",
     "\"char\"",
     "\"return\"",
     "\"void\"",
-    "\"if\"",
     "\"else\"",
     "\"while\"",
     "\"input\"",
@@ -105,6 +107,7 @@ public interface LexicoConstants {
     "\"<=\"",
     "\">=\"",
     "\"==\"",
+    "\"!=\"",
     "<ANGLEBRACKETOPEN>",
     "<ANGLEBRACKETCLOSE>",
     "<EQUIVALENCE>",
@@ -114,17 +117,17 @@ public interface LexicoConstants {
     "<NUMENT>",
     "<NUMREAL>",
     "<SIMPLECHAR>",
-    "<token of kind 34>",
     "<token of kind 35>",
+    "<token of kind 36>",
     "\" \"",
     "\"\\t\"",
     "\"\\n\"",
     "\"\\r\"",
-    "<token of kind 40>",
     "<token of kind 41>",
     "<token of kind 42>",
     "<token of kind 43>",
     "<token of kind 44>",
+    "<token of kind 45>",
   };
 
 }

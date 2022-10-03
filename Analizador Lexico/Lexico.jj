@@ -2,7 +2,7 @@ PARSER_BEGIN (Lexico)
 	public class Lexico {
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
-			anLex.analizar();
+			//anLex.analizar();
 			anLex.sintactico();
 			System.out.println("\nAnalisis Lexico terminado!");
 		}
@@ -110,12 +110,6 @@ TOKEN:
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Coma: " + image );}
 	}
 
-TOKEN: 
-{
-	<NUMCONTRO : (["M"]|["C"])?(["0"-"9"]{2})(["120"]|["121"])(["0"-"9"]{3})>
-	{System.out.println( "No. linea: " + matchedToken.beginLine + " Numero de Control: " + image );}
-}
-
 // Regular Expresions
 
 TOKEN:
@@ -163,10 +157,10 @@ SPECIAL_TOKEN: {
 	<~[]> {System.out.println( "(Error) Token desconocido en la linea:" + matchedToken.beginLine );}
 }
 
+/* 
+
 void analizar() : {}
 	{
-		)
-
 		(<INT> | <FLOAT> | <CHAR> | <RETURN> | <VOID>
 		| <IF> | <ELSE> | <WHILE> | <INPUT> | <OUTPUT> |
 		<SUM> | <SUB> | <MULT> | <DIV> | <LESSEQUAL> | <MOREEQUAL>
@@ -176,6 +170,8 @@ void analizar() : {}
 		<EQUIVALENCE> | <SEMICOLON> | <COMMA> | <ID> | <NUMENT> |
 		<NUMREAL> | <SIMPLECHAR>) + <EOF>
 	}
+
+*/
 
 // Analizador sintactico
 
@@ -193,262 +189,263 @@ void program() : {}
 
 // 2
 
-declarationList() : {}
+void declarationList() : {}
 {
 	declaration() declarationListPrime()
 }
 
-declarationListPrime() : {}
+void declarationListPrime() : {}
 {
 	declaration() declarationListPrime() | {}
 }
 
 // 3
 
-declaration() : {}
+void declaration() : {}
 {
-	varDeclaration() | funDeclaration()
+	(LOOKAHEAD(3) varDeclaration() | LOOKAHEAD(3) funDeclaration())
 }
 
 // 4
 
-varDeclaration() : {}
+void varDeclaration() : {}
 {
 	typeSpecifier() <ID> varDeclarationPrime()
 }
 
-varDeclarationPrime() : {}
+void varDeclarationPrime() : {}
 {
 	<SEMICOLON> | <NUMENT> <SEMICOLON>
 }
 
 // 5
 
-typeSpecifier() : {}
+void typeSpecifier() : {}
 {
 	<INT> | <FLOAT> | <CHAR> | <VOID>
 }
 
 // 6
 
-funDeclaration() : {}
+void funDeclaration() : {}
 {
 	typeSpecifier() <ID> <BRACKETOPEN> params() <BRACKETCLOSE> compoundStmt()
 }
 
 // 7
 
-params() : {}
+void params() : {}
 {
-	paramList() | <VOID>
+	(LOOKAHEAD(2) paramList() | LOOKAHEAD(2) <VOID>)
 }
 
 
 // 8
 
-paramList() : {}
+void paramList() : {}
 {
 	param() paramListPrime()
 }
 
-paramListPrime() : {}
+void paramListPrime() : {}
 {
 	<COMMA> param() paramListPrime() | {}
 }
 
 // 9
 
-param() : {}
+void param() : {}
 {
 	typeSpecifier() <ID> paramPrime()
 }
 
-paramPrime() : {}
+void paramPrime() : {}
 {
 	<SQUAREBRACKETOPEN> <SQUAREBRACKETCLOSE> | {}
 }
 
 // 10
 
-compoundStmt() : {}
+void compoundStmt() : {}
 {
 	<CURLYBRACKETOPEN> localDeclarations() statementList() <CURLYBRACKETCLOSE>
 }
 
 // 11
 
-localDeclarations() : {}
+void localDeclarations() : {}
 {
 	varDeclaration() localDeclarations() {}
 }
 
-localDeclarationsPrime() : {}
+void localDeclarationsPrime() : {}
 {
 	varDeclaration() localDeclarationsPrime() | {}
 }
 
 // 12
 
-statementList() : {}
+void statementList() : {}
 {
 	{} statementListPrime()
 }
 
-statementListPrime() : {}
+void statementListPrime() : {}
 {
 	statement() statementListPrime() | {}
 }
 
 // 13
 
-statement() : {}
+void statement() : {}
 {
 	expressionStmt() | compoundStmt() | selectionStmt() | iterationStmt() | returnStmt()
 }
 
 // 14
 
-expressionStmt() : {}
+void expressionStmt() : {}
 {
 	expression() <SEMICOLON> | <SEMICOLON>
 }
 
 // 15
 
-selectionStmt() : {}
+void selectionStmt() : {}
 {
 	<IF> <BRACKETOPEN> expression() <BRACKETCLOSE> statement() selectionStmtPrime()
 }
 
-selectionStmtPrime() : {}
+void selectionStmtPrime() : {}
 {
 	<ELSE> statement() | {}
 }
 
 // 16
 
-iterationStmt() : {}
+void iterationStmt() : {}
 {
 	<WHILE> <BRACKETOPEN> expression() <BRACKETCLOSE> statement()
 }
 
 // 17
 
-returnStmt() : {}
+void returnStmt() : {}
 {
 	<RETURN> returnStmtPrime()
 }
 
-returnStmtPrime() : {}
+void returnStmtPrime() : {}
 {
 	<SEMICOLON> | expression() <SEMICOLON>
 }
 
 // 18
 
-expression() : {}
+void expression() : {}
 {
-	var() <EQUIVALENCE> expression() | simpleExpression()
+	(LOOKAHEAD(3) var() <EQUIVALENCE> expression() | LOOKAHEAD(3) simpleExpression())
 }
 
 // 19
 
-var() : {}
+void var() : {}
 {
 	<ID> varPrime()
 }
 
-varPrime() : {}
+void varPrime() : {}
 {
 	<SQUAREBRACKETOPEN> expression() <SQUAREBRACKETCLOSE> | {}
 }
 
 // 20
 
-simpleExpression() : {}
+void simpleExpression() : {}
 {
 	additiveExpression() simpleExpressionPrime()
 }
 
-simpleExpressionPrime() : {}
+void simpleExpressionPrime() : {}
 {
 	relop() additiveExpression() | {}
 }
 
 // 21
 
-relop() : {}
+void relop() : {}
 {
 	<EQUALS> | <LESSEQUAL> | <MOREEQUAL> | <ANGLEBRACKETOPEN> | <ANGLEBRACKETCLOSE> | <NOTEQUALS>
 }
 
 // 22
 
-additiveExpression() : {}
+void additiveExpression() : {}
 {
 	term() additiveExpressionPrime()
 }
 
-additiveExpressionPrime() : {}
+void additiveExpressionPrime() : {}
 {
 	addop() term() additiveExpressionPrime() | {}
 }
 
 // 23
 
-addop() : {}
+void addop() : {}
 {
 	<SUM> | <SUB>
 }
 
 // 24
 
-term() : {}
+void term() : {}
 {
 	factor() termPrime()
 }
 
-termPrime() : {}
+void termPrime() : {}
 {
 	mulop() factor() termPrime() | {}
 }
 
 // 25
 
-mulop() : {}
+void mulop() : {}
 {
 	<MULT> | <DIV> | <MOD>
 }
 
 // 26
 
-factor() : {}
+void factor() : {}
 {
-	<BRACKETOPEN> expression() <BRACKETCLOSE> | var() | call() | <NUMENT> | <NUMREAL> | <SIMPLECHAR>
+	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) var() | LOOKAHEAD(2) call() | 
+	 LOOKAHEAD(2) <NUMENT> | LOOKAHEAD(2) <NUMREAL> | LOOKAHEAD(2) <SIMPLECHAR>)
 }
 
 // 27
 
-call() : {}
+void call() : {}
 {
 	<ID> <BRACKETOPEN> args() <BRACKETCLOSE>
 }
 
 // 28
 
-args() : {}
+void args() : {}
 {
 	argList() | {}
 }
 
 // 29
 
-argList() : {}
+void argList() : {}
 {
 	expression() argListPrime()
 }
 
-argListPrime() : {}
+void argListPrime() : {}
 {
 	<COMMA> expression() argListPrime() | {}
 }

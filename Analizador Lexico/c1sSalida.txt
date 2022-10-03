@@ -1,0 +1,11 @@
+No. linea: 7 Declaracion int: int
+No. linea: 7 Identificador: gcd
+No. linea: 7 Parentesis incial: (
+No. linea: 7 Declaracion int: int
+No. linea: 7 Identificador: u
+No. linea: 7 Coma: ,
+No. linea: 7 Declaracion int: int
+No. linea: 7 Identificador: v
+No. linea: 7 Parentesis final: )
+No. linea: 8 Llave incial: {
+No. linea: 9 Declaracion if: if
