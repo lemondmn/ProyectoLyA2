@@ -3,6 +3,7 @@ PARSER_BEGIN (Lexico)
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
 			anLex.analizar();
+			anLex.sintactico();
 			System.out.println("\nAnalisis Lexico terminado!");
 		}
 	}
