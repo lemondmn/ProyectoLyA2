@@ -1,0 +1,83 @@
+Call:   sintactico
+  Call:   program
+    Call:   declarationList
+      Call:   declaration
+        Call:   varDeclaration(LOOKING AHEAD...)
+          Call:   typeSpecifier(LOOKING AHEAD...)
+No. linea: 7 Declaracion int: int
+            Visited token: <"int" at line 7 column 1>; Expected token: <"int">
+          Return: typeSpecifier(LOOKAHEAD SUCCEEDED)
+No. linea: 7 Identificador: gcd
+          Visited token: <<ID>: "gcd" at line 7 column 5>; Expected token: <<ID>>
+          Call:   varDeclarationPrime(LOOKING AHEAD...)
+No. linea: 7 Parentesis incial: (
+            Visited token: <<BRACKETOPEN>: "(" at line 7 column 8>; Expected token: <<SEMICOLON>>
+            Visited token: <<BRACKETOPEN>: "(" at line 7 column 8>; Expected token: <<NUMENT>>
+          Return: varDeclarationPrime(LOOKAHEAD FAILED)
+        Return: varDeclaration(LOOKAHEAD FAILED)
+        Call:   funDeclaration(LOOKING AHEAD...)
+          Call:   typeSpecifier(LOOKING AHEAD...)
+            Visited token: <"int" at line 7 column 1>; Expected token: <"int">
+          Return: typeSpecifier(LOOKAHEAD SUCCEEDED)
+          Visited token: <<ID>: "gcd" at line 7 column 5>; Expected token: <<ID>>
+          Visited token: <<BRACKETOPEN>: "(" at line 7 column 8>; Expected token: <<BRACKETOPEN>>
+          Call:   funDeclaration
+            Call:   typeSpecifier
+              Consumed token: <"int" at line 7 column 1>
+            Return: typeSpecifier
+            Consumed token: <<ID>: "gcd" at line 7 column 5>
+            Consumed token: <<BRACKETOPEN>: "(" at line 7 column 8>
+            Call:   params
+              Call:   paramList(LOOKING AHEAD...)
+                Call:   param(LOOKING AHEAD...)
+                  Call:   typeSpecifier(LOOKING AHEAD...)
+No. linea: 7 Declaracion int: int
+                    Visited token: <"int" at line 7 column 9>; Expected token: <"int">
+                  Return: typeSpecifier(LOOKAHEAD SUCCEEDED)
+No. linea: 7 Identificador: u
+                  Visited token: <<ID>: "u" at line 7 column 13>; Expected token: <<ID>>
+                  Call:   paramList
+                    Call:   param
+                      Call:   typeSpecifier
+                        Consumed token: <"int" at line 7 column 9>
+                      Return: typeSpecifier
+                      Consumed token: <<ID>: "u" at line 7 column 13>
+                      Call:   paramPrime
+No. linea: 7 Coma: ,
+                      Return: paramPrime
+                    Return: param
+                    Call:   paramListPrime
+                      Consumed token: <<COMMA>: "," at line 7 column 14>
+                      Call:   param
+                        Call:   typeSpecifier
+No. linea: 7 Declaracion int: int
+                          Consumed token: <"int" at line 7 column 16>
+                        Return: typeSpecifier
+No. linea: 7 Identificador: v
+                        Consumed token: <<ID>: "v" at line 7 column 20>
+                        Call:   paramPrime
+No. linea: 7 Parentesis final: )
+                        Return: paramPrime
+                      Return: param
+                      Call:   paramListPrime
+                      Return: paramListPrime
+                    Return: paramListPrime
+                  Return: paramList
+                Return: params
+                Consumed token: <<BRACKETCLOSE>: ")" at line 7 column 21>
+                Call:   compoundStmt
+No. linea: 8 Llave incial: {
+                  Consumed token: <<CURLYBRACKETOPEN>: "{" at line 8 column 1>
+                  Call:   localDeclarations
+                    Call:   varDeclaration
+                      Call:   typeSpecifier
+No. linea: 9 Declaracion if: if
+                      Return: typeSpecifier
+                    Return: varDeclaration
+                  Return: localDeclarations
+                Return: compoundStmt
+              Return: funDeclaration
+            Return: declaration
+          Return: declarationList
+        Return: program
+      Return: sintactico

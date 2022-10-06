@@ -9,17 +9,17 @@ public interface LexicoConstants {
   /** End of File. */
   int EOF = 0;
   /** RegularExpression Id. */
-  int IF = 1;
+  int INT = 1;
   /** RegularExpression Id. */
-  int INT = 2;
+  int FLOAT = 2;
   /** RegularExpression Id. */
-  int FLOAT = 3;
+  int CHAR = 3;
   /** RegularExpression Id. */
-  int CHAR = 4;
+  int RETURN = 4;
   /** RegularExpression Id. */
-  int RETURN = 5;
+  int VOID = 5;
   /** RegularExpression Id. */
-  int VOID = 6;
+  int IF = 6;
   /** RegularExpression Id. */
   int ELSE = 7;
   /** RegularExpression Id. */
@@ -83,12 +83,12 @@ public interface LexicoConstants {
   /** Literal token values. */
   String[] tokenImage = {
     "<EOF>",
-    "\"if\"",
     "\"int\"",
     "\"float\"",
     "\"char\"",
     "\"return\"",
     "\"void\"",
+    "\"if\"",
     "\"else\"",
     "\"while\"",
     "\"input\"",

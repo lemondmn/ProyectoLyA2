@@ -1,3 +1,10 @@
+options {
+	Ignore_Case = false;
+	STATIC=false;
+	DEBUG_PARSER=true;
+	DEBUG_LOOKAHEAD=true;
+}
+
 PARSER_BEGIN (Lexico)
 	public class Lexico {
 		public static void main (String[] args) throws ParseException {
