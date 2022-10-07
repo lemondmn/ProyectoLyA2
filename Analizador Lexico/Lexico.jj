@@ -222,7 +222,8 @@ void varDeclaration() : {}
 
 void varDeclarationPrime() : {}
 {
-	<SEMICOLON> | <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>
+	<SEMICOLON> | LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON> | 
+	LOOKAHEAD(2) <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>
 }
 
 // 5
@@ -353,8 +354,10 @@ void returnStmtPrime() : {}
 
 void expression() : {}
 {
-	(LOOKAHEAD(3) var() <EQUIVALENCE> expression() | LOOKAHEAD(3) simpleExpression() 
-	| 
+	(LOOKAHEAD(3) var() <EQUIVALENCE> expression()
+	|
+	LOOKAHEAD(3) simpleExpression() 
+	|
 	LOOKAHEAD(3) <INPUT> <BRACKETOPEN> <BRACKETCLOSE>)
 }
 
