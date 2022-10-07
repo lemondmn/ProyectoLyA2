@@ -275,14 +275,28 @@ void paramPrime() : {}
 
 void compoundStmt() : {}
 {
+	//<CURLYBRACKETOPEN> localDeclarations() statementList() <CURLYBRACKETCLOSE>
 	<CURLYBRACKETOPEN> localDeclarations() statementList() <CURLYBRACKETCLOSE>
+	
 }
+
+//Correccion funciones
+
+/*void fillFun() : {}
+{
+	fill() fillFun() | {}
+}
+
+void fill() : {}
+{
+	varDeclaration() | statementList() | {}
+}*/
 
 // 11
 
 void localDeclarations() : {}
 {
-	varDeclaration() localDeclarations() {}
+	varDeclaration() localDeclarationsPrime() | {}
 }
 
 void localDeclarationsPrime() : {}
@@ -294,7 +308,7 @@ void localDeclarationsPrime() : {}
 
 void statementList() : {}
 {
-	{} statementListPrime()
+	statementListPrime() | {}
 }
 
 void statementListPrime() : {}
