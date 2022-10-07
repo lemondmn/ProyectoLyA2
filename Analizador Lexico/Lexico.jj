@@ -353,7 +353,9 @@ void returnStmtPrime() : {}
 
 void expression() : {}
 {
-	(LOOKAHEAD(3) var() <EQUIVALENCE> expression() | LOOKAHEAD(3) simpleExpression())
+	(LOOKAHEAD(3) var() <EQUIVALENCE> expression() | LOOKAHEAD(3) simpleExpression() 
+	| 
+	LOOKAHEAD(3) <INPUT> <BRACKETOPEN> <BRACKETCLOSE>)
 }
 
 // 19
@@ -437,7 +439,7 @@ void factor() : {}
 
 void call() : {}
 {
-	<ID> <BRACKETOPEN> args() <BRACKETCLOSE>
+	<ID> <BRACKETOPEN> args() <BRACKETCLOSE> | <OUTPUT> <BRACKETOPEN> args() <BRACKETCLOSE>
 }
 
 // 28
