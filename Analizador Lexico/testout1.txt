@@ -12,7 +12,7 @@ No. linea: 7 Identificador: gcd
           Call:   varDeclarationPrime(LOOKING AHEAD...)
 No. linea: 7 Parentesis incial: (
             Visited token: <<BRACKETOPEN>: "(" at line 7 column 8>; Expected token: <<SEMICOLON>>
-            Visited token: <<BRACKETOPEN>: "(" at line 7 column 8>; Expected token: <<NUMENT>>
+            Visited token: <<BRACKETOPEN>: "(" at line 7 column 8>; Expected token: <<SQUAREBRACKETOPEN>>
           Return: varDeclarationPrime(LOOKAHEAD FAILED)
         Return: varDeclaration(LOOKAHEAD FAILED)
         Call:   funDeclaration(LOOKING AHEAD...)
@@ -93,6 +93,10 @@ No. linea: 9 Operador igual igual: ==
                                 Call:   term(LOOKING AHEAD...)
                                   Call:   factor(LOOKING AHEAD...)
                                     Visited token: <<ID>: "v" at line 9 column 12>; Expected token: <<BRACKETOPEN>>
+                                    Call:   call(LOOKING AHEAD...)
+                                      Visited token: <<ID>: "v" at line 9 column 12>; Expected token: <<ID>>
+                                      Visited token: <"==" at line 9 column 13>; Expected token: <<BRACKETOPEN>>
+                                    Return: call(LOOKAHEAD FAILED)
                                     Call:   var(LOOKING AHEAD...)
                                       Visited token: <<ID>: "v" at line 9 column 12>; Expected token: <<ID>>
                                       Call:   varPrime(LOOKING AHEAD...)
@@ -124,18 +128,22 @@ No. linea: 9 Operador igual igual: ==
                                     Call:   factor(LOOKING AHEAD...)
 No. linea: 9 Numero entero: 0
                                       Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<BRACKETOPEN>>
-                                      Call:   var(LOOKING AHEAD...)
-                                        Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<ID>>
-                                      Return: var(LOOKAHEAD FAILED)
                                       Call:   call(LOOKING AHEAD...)
                                         Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<ID>>
                                       Return: call(LOOKAHEAD FAILED)
+                                      Call:   var(LOOKING AHEAD...)
+                                        Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<ID>>
+                                      Return: var(LOOKAHEAD FAILED)
                                       Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<NUMENT>>
                                       Call:   simpleExpression
                                         Call:   additiveExpression
                                           Call:   term
                                             Call:   factor
                                               Visited token: <<ID>: "v" at line 9 column 12>; Expected token: <<BRACKETOPEN>>
+                                              Call:   call(LOOKING AHEAD...)
+                                                Visited token: <<ID>: "v" at line 9 column 12>; Expected token: <<ID>>
+                                                Visited token: <"==" at line 9 column 13>; Expected token: <<BRACKETOPEN>>
+                                              Return: call(LOOKAHEAD FAILED)
                                               Call:   var(LOOKING AHEAD...)
                                                 Visited token: <<ID>: "v" at line 9 column 12>; Expected token: <<ID>>
                                                 Call:   varPrime(LOOKING AHEAD...)
@@ -162,12 +170,12 @@ No. linea: 9 Numero entero: 0
                                             Call:   term
                                               Call:   factor
                                                 Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<BRACKETOPEN>>
-                                                Call:   var(LOOKING AHEAD...)
-                                                  Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<ID>>
-                                                Return: var(LOOKAHEAD FAILED)
                                                 Call:   call(LOOKING AHEAD...)
                                                   Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<ID>>
                                                 Return: call(LOOKAHEAD FAILED)
+                                                Call:   var(LOOKING AHEAD...)
+                                                  Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<ID>>
+                                                Return: var(LOOKAHEAD FAILED)
                                                 Visited token: <<NUMENT>: "0" at line 9 column 15>; Expected token: <<NUMENT>>
                                                 Consumed token: <<NUMENT>: "0" at line 9 column 15>
                                               Return: factor
@@ -202,6 +210,10 @@ No. linea: 9 Punto y Coma: ;
                                                 Call:   term(LOOKING AHEAD...)
                                                   Call:   factor(LOOKING AHEAD...)
                                                     Visited token: <<ID>: "u" at line 9 column 25>; Expected token: <<BRACKETOPEN>>
+                                                    Call:   call(LOOKING AHEAD...)
+                                                      Visited token: <<ID>: "u" at line 9 column 25>; Expected token: <<ID>>
+                                                      Visited token: <<SEMICOLON>: ";" at line 9 column 26>; Expected token: <<BRACKETOPEN>>
+                                                    Return: call(LOOKAHEAD FAILED)
                                                     Call:   var(LOOKING AHEAD...)
                                                       Visited token: <<ID>: "u" at line 9 column 25>; Expected token: <<ID>>
                                                       Call:   varPrime(LOOKING AHEAD...)
@@ -240,6 +252,10 @@ No. linea: 9 Punto y Coma: ;
                                                 Call:   term
                                                   Call:   factor
                                                     Visited token: <<ID>: "u" at line 9 column 25>; Expected token: <<BRACKETOPEN>>
+                                                    Call:   call(LOOKING AHEAD...)
+                                                      Visited token: <<ID>: "u" at line 9 column 25>; Expected token: <<ID>>
+                                                      Visited token: <<SEMICOLON>: ";" at line 9 column 26>; Expected token: <<BRACKETOPEN>>
+                                                    Return: call(LOOKAHEAD FAILED)
                                                     Call:   var(LOOKING AHEAD...)
                                                       Visited token: <<ID>: "u" at line 9 column 25>; Expected token: <<ID>>
                                                       Call:   varPrime(LOOKING AHEAD...)
@@ -289,77 +305,504 @@ No. linea: 10 Parentesis incial: (
                                                   Call:   term(LOOKING AHEAD...)
                                                     Call:   factor(LOOKING AHEAD...)
                                                       Visited token: <<ID>: "gcd" at line 10 column 21>; Expected token: <<BRACKETOPEN>>
-                                                      Call:   var(LOOKING AHEAD...)
+                                                      Call:   call(LOOKING AHEAD...)
                                                         Visited token: <<ID>: "gcd" at line 10 column 21>; Expected token: <<ID>>
-                                                        Call:   varPrime(LOOKING AHEAD...)
-                                                          Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<SQUAREBRACKETOPEN>>
-                                                        Return: varPrime(LOOKAHEAD SUCCEEDED)
-                                                      Return: var(LOOKAHEAD SUCCEEDED)
-                                                    Return: factor(LOOKAHEAD SUCCEEDED)
-                                                    Call:   termPrime(LOOKING AHEAD...)
-                                                      Call:   mulop(LOOKING AHEAD...)
-                                                        Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<MULT>>
-                                                        Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<DIV>>
-                                                        Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<MOD>>
-                                                      Return: mulop(LOOKAHEAD FAILED)
-                                                    Return: termPrime(LOOKAHEAD SUCCEEDED)
-                                                  Return: term(LOOKAHEAD SUCCEEDED)
-                                                  Call:   additiveExpressionPrime(LOOKING AHEAD...)
-                                                    Call:   addop(LOOKING AHEAD...)
-                                                      Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<SUM>>
-                                                      Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<SUB>>
-                                                    Return: addop(LOOKAHEAD FAILED)
-                                                  Return: additiveExpressionPrime(LOOKAHEAD SUCCEEDED)
-                                                Return: additiveExpression(LOOKAHEAD SUCCEEDED)
-                                                Call:   simpleExpressionPrime(LOOKING AHEAD...)
-                                                  Call:   relop(LOOKING AHEAD...)
-                                                    Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <"==">
-                                                    Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <"<=">
-                                                    Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <">=">
-                                                    Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<ANGLEBRACKETOPEN>>
-                                                    Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<ANGLEBRACKETCLOSE>>
-                                                    Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <"!=">
-                                                  Return: relop(LOOKAHEAD FAILED)
-                                                Return: simpleExpressionPrime(LOOKAHEAD SUCCEEDED)
-                                              Return: simpleExpression(LOOKAHEAD SUCCEEDED)
-                                              Call:   simpleExpression
-                                                Call:   additiveExpression
-                                                  Call:   term
-                                                    Call:   factor
-                                                      Visited token: <<ID>: "gcd" at line 10 column 21>; Expected token: <<BRACKETOPEN>>
-                                                      Call:   var(LOOKING AHEAD...)
-                                                        Visited token: <<ID>: "gcd" at line 10 column 21>; Expected token: <<ID>>
-                                                        Call:   varPrime(LOOKING AHEAD...)
-                                                          Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<SQUAREBRACKETOPEN>>
-                                                        Return: varPrime(LOOKAHEAD SUCCEEDED)
-                                                      Return: var(LOOKAHEAD SUCCEEDED)
-                                                      Call:   var
-                                                        Consumed token: <<ID>: "gcd" at line 10 column 21>
-                                                        Call:   varPrime
-                                                        Return: varPrime
-                                                      Return: var
-                                                    Return: factor
-                                                    Call:   termPrime
-                                                    Return: termPrime
-                                                  Return: term
-                                                  Call:   additiveExpressionPrime
-                                                  Return: additiveExpressionPrime
-                                                Return: additiveExpression
-                                                Call:   simpleExpressionPrime
-                                                Return: simpleExpressionPrime
-                                              Return: simpleExpression
-                                            Return: expression
-                                          Return: returnStmtPrime
-                                        Return: returnStmt
-                                      Return: statement
-                                    Return: selectionStmtPrime
-                                  Return: selectionStmt
-                                Return: statement
-                              Return: statementListPrime
-                            Return: statementList
-                          Return: compoundStmt
-                        Return: funDeclaration
-                      Return: declaration
-                    Return: declarationList
-                  Return: program
-                Return: sintactico
+                                                        Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<BRACKETOPEN>>
+                                                        Call:   args(LOOKING AHEAD...)
+                                                          Call:   argList(LOOKING AHEAD...)
+                                                            Call:   expression(LOOKING AHEAD...)
+                                                              Call:   var(LOOKING AHEAD...)
+No. linea: 10 Identificador: v
+                                                                Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<ID>>
+                                                                Call:   simpleExpression
+                                                                  Call:   additiveExpression
+                                                                    Call:   term
+                                                                      Call:   factor
+                                                                        Visited token: <<ID>: "gcd" at line 10 column 21>; Expected token: <<BRACKETOPEN>>
+                                                                        Call:   call(LOOKING AHEAD...)
+                                                                          Visited token: <<ID>: "gcd" at line 10 column 21>; Expected token: <<ID>>
+                                                                          Visited token: <<BRACKETOPEN>: "(" at line 10 column 24>; Expected token: <<BRACKETOPEN>>
+                                                                          Call:   call
+                                                                            Consumed token: <<ID>: "gcd" at line 10 column 21>
+                                                                            Consumed token: <<BRACKETOPEN>: "(" at line 10 column 24>
+                                                                            Call:   args
+                                                                              Call:   argList
+                                                                                Call:   expression
+                                                                                  Call:   var(LOOKING AHEAD...)
+                                                                                    Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<ID>>
+                                                                                    Call:   varPrime(LOOKING AHEAD...)
+No. linea: 10 Coma: ,
+                                                                                      Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                    Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                  Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                  Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<EQUIVALENCE>>
+                                                                                  Call:   simpleExpression(LOOKING AHEAD...)
+                                                                                    Call:   additiveExpression(LOOKING AHEAD...)
+                                                                                      Call:   term(LOOKING AHEAD...)
+                                                                                        Call:   factor(LOOKING AHEAD...)
+                                                                                          Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<BRACKETOPEN>>
+                                                                                          Call:   call(LOOKING AHEAD...)
+                                                                                            Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<ID>>
+                                                                                            Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<BRACKETOPEN>>
+                                                                                          Return: call(LOOKAHEAD FAILED)
+                                                                                          Call:   var(LOOKING AHEAD...)
+                                                                                            Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<ID>>
+                                                                                            Call:   varPrime(LOOKING AHEAD...)
+                                                                                              Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                            Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                          Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                        Return: factor(LOOKAHEAD SUCCEEDED)
+                                                                                        Call:   termPrime(LOOKING AHEAD...)
+                                                                                          Call:   mulop(LOOKING AHEAD...)
+                                                                                            Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<MULT>>
+                                                                                            Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<DIV>>
+                                                                                            Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<MOD>>
+                                                                                          Return: mulop(LOOKAHEAD FAILED)
+                                                                                        Return: termPrime(LOOKAHEAD SUCCEEDED)
+                                                                                      Return: term(LOOKAHEAD SUCCEEDED)
+                                                                                      Call:   additiveExpressionPrime(LOOKING AHEAD...)
+                                                                                        Call:   addop(LOOKING AHEAD...)
+                                                                                          Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<SUM>>
+                                                                                          Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<SUB>>
+                                                                                        Return: addop(LOOKAHEAD FAILED)
+                                                                                      Return: additiveExpressionPrime(LOOKAHEAD SUCCEEDED)
+                                                                                    Return: additiveExpression(LOOKAHEAD SUCCEEDED)
+                                                                                    Call:   simpleExpressionPrime(LOOKING AHEAD...)
+                                                                                      Call:   relop(LOOKING AHEAD...)
+                                                                                        Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <"==">
+                                                                                        Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <"<=">
+                                                                                        Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <">=">
+                                                                                        Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<ANGLEBRACKETOPEN>>
+                                                                                        Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<ANGLEBRACKETCLOSE>>
+                                                                                        Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <"!=">
+                                                                                      Return: relop(LOOKAHEAD FAILED)
+                                                                                    Return: simpleExpressionPrime(LOOKAHEAD SUCCEEDED)
+                                                                                  Return: simpleExpression(LOOKAHEAD SUCCEEDED)
+                                                                                  Call:   simpleExpression
+                                                                                    Call:   additiveExpression
+                                                                                      Call:   term
+                                                                                        Call:   factor
+                                                                                          Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<BRACKETOPEN>>
+                                                                                          Call:   call(LOOKING AHEAD...)
+                                                                                            Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<ID>>
+                                                                                            Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<BRACKETOPEN>>
+                                                                                          Return: call(LOOKAHEAD FAILED)
+                                                                                          Call:   var(LOOKING AHEAD...)
+                                                                                            Visited token: <<ID>: "v" at line 10 column 25>; Expected token: <<ID>>
+                                                                                            Call:   varPrime(LOOKING AHEAD...)
+                                                                                              Visited token: <<COMMA>: "," at line 10 column 26>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                            Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                          Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                          Call:   var
+                                                                                            Consumed token: <<ID>: "v" at line 10 column 25>
+                                                                                            Call:   varPrime
+                                                                                            Return: varPrime
+                                                                                          Return: var
+                                                                                        Return: factor
+                                                                                        Call:   termPrime
+                                                                                        Return: termPrime
+                                                                                      Return: term
+                                                                                      Call:   additiveExpressionPrime
+                                                                                      Return: additiveExpressionPrime
+                                                                                    Return: additiveExpression
+                                                                                    Call:   simpleExpressionPrime
+                                                                                    Return: simpleExpressionPrime
+                                                                                  Return: simpleExpression
+                                                                                Return: expression
+                                                                                Call:   argListPrime
+                                                                                  Consumed token: <<COMMA>: "," at line 10 column 26>
+                                                                                  Call:   expression
+                                                                                    Call:   var(LOOKING AHEAD...)
+No. linea: 10 Identificador: u
+                                                                                      Visited token: <<ID>: "u" at line 10 column 27>; Expected token: <<ID>>
+                                                                                      Call:   varPrime(LOOKING AHEAD...)
+No. linea: 10 Operador resta: -
+                                                                                        Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                      Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                    Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                    Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<EQUIVALENCE>>
+                                                                                    Call:   simpleExpression(LOOKING AHEAD...)
+                                                                                      Call:   additiveExpression(LOOKING AHEAD...)
+                                                                                        Call:   term(LOOKING AHEAD...)
+                                                                                          Call:   factor(LOOKING AHEAD...)
+                                                                                            Visited token: <<ID>: "u" at line 10 column 27>; Expected token: <<BRACKETOPEN>>
+                                                                                            Call:   call(LOOKING AHEAD...)
+                                                                                              Visited token: <<ID>: "u" at line 10 column 27>; Expected token: <<ID>>
+                                                                                              Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<BRACKETOPEN>>
+                                                                                            Return: call(LOOKAHEAD FAILED)
+                                                                                            Call:   var(LOOKING AHEAD...)
+                                                                                              Visited token: <<ID>: "u" at line 10 column 27>; Expected token: <<ID>>
+                                                                                              Call:   varPrime(LOOKING AHEAD...)
+                                                                                                Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                              Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                            Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                          Return: factor(LOOKAHEAD SUCCEEDED)
+                                                                                          Call:   termPrime(LOOKING AHEAD...)
+                                                                                            Call:   mulop(LOOKING AHEAD...)
+                                                                                              Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<MULT>>
+                                                                                              Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<DIV>>
+                                                                                              Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<MOD>>
+                                                                                            Return: mulop(LOOKAHEAD FAILED)
+                                                                                          Return: termPrime(LOOKAHEAD SUCCEEDED)
+                                                                                        Return: term(LOOKAHEAD SUCCEEDED)
+                                                                                        Call:   additiveExpressionPrime(LOOKING AHEAD...)
+                                                                                          Call:   addop(LOOKING AHEAD...)
+                                                                                            Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<SUM>>
+                                                                                            Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<SUB>>
+                                                                                          Return: addop(LOOKAHEAD SUCCEEDED)
+                                                                                          Call:   term(LOOKING AHEAD...)
+                                                                                            Call:   factor(LOOKING AHEAD...)
+No. linea: 10 Identificador: u
+                                                                                              Visited token: <<ID>: "u" at line 10 column 29>; Expected token: <<BRACKETOPEN>>
+                                                                                              Call:   call(LOOKING AHEAD...)
+                                                                                                Visited token: <<ID>: "u" at line 10 column 29>; Expected token: <<ID>>
+                                                                                                Call:   simpleExpression
+                                                                                                  Call:   additiveExpression
+                                                                                                    Call:   term
+                                                                                                      Call:   factor
+                                                                                                        Visited token: <<ID>: "u" at line 10 column 27>; Expected token: <<BRACKETOPEN>>
+                                                                                                        Call:   call(LOOKING AHEAD...)
+                                                                                                          Visited token: <<ID>: "u" at line 10 column 27>; Expected token: <<ID>>
+                                                                                                          Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<BRACKETOPEN>>
+                                                                                                        Return: call(LOOKAHEAD FAILED)
+                                                                                                        Call:   var(LOOKING AHEAD...)
+                                                                                                          Visited token: <<ID>: "u" at line 10 column 27>; Expected token: <<ID>>
+                                                                                                          Call:   varPrime(LOOKING AHEAD...)
+                                                                                                            Visited token: <<SUB>: "-" at line 10 column 28>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                                          Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                                        Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                                        Call:   var
+                                                                                                          Consumed token: <<ID>: "u" at line 10 column 27>
+                                                                                                          Call:   varPrime
+                                                                                                          Return: varPrime
+                                                                                                        Return: var
+                                                                                                      Return: factor
+                                                                                                      Call:   termPrime
+                                                                                                      Return: termPrime
+                                                                                                    Return: term
+                                                                                                    Call:   additiveExpressionPrime
+                                                                                                      Call:   addop
+                                                                                                        Consumed token: <<SUB>: "-" at line 10 column 28>
+                                                                                                      Return: addop
+                                                                                                      Call:   term
+                                                                                                        Call:   factor
+                                                                                                          Visited token: <<ID>: "u" at line 10 column 29>; Expected token: <<BRACKETOPEN>>
+                                                                                                          Call:   call(LOOKING AHEAD...)
+                                                                                                            Visited token: <<ID>: "u" at line 10 column 29>; Expected token: <<ID>>
+No. linea: 10 Operador division: /
+                                                                                                            Visited token: <<DIV>: "/" at line 10 column 30>; Expected token: <<BRACKETOPEN>>
+                                                                                                          Return: call(LOOKAHEAD FAILED)
+                                                                                                          Call:   var(LOOKING AHEAD...)
+                                                                                                            Visited token: <<ID>: "u" at line 10 column 29>; Expected token: <<ID>>
+                                                                                                            Call:   varPrime(LOOKING AHEAD...)
+                                                                                                              Visited token: <<DIV>: "/" at line 10 column 30>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                                            Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                                          Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                                          Call:   var
+                                                                                                            Consumed token: <<ID>: "u" at line 10 column 29>
+                                                                                                            Call:   varPrime
+                                                                                                            Return: varPrime
+                                                                                                          Return: var
+                                                                                                        Return: factor
+                                                                                                        Call:   termPrime
+                                                                                                          Call:   mulop
+                                                                                                            Consumed token: <<DIV>: "/" at line 10 column 30>
+                                                                                                          Return: mulop
+                                                                                                          Call:   factor
+No. linea: 10 Identificador: v
+                                                                                                            Visited token: <<ID>: "v" at line 10 column 31>; Expected token: <<BRACKETOPEN>>
+                                                                                                            Call:   call(LOOKING AHEAD...)
+                                                                                                              Visited token: <<ID>: "v" at line 10 column 31>; Expected token: <<ID>>
+No. linea: 10 Operador multiplicacion: *
+                                                                                                              Visited token: <<MULT>: "*" at line 10 column 32>; Expected token: <<BRACKETOPEN>>
+                                                                                                            Return: call(LOOKAHEAD FAILED)
+                                                                                                            Call:   var(LOOKING AHEAD...)
+                                                                                                              Visited token: <<ID>: "v" at line 10 column 31>; Expected token: <<ID>>
+                                                                                                              Call:   varPrime(LOOKING AHEAD...)
+                                                                                                                Visited token: <<MULT>: "*" at line 10 column 32>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                                              Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                                            Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                                            Call:   var
+                                                                                                              Consumed token: <<ID>: "v" at line 10 column 31>
+                                                                                                              Call:   varPrime
+                                                                                                              Return: varPrime
+                                                                                                            Return: var
+                                                                                                          Return: factor
+                                                                                                          Call:   termPrime
+                                                                                                            Call:   mulop
+                                                                                                              Consumed token: <<MULT>: "*" at line 10 column 32>
+                                                                                                            Return: mulop
+                                                                                                            Call:   factor
+No. linea: 10 Identificador: v
+                                                                                                              Visited token: <<ID>: "v" at line 10 column 33>; Expected token: <<BRACKETOPEN>>
+                                                                                                              Call:   call(LOOKING AHEAD...)
+                                                                                                                Visited token: <<ID>: "v" at line 10 column 33>; Expected token: <<ID>>
+No. linea: 10 Parentesis final: )
+                                                                                                                Visited token: <<BRACKETCLOSE>: ")" at line 10 column 34>; Expected token: <<BRACKETOPEN>>
+                                                                                                              Return: call(LOOKAHEAD FAILED)
+                                                                                                              Call:   var(LOOKING AHEAD...)
+                                                                                                                Visited token: <<ID>: "v" at line 10 column 33>; Expected token: <<ID>>
+                                                                                                                Call:   varPrime(LOOKING AHEAD...)
+                                                                                                                  Visited token: <<BRACKETCLOSE>: ")" at line 10 column 34>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                                                Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                                              Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                                              Call:   var
+                                                                                                                Consumed token: <<ID>: "v" at line 10 column 33>
+                                                                                                                Call:   varPrime
+                                                                                                                Return: varPrime
+                                                                                                              Return: var
+                                                                                                            Return: factor
+                                                                                                            Call:   termPrime
+                                                                                                            Return: termPrime
+                                                                                                          Return: termPrime
+                                                                                                        Return: termPrime
+                                                                                                      Return: term
+                                                                                                      Call:   additiveExpressionPrime
+                                                                                                      Return: additiveExpressionPrime
+                                                                                                    Return: additiveExpressionPrime
+                                                                                                  Return: additiveExpression
+                                                                                                  Call:   simpleExpressionPrime
+                                                                                                  Return: simpleExpressionPrime
+                                                                                                Return: simpleExpression
+                                                                                              Return: expression
+                                                                                              Call:   argListPrime
+                                                                                              Return: argListPrime
+                                                                                            Return: argListPrime
+                                                                                          Return: argList
+                                                                                        Return: args
+                                                                                        Consumed token: <<BRACKETCLOSE>: ")" at line 10 column 34>
+                                                                                      Return: call
+                                                                                    Return: factor
+                                                                                    Call:   termPrime
+No. linea: 10 Punto y Coma: ;
+                                                                                    Return: termPrime
+                                                                                  Return: term
+                                                                                  Call:   additiveExpressionPrime
+                                                                                  Return: additiveExpressionPrime
+                                                                                Return: additiveExpression
+                                                                                Call:   simpleExpressionPrime
+                                                                                Return: simpleExpressionPrime
+                                                                              Return: simpleExpression
+                                                                            Return: expression
+                                                                            Consumed token: <<SEMICOLON>: ";" at line 10 column 35>
+                                                                          Return: returnStmtPrime
+                                                                        Return: returnStmt
+                                                                      Return: statement
+                                                                    Return: selectionStmtPrime
+                                                                  Return: selectionStmt
+                                                                Return: statement
+                                                                Call:   statementListPrime
+No. linea: 12 Llave final: }
+                                                                Return: statementListPrime
+                                                              Return: statementListPrime
+                                                            Return: statementList
+                                                            Consumed token: <<CURLYBRACKETCLOSE>: "}" at line 12 column 1>
+                                                          Return: compoundStmt
+                                                        Return: funDeclaration
+                                                      Return: declaration
+                                                      Call:   declarationListPrime
+No. linea: 14 Declaracion void: void
+                                                        Call:   declaration
+                                                          Call:   varDeclaration(LOOKING AHEAD...)
+                                                            Call:   typeSpecifier(LOOKING AHEAD...)
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"int">
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"float">
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"char">
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"void">
+                                                            Return: typeSpecifier(LOOKAHEAD SUCCEEDED)
+No. linea: 14 Identificador: main
+                                                            Visited token: <<ID>: "main" at line 14 column 6>; Expected token: <<ID>>
+                                                            Call:   varDeclarationPrime(LOOKING AHEAD...)
+No. linea: 14 Parentesis incial: (
+                                                              Visited token: <<BRACKETOPEN>: "(" at line 14 column 10>; Expected token: <<SEMICOLON>>
+                                                              Visited token: <<BRACKETOPEN>: "(" at line 14 column 10>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                            Return: varDeclarationPrime(LOOKAHEAD FAILED)
+                                                          Return: varDeclaration(LOOKAHEAD FAILED)
+                                                          Call:   funDeclaration(LOOKING AHEAD...)
+                                                            Call:   typeSpecifier(LOOKING AHEAD...)
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"int">
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"float">
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"char">
+                                                              Visited token: <"void" at line 14 column 1>; Expected token: <"void">
+                                                            Return: typeSpecifier(LOOKAHEAD SUCCEEDED)
+                                                            Visited token: <<ID>: "main" at line 14 column 6>; Expected token: <<ID>>
+                                                            Visited token: <<BRACKETOPEN>: "(" at line 14 column 10>; Expected token: <<BRACKETOPEN>>
+                                                            Call:   funDeclaration
+                                                              Call:   typeSpecifier
+                                                                Consumed token: <"void" at line 14 column 1>
+                                                              Return: typeSpecifier
+                                                              Consumed token: <<ID>: "main" at line 14 column 6>
+                                                              Consumed token: <<BRACKETOPEN>: "(" at line 14 column 10>
+                                                              Call:   params
+                                                                Call:   paramList(LOOKING AHEAD...)
+                                                                  Call:   param(LOOKING AHEAD...)
+                                                                    Call:   typeSpecifier(LOOKING AHEAD...)
+No. linea: 14 Declaracion void: void
+                                                                      Visited token: <"void" at line 14 column 11>; Expected token: <"int">
+                                                                      Visited token: <"void" at line 14 column 11>; Expected token: <"float">
+                                                                      Visited token: <"void" at line 14 column 11>; Expected token: <"char">
+                                                                      Visited token: <"void" at line 14 column 11>; Expected token: <"void">
+                                                                    Return: typeSpecifier(LOOKAHEAD SUCCEEDED)
+No. linea: 14 Parentesis final: )
+                                                                    Visited token: <<BRACKETCLOSE>: ")" at line 14 column 15>; Expected token: <<ID>>
+                                                                  Return: param(LOOKAHEAD FAILED)
+                                                                Return: paramList(LOOKAHEAD FAILED)
+                                                                Visited token: <"void" at line 14 column 11>; Expected token: <"void">
+                                                                Consumed token: <"void" at line 14 column 11>
+                                                              Return: params
+                                                              Consumed token: <<BRACKETCLOSE>: ")" at line 14 column 15>
+                                                              Call:   compoundStmt
+No. linea: 15 Llave incial: {
+                                                                Consumed token: <<CURLYBRACKETOPEN>: "{" at line 15 column 1>
+                                                                Call:   localDeclarations
+No. linea: 16 Declaracion int: int
+                                                                  Call:   varDeclaration
+                                                                    Call:   typeSpecifier
+                                                                      Consumed token: <"int" at line 16 column 9>
+                                                                    Return: typeSpecifier
+No. linea: 16 Identificador: x
+                                                                    Consumed token: <<ID>: "x" at line 16 column 13>
+                                                                    Call:   varDeclarationPrime
+No. linea: 16 Punto y Coma: ;
+                                                                      Consumed token: <<SEMICOLON>: ";" at line 16 column 14>
+                                                                    Return: varDeclarationPrime
+                                                                  Return: varDeclaration
+                                                                  Call:   localDeclarationsPrime
+No. linea: 16 Declaracion int: int
+                                                                    Call:   varDeclaration
+                                                                      Call:   typeSpecifier
+                                                                        Consumed token: <"int" at line 16 column 16>
+                                                                      Return: typeSpecifier
+No. linea: 16 Identificador: y
+                                                                      Consumed token: <<ID>: "y" at line 16 column 20>
+                                                                      Call:   varDeclarationPrime
+No. linea: 16 Punto y Coma: ;
+                                                                        Consumed token: <<SEMICOLON>: ";" at line 16 column 21>
+                                                                      Return: varDeclarationPrime
+                                                                    Return: varDeclaration
+                                                                    Call:   localDeclarationsPrime
+No. linea: 17 Identificador: x
+                                                                    Return: localDeclarationsPrime
+                                                                  Return: localDeclarationsPrime
+                                                                Return: localDeclarations
+                                                                Call:   statementList
+                                                                  Call:   statementListPrime
+                                                                    Call:   statement
+                                                                      Call:   expressionStmt
+                                                                        Call:   expression
+                                                                          Call:   var(LOOKING AHEAD...)
+                                                                            Visited token: <<ID>: "x" at line 17 column 9>; Expected token: <<ID>>
+                                                                            Call:   varPrime(LOOKING AHEAD...)
+No. linea: 17 Operador igual: =
+                                                                              Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                            Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                          Return: var(LOOKAHEAD SUCCEEDED)
+                                                                          Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<EQUIVALENCE>>
+                                                                          Call:   expression(LOOKING AHEAD...)
+                                                                            Call:   var(LOOKING AHEAD...)
+No. linea: 17 Sentencia input: input
+                                                                              Visited token: <"input" at line 17 column 11>; Expected token: <<ID>>
+                                                                            Return: var(LOOKAHEAD FAILED)
+                                                                            Call:   simpleExpression(LOOKING AHEAD...)
+                                                                              Call:   additiveExpression(LOOKING AHEAD...)
+                                                                                Call:   term(LOOKING AHEAD...)
+                                                                                  Call:   factor(LOOKING AHEAD...)
+                                                                                    Visited token: <"input" at line 17 column 11>; Expected token: <<BRACKETOPEN>>
+                                                                                    Call:   call(LOOKING AHEAD...)
+                                                                                      Visited token: <"input" at line 17 column 11>; Expected token: <<ID>>
+                                                                                    Return: call(LOOKAHEAD FAILED)
+                                                                                    Call:   var(LOOKING AHEAD...)
+                                                                                      Visited token: <"input" at line 17 column 11>; Expected token: <<ID>>
+                                                                                    Return: var(LOOKAHEAD FAILED)
+                                                                                    Visited token: <"input" at line 17 column 11>; Expected token: <<NUMENT>>
+                                                                                    Visited token: <"input" at line 17 column 11>; Expected token: <<NUMREAL>>
+                                                                                    Visited token: <"input" at line 17 column 11>; Expected token: <<SIMPLECHAR>>
+                                                                                  Return: factor(LOOKAHEAD FAILED)
+                                                                                Return: term(LOOKAHEAD FAILED)
+                                                                              Return: additiveExpression(LOOKAHEAD FAILED)
+                                                                            Return: simpleExpression(LOOKAHEAD FAILED)
+                                                                          Return: expression(LOOKAHEAD FAILED)
+                                                                          Call:   simpleExpression(LOOKING AHEAD...)
+                                                                            Call:   additiveExpression(LOOKING AHEAD...)
+                                                                              Call:   term(LOOKING AHEAD...)
+                                                                                Call:   factor(LOOKING AHEAD...)
+                                                                                  Visited token: <<ID>: "x" at line 17 column 9>; Expected token: <<BRACKETOPEN>>
+                                                                                  Call:   call(LOOKING AHEAD...)
+                                                                                    Visited token: <<ID>: "x" at line 17 column 9>; Expected token: <<ID>>
+                                                                                    Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<BRACKETOPEN>>
+                                                                                  Return: call(LOOKAHEAD FAILED)
+                                                                                  Call:   var(LOOKING AHEAD...)
+                                                                                    Visited token: <<ID>: "x" at line 17 column 9>; Expected token: <<ID>>
+                                                                                    Call:   varPrime(LOOKING AHEAD...)
+                                                                                      Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                    Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                  Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                Return: factor(LOOKAHEAD SUCCEEDED)
+                                                                                Call:   termPrime(LOOKING AHEAD...)
+                                                                                  Call:   mulop(LOOKING AHEAD...)
+                                                                                    Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<MULT>>
+                                                                                    Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<DIV>>
+                                                                                    Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<MOD>>
+                                                                                  Return: mulop(LOOKAHEAD FAILED)
+                                                                                Return: termPrime(LOOKAHEAD SUCCEEDED)
+                                                                              Return: term(LOOKAHEAD SUCCEEDED)
+                                                                              Call:   additiveExpressionPrime(LOOKING AHEAD...)
+                                                                                Call:   addop(LOOKING AHEAD...)
+                                                                                  Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<SUM>>
+                                                                                  Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<SUB>>
+                                                                                Return: addop(LOOKAHEAD FAILED)
+                                                                              Return: additiveExpressionPrime(LOOKAHEAD SUCCEEDED)
+                                                                            Return: additiveExpression(LOOKAHEAD SUCCEEDED)
+                                                                            Call:   simpleExpressionPrime(LOOKING AHEAD...)
+                                                                              Call:   relop(LOOKING AHEAD...)
+                                                                                Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <"==">
+                                                                                Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <"<=">
+                                                                                Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <">=">
+                                                                                Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<ANGLEBRACKETOPEN>>
+                                                                                Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<ANGLEBRACKETCLOSE>>
+                                                                                Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <"!=">
+                                                                              Return: relop(LOOKAHEAD FAILED)
+                                                                            Return: simpleExpressionPrime(LOOKAHEAD SUCCEEDED)
+                                                                          Return: simpleExpression(LOOKAHEAD SUCCEEDED)
+                                                                          Call:   simpleExpression
+                                                                            Call:   additiveExpression
+                                                                              Call:   term
+                                                                                Call:   factor
+                                                                                  Visited token: <<ID>: "x" at line 17 column 9>; Expected token: <<BRACKETOPEN>>
+                                                                                  Call:   call(LOOKING AHEAD...)
+                                                                                    Visited token: <<ID>: "x" at line 17 column 9>; Expected token: <<ID>>
+                                                                                    Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<BRACKETOPEN>>
+                                                                                  Return: call(LOOKAHEAD FAILED)
+                                                                                  Call:   var(LOOKING AHEAD...)
+                                                                                    Visited token: <<ID>: "x" at line 17 column 9>; Expected token: <<ID>>
+                                                                                    Call:   varPrime(LOOKING AHEAD...)
+                                                                                      Visited token: <<EQUIVALENCE>: "=" at line 17 column 10>; Expected token: <<SQUAREBRACKETOPEN>>
+                                                                                    Return: varPrime(LOOKAHEAD SUCCEEDED)
+                                                                                  Return: var(LOOKAHEAD SUCCEEDED)
+                                                                                  Call:   var
+                                                                                    Consumed token: <<ID>: "x" at line 17 column 9>
+                                                                                    Call:   varPrime
+                                                                                    Return: varPrime
+                                                                                  Return: var
+                                                                                Return: factor
+                                                                                Call:   termPrime
+                                                                                Return: termPrime
+                                                                              Return: term
+                                                                              Call:   additiveExpressionPrime
+                                                                              Return: additiveExpressionPrime
+                                                                            Return: additiveExpression
+                                                                            Call:   simpleExpressionPrime
+                                                                            Return: simpleExpressionPrime
+                                                                          Return: simpleExpression
+                                                                        Return: expression
+                                                                      Return: expressionStmt
+                                                                    Return: statement
+                                                                  Return: statementListPrime
+                                                                Return: statementList
+                                                              Return: compoundStmt
+                                                            Return: funDeclaration
+                                                          Return: declaration
+                                                        Return: declarationListPrime
+                                                      Return: declarationList
+                                                    Return: program
+                                                  Return: sintactico

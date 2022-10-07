@@ -222,7 +222,7 @@ void varDeclaration() : {}
 
 void varDeclarationPrime() : {}
 {
-	<SEMICOLON> | <NUMENT> <SEMICOLON>
+	<SEMICOLON> | <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>
 }
 
 // 5
@@ -279,18 +279,6 @@ void compoundStmt() : {}
 	<CURLYBRACKETOPEN> localDeclarations() statementList() <CURLYBRACKETCLOSE>
 	
 }
-
-//Correccion funciones
-
-/*void fillFun() : {}
-{
-	fill() fillFun() | {}
-}
-
-void fill() : {}
-{
-	varDeclaration() | statementList() | {}
-}*/
 
 // 11
 
@@ -441,7 +429,7 @@ void mulop() : {}
 
 void factor() : {}
 {
-	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) var() | LOOKAHEAD(2) call() | 
+	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) call() | LOOKAHEAD(2) var() | 
 	 LOOKAHEAD(2) <NUMENT> | LOOKAHEAD(2) <NUMREAL> | LOOKAHEAD(2) <SIMPLECHAR>)
 }
 
