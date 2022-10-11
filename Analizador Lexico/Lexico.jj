@@ -354,11 +354,11 @@ void returnStmtPrime() : {}
 
 void expression() : {}
 {
-	(LOOKAHEAD(3) var() <EQUIVALENCE> expression()
+	(LOOKAHEAD(5) var() <EQUIVALENCE> expression()
 	|
-	LOOKAHEAD(3) simpleExpression() 
+	LOOKAHEAD(5) simpleExpression() 
 	|
-	LOOKAHEAD(3) <INPUT> <BRACKETOPEN> <BRACKETCLOSE>)
+	LOOKAHEAD(5) <INPUT> <BRACKETOPEN> <BRACKETCLOSE>)
 }
 
 // 19
@@ -434,7 +434,7 @@ void mulop() : {}
 
 void factor() : {}
 {
-	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) call() | LOOKAHEAD(2) var() | 
+	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) call() | LOOKAHEAD(2) var() |
 	 LOOKAHEAD(2) <NUMENT> | LOOKAHEAD(2) <NUMREAL> | LOOKAHEAD(2) <SIMPLECHAR>)
 }
 
