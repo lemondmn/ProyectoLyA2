@@ -222,8 +222,8 @@ void varDeclaration() : {}
 
 void varDeclarationPrime() : {}
 {
-	<SEMICOLON> | LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON> | 
-	LOOKAHEAD(2) <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>
+	<SEMICOLON> | LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON> 
+	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>
 }
 
 // 5
@@ -257,7 +257,7 @@ void paramList() : {}
 
 void paramListPrime() : {}
 {
-	<COMMA> param() paramListPrime() | {}
+	<COMMA> param() paramListPrime() |{}
 }
 
 // 9
@@ -269,7 +269,7 @@ void param() : {}
 
 void paramPrime() : {}
 {
-	<SQUAREBRACKETOPEN> <SQUAREBRACKETCLOSE> | {}
+	(<SQUAREBRACKETOPEN> <SQUAREBRACKETCLOSE>)*
 }
 
 // 10
@@ -285,7 +285,7 @@ void compoundStmt() : {}
 
 void localDeclarations() : {}
 {
-	varDeclaration() localDeclarationsPrime() | {}
+	localDeclarationsPrime()
 }
 
 void localDeclarationsPrime() : {}
@@ -297,7 +297,7 @@ void localDeclarationsPrime() : {}
 
 void statementList() : {}
 {
-	statementListPrime() | {}
+	statementListPrime()
 }
 
 void statementListPrime() : {}
@@ -370,7 +370,7 @@ void var() : {}
 
 void varPrime() : {}
 {
-	<SQUAREBRACKETOPEN> expression() <SQUAREBRACKETCLOSE> | {}
+	(<SQUAREBRACKETOPEN> expression() <SQUAREBRACKETCLOSE>)*
 }
 
 // 20
@@ -382,7 +382,7 @@ void simpleExpression() : {}
 
 void simpleExpressionPrime() : {}
 {
-	relop() additiveExpression() | {}
+	(relop() additiveExpression())*
 }
 
 // 21
@@ -449,7 +449,7 @@ void call() : {}
 
 void args() : {}
 {
-	argList() | {}
+	(argList())*
 }
 
 // 29
