@@ -1,0 +1,43 @@
+Call:   sintactico
+  Call:   program
+    Call:   declarationList
+      Call:   declaration
+        Call:   varDeclaration(LOOKING AHEAD...)
+          Call:   typeSpecifier(LOOKING AHEAD...)
+No. linea: 4 Declaracion int: int
+            Visited token: <"int" at line 4 column 1>; Expected token: <"int">
+          Return: typeSpecifier(LOOKAHEAD SUCCEEDED)
+No. linea: 4 Identificador: x
+          Visited token: <<ID>: "x" at line 4 column 5>; Expected token: <<ID>>
+          Call:   varDeclarationPrime(LOOKING AHEAD...)
+No. linea: 4 Corchete incial: [
+            Visited token: <<SQUAREBRACKETOPEN>: "[" at line 4 column 6>; Expected token: <<SEMICOLON>>
+            Visited token: <<SQUAREBRACKETOPEN>: "[" at line 4 column 6>; Expected token: <<SQUAREBRACKETOPEN>>
+            Call:   varDeclaration
+              Call:   typeSpecifier
+                Consumed token: <"int" at line 4 column 1>
+              Return: typeSpecifier
+              Consumed token: <<ID>: "x" at line 4 column 5>
+              Call:   varDeclarationPrime
+                Visited token: <<SQUAREBRACKETOPEN>: "[" at line 4 column 6>; Expected token: <<SQUAREBRACKETOPEN>>
+                Call:   var(LOOKING AHEAD...)
+No. linea: 4 Numero entero: 10
+                  Visited token: <<NUMENT>: "10" at line 4 column 7>; Expected token: <<ID>>
+                Return: var(LOOKAHEAD FAILED)
+                Visited token: <<SQUAREBRACKETOPEN>: "[" at line 4 column 6>; Expected token: <<SQUAREBRACKETOPEN>>
+                Visited token: <<NUMENT>: "10" at line 4 column 7>; Expected token: <<NUMENT>>
+                Consumed token: <<SQUAREBRACKETOPEN>: "[" at line 4 column 6>
+                Consumed token: <<NUMENT>: "10" at line 4 column 7>
+No. linea: 4 Corchete final: ]
+                Consumed token: <<SQUAREBRACKETCLOSE>: "]" at line 4 column 9>
+No. linea: 4 Punto y Coma: ;
+                Consumed token: <<SEMICOLON>: ";" at line 4 column 10>
+              Return: varDeclarationPrime
+            Return: varDeclaration
+          Return: declaration
+          Call:   declarationListPrime
+No. linea: 6 Declaracion while: while
+          Return: declarationListPrime
+        Return: declarationList
+      Return: program
+    Return: sintactico

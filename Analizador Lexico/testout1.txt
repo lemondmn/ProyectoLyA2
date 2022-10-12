@@ -70,7 +70,9 @@ No. linea: 7 Parentesis final: )
 No. linea: 8 Llave incial: {
                   Consumed token: <<CURLYBRACKETOPEN>: "{" at line 8 column 1>
                   Call:   localDeclarations
+                    Call:   localDeclarationsPrime
 No. linea: 9 Declaracion if: if
+                    Return: localDeclarationsPrime
                   Return: localDeclarations
                   Call:   statementList
                     Call:   statementListPrime
@@ -155,6 +157,14 @@ No. linea: 9 Parentesis final: )
                                     Return: addop(LOOKAHEAD FAILED)
                                   Return: additiveExpressionPrime(LOOKAHEAD SUCCEEDED)
                                 Return: additiveExpression(LOOKAHEAD SUCCEEDED)
+                                Call:   relop(LOOKING AHEAD...)
+                                  Visited token: <<BRACKETCLOSE>: ")" at line 9 column 16>; Expected token: <"==">
+                                  Visited token: <<BRACKETCLOSE>: ")" at line 9 column 16>; Expected token: <"<=">
+                                  Visited token: <<BRACKETCLOSE>: ")" at line 9 column 16>; Expected token: <">=">
+                                  Visited token: <<BRACKETCLOSE>: ")" at line 9 column 16>; Expected token: <<ANGLEBRACKETOPEN>>
+                                  Visited token: <<BRACKETCLOSE>: ")" at line 9 column 16>; Expected token: <<ANGLEBRACKETCLOSE>>
+                                  Visited token: <<BRACKETCLOSE>: ")" at line 9 column 16>; Expected token: <"!=">
+                                Return: relop(LOOKAHEAD FAILED)
                               Return: simpleExpressionPrime(LOOKAHEAD SUCCEEDED)
                             Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                             Call:   simpleExpression
@@ -761,33 +771,35 @@ No. linea: 14 Parentesis final: )
 No. linea: 15 Llave incial: {
                                                           Consumed token: <<CURLYBRACKETOPEN>: "{" at line 15 column 1>
                                                           Call:   localDeclarations
-No. linea: 16 Declaracion int: int
-                                                            Call:   varDeclaration
-                                                              Call:   typeSpecifier
-                                                                Consumed token: <"int" at line 16 column 9>
-                                                              Return: typeSpecifier
-No. linea: 16 Identificador: x
-                                                              Consumed token: <<ID>: "x" at line 16 column 13>
-                                                              Call:   varDeclarationPrime
-No. linea: 16 Punto y Coma: ;
-                                                                Consumed token: <<SEMICOLON>: ";" at line 16 column 14>
-                                                              Return: varDeclarationPrime
-                                                            Return: varDeclaration
                                                             Call:   localDeclarationsPrime
 No. linea: 16 Declaracion int: int
                                                               Call:   varDeclaration
                                                                 Call:   typeSpecifier
-                                                                  Consumed token: <"int" at line 16 column 16>
+                                                                  Consumed token: <"int" at line 16 column 9>
                                                                 Return: typeSpecifier
-No. linea: 16 Identificador: y
-                                                                Consumed token: <<ID>: "y" at line 16 column 20>
+No. linea: 16 Identificador: x
+                                                                Consumed token: <<ID>: "x" at line 16 column 13>
                                                                 Call:   varDeclarationPrime
 No. linea: 16 Punto y Coma: ;
-                                                                  Consumed token: <<SEMICOLON>: ";" at line 16 column 21>
+                                                                  Consumed token: <<SEMICOLON>: ";" at line 16 column 14>
                                                                 Return: varDeclarationPrime
                                                               Return: varDeclaration
                                                               Call:   localDeclarationsPrime
+No. linea: 16 Declaracion int: int
+                                                                Call:   varDeclaration
+                                                                  Call:   typeSpecifier
+                                                                    Consumed token: <"int" at line 16 column 16>
+                                                                  Return: typeSpecifier
+No. linea: 16 Identificador: y
+                                                                  Consumed token: <<ID>: "y" at line 16 column 20>
+                                                                  Call:   varDeclarationPrime
+No. linea: 16 Punto y Coma: ;
+                                                                    Consumed token: <<SEMICOLON>: ";" at line 16 column 21>
+                                                                  Return: varDeclarationPrime
+                                                                Return: varDeclaration
+                                                                Call:   localDeclarationsPrime
 No. linea: 17 Identificador: x
+                                                                Return: localDeclarationsPrime
                                                               Return: localDeclarationsPrime
                                                             Return: localDeclarationsPrime
                                                           Return: localDeclarations

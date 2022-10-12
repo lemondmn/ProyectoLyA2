@@ -84,10 +84,10 @@ No. linea: 6 Corchete incial: [
                                 Consumed token: <<SQUAREBRACKETOPEN>: "[" at line 6 column 17>
 No. linea: 6 Corchete final: ]
                                 Consumed token: <<SQUAREBRACKETCLOSE>: "]" at line 6 column 18>
+No. linea: 6 Coma: ,
                               Return: paramPrime
                             Return: param
                             Call:   paramListPrime
-No. linea: 6 Coma: ,
                               Consumed token: <<COMMA>: "," at line 6 column 19>
                               Call:   param
                                 Call:   typeSpecifier
@@ -124,46 +124,48 @@ No. linea: 6 Parentesis final: )
 No. linea: 7 Llave incial: {
                           Consumed token: <<CURLYBRACKETOPEN>: "{" at line 7 column 1>
                           Call:   localDeclarations
-No. linea: 8 Declaracion int: int
-                            Call:   varDeclaration
-                              Call:   typeSpecifier
-                                Consumed token: <"int" at line 8 column 5>
-                              Return: typeSpecifier
-No. linea: 8 Identificador: i
-                              Consumed token: <<ID>: "i" at line 8 column 9>
-                              Call:   varDeclarationPrime
-No. linea: 8 Punto y Coma: ;
-                                Consumed token: <<SEMICOLON>: ";" at line 8 column 10>
-                              Return: varDeclarationPrime
-                            Return: varDeclaration
                             Call:   localDeclarationsPrime
 No. linea: 8 Declaracion int: int
                               Call:   varDeclaration
                                 Call:   typeSpecifier
-                                  Consumed token: <"int" at line 8 column 12>
+                                  Consumed token: <"int" at line 8 column 5>
                                 Return: typeSpecifier
-No. linea: 8 Identificador: x
-                                Consumed token: <<ID>: "x" at line 8 column 16>
+No. linea: 8 Identificador: i
+                                Consumed token: <<ID>: "i" at line 8 column 9>
                                 Call:   varDeclarationPrime
 No. linea: 8 Punto y Coma: ;
-                                  Consumed token: <<SEMICOLON>: ";" at line 8 column 17>
+                                  Consumed token: <<SEMICOLON>: ";" at line 8 column 10>
                                 Return: varDeclarationPrime
                               Return: varDeclaration
                               Call:   localDeclarationsPrime
 No. linea: 8 Declaracion int: int
                                 Call:   varDeclaration
                                   Call:   typeSpecifier
-                                    Consumed token: <"int" at line 8 column 19>
+                                    Consumed token: <"int" at line 8 column 12>
                                   Return: typeSpecifier
-No. linea: 8 Identificador: k
-                                  Consumed token: <<ID>: "k" at line 8 column 23>
+No. linea: 8 Identificador: x
+                                  Consumed token: <<ID>: "x" at line 8 column 16>
                                   Call:   varDeclarationPrime
 No. linea: 8 Punto y Coma: ;
-                                    Consumed token: <<SEMICOLON>: ";" at line 8 column 24>
+                                    Consumed token: <<SEMICOLON>: ";" at line 8 column 17>
                                   Return: varDeclarationPrime
                                 Return: varDeclaration
                                 Call:   localDeclarationsPrime
+No. linea: 8 Declaracion int: int
+                                  Call:   varDeclaration
+                                    Call:   typeSpecifier
+                                      Consumed token: <"int" at line 8 column 19>
+                                    Return: typeSpecifier
+No. linea: 8 Identificador: k
+                                    Consumed token: <<ID>: "k" at line 8 column 23>
+                                    Call:   varDeclarationPrime
+No. linea: 8 Punto y Coma: ;
+                                      Consumed token: <<SEMICOLON>: ";" at line 8 column 24>
+                                    Return: varDeclarationPrime
+                                  Return: varDeclaration
+                                  Call:   localDeclarationsPrime
 No. linea: 10 Identificador: k
+                                  Return: localDeclarationsPrime
                                 Return: localDeclarationsPrime
                               Return: localDeclarationsPrime
                             Return: localDeclarationsPrime
@@ -417,9 +419,10 @@ No. linea: 11 Corchete final: ]
                                                         Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                       Return: expression(LOOKAHEAD SUCCEEDED)
                                                       Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 11 column 15>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 11 Punto y Coma: ;
+                                                      Visited token: <<SEMICOLON>: ";" at line 11 column 16>; Expected token: <<SQUAREBRACKETOPEN>>
                                                     Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                   Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 11 Punto y Coma: ;
                                                   Visited token: <<SEMICOLON>: ";" at line 11 column 16>; Expected token: <<EQUIVALENCE>>
                                                   Call:   simpleExpression(LOOKING AHEAD...)
                                                     Call:   additiveExpression(LOOKING AHEAD...)
@@ -488,6 +491,7 @@ No. linea: 11 Punto y Coma: ;
                                                                 Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                               Return: expression(LOOKAHEAD SUCCEEDED)
                                                               Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 11 column 15>; Expected token: <<SQUAREBRACKETCLOSE>>
+                                                              Visited token: <<SEMICOLON>: ";" at line 11 column 16>; Expected token: <<SQUAREBRACKETOPEN>>
                                                             Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                           Return: var(LOOKAHEAD SUCCEEDED)
                                                         Return: factor(LOOKAHEAD SUCCEEDED)
@@ -929,6 +933,14 @@ No. linea: 14 Parentesis final: )
                                                                             Return: addop(LOOKAHEAD FAILED)
                                                                           Return: additiveExpressionPrime(LOOKAHEAD SUCCEEDED)
                                                                         Return: additiveExpression(LOOKAHEAD SUCCEEDED)
+                                                                        Call:   relop(LOOKING AHEAD...)
+                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 14 column 20>; Expected token: <"==">
+                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 14 column 20>; Expected token: <"<=">
+                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 14 column 20>; Expected token: <">=">
+                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 14 column 20>; Expected token: <<ANGLEBRACKETOPEN>>
+                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 14 column 20>; Expected token: <<ANGLEBRACKETCLOSE>>
+                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 14 column 20>; Expected token: <"!=">
+                                                                        Return: relop(LOOKAHEAD FAILED)
                                                                       Return: simpleExpressionPrime(LOOKAHEAD SUCCEEDED)
                                                                     Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                     Call:   simpleExpression
@@ -999,7 +1011,9 @@ No. linea: 15 Llave incial: {
                                                                     Call:   compoundStmt
                                                                       Consumed token: <<CURLYBRACKETOPEN>: "{" at line 15 column 5>
                                                                       Call:   localDeclarations
+                                                                        Call:   localDeclarationsPrime
 No. linea: 16 Declaracion if: if
+                                                                        Return: localDeclarationsPrime
                                                                       Return: localDeclarations
                                                                       Call:   statementList
                                                                         Call:   statementListPrime
@@ -1070,9 +1084,10 @@ No. linea: 16 Corchete final: ]
                                                                                       Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                     Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                     Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 16 column 16>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 16 Operador menor que: <
+                                                                                    Visited token: <<ANGLEBRACKETOPEN>: "<" at line 16 column 18>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                   Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                 Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 16 Operador menor que: <
                                                                                 Visited token: <<ANGLEBRACKETOPEN>: "<" at line 16 column 18>; Expected token: <<EQUIVALENCE>>
                                                                                 Call:   simpleExpression(LOOKING AHEAD...)
                                                                                   Call:   additiveExpression(LOOKING AHEAD...)
@@ -1141,6 +1156,7 @@ No. linea: 16 Operador menor que: <
                                                                                               Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                             Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                             Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 16 column 16>; Expected token: <<SQUAREBRACKETCLOSE>>
+                                                                                            Visited token: <<ANGLEBRACKETOPEN>: "<" at line 16 column 18>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                           Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                         Return: var(LOOKAHEAD SUCCEEDED)
                                                                                       Return: factor(LOOKAHEAD SUCCEEDED)
@@ -1318,7 +1334,9 @@ No. linea: 17 Llave incial: {
                                                                                           Call:   compoundStmt
                                                                                             Consumed token: <<CURLYBRACKETOPEN>: "{" at line 17 column 9>
                                                                                             Call:   localDeclarations
+                                                                                              Call:   localDeclarationsPrime
 No. linea: 18 Identificador: x
+                                                                                              Return: localDeclarationsPrime
                                                                                             Return: localDeclarations
                                                                                             Call:   statementList
                                                                                               Call:   statementListPrime
@@ -1409,9 +1427,10 @@ No. linea: 18 Corchete final: ]
                                                                                                                         Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                       Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                       Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 18 column 18>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 18 Punto y Coma: ;
+                                                                                                                      Visited token: <<SEMICOLON>: ";" at line 18 column 19>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                     Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                   Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 18 Punto y Coma: ;
                                                                                                                   Visited token: <<SEMICOLON>: ";" at line 18 column 19>; Expected token: <<EQUIVALENCE>>
                                                                                                                   Call:   simpleExpression(LOOKING AHEAD...)
                                                                                                                     Call:   additiveExpression(LOOKING AHEAD...)
@@ -1480,6 +1499,7 @@ No. linea: 18 Punto y Coma: ;
                                                                                                                                 Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                               Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                               Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 18 column 18>; Expected token: <<SQUAREBRACKETCLOSE>>
+                                                                                                                              Visited token: <<SEMICOLON>: ";" at line 18 column 19>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                             Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                           Return: var(LOOKAHEAD SUCCEEDED)
                                                                                                                         Return: factor(LOOKAHEAD SUCCEEDED)
@@ -2178,10 +2198,10 @@ No. linea: 29 Corchete incial: [
                                                                                                       Consumed token: <<SQUAREBRACKETOPEN>: "[" at line 29 column 16>
 No. linea: 29 Corchete final: ]
                                                                                                       Consumed token: <<SQUAREBRACKETCLOSE>: "]" at line 29 column 17>
+No. linea: 29 Coma: ,
                                                                                                     Return: paramPrime
                                                                                                   Return: param
                                                                                                   Call:   paramListPrime
-No. linea: 29 Coma: ,
                                                                                                     Consumed token: <<COMMA>: "," at line 29 column 18>
                                                                                                     Call:   param
                                                                                                       Call:   typeSpecifier
@@ -2218,33 +2238,35 @@ No. linea: 29 Parentesis final: )
 No. linea: 30 Llave incial: {
                                                                                                 Consumed token: <<CURLYBRACKETOPEN>: "{" at line 30 column 1>
                                                                                                 Call:   localDeclarations
-No. linea: 31 Declaracion int: int
-                                                                                                  Call:   varDeclaration
-                                                                                                    Call:   typeSpecifier
-                                                                                                      Consumed token: <"int" at line 31 column 5>
-                                                                                                    Return: typeSpecifier
-No. linea: 31 Identificador: i
-                                                                                                    Consumed token: <<ID>: "i" at line 31 column 9>
-                                                                                                    Call:   varDeclarationPrime
-No. linea: 31 Punto y Coma: ;
-                                                                                                      Consumed token: <<SEMICOLON>: ";" at line 31 column 10>
-                                                                                                    Return: varDeclarationPrime
-                                                                                                  Return: varDeclaration
                                                                                                   Call:   localDeclarationsPrime
-No. linea: 32 Declaracion int: int
+No. linea: 31 Declaracion int: int
                                                                                                     Call:   varDeclaration
                                                                                                       Call:   typeSpecifier
-                                                                                                        Consumed token: <"int" at line 32 column 5>
+                                                                                                        Consumed token: <"int" at line 31 column 5>
                                                                                                       Return: typeSpecifier
-No. linea: 32 Identificador: k
-                                                                                                      Consumed token: <<ID>: "k" at line 32 column 9>
+No. linea: 31 Identificador: i
+                                                                                                      Consumed token: <<ID>: "i" at line 31 column 9>
                                                                                                       Call:   varDeclarationPrime
-No. linea: 32 Punto y Coma: ;
-                                                                                                        Consumed token: <<SEMICOLON>: ";" at line 32 column 10>
+No. linea: 31 Punto y Coma: ;
+                                                                                                        Consumed token: <<SEMICOLON>: ";" at line 31 column 10>
                                                                                                       Return: varDeclarationPrime
                                                                                                     Return: varDeclaration
                                                                                                     Call:   localDeclarationsPrime
+No. linea: 32 Declaracion int: int
+                                                                                                      Call:   varDeclaration
+                                                                                                        Call:   typeSpecifier
+                                                                                                          Consumed token: <"int" at line 32 column 5>
+                                                                                                        Return: typeSpecifier
+No. linea: 32 Identificador: k
+                                                                                                        Consumed token: <<ID>: "k" at line 32 column 9>
+                                                                                                        Call:   varDeclarationPrime
+No. linea: 32 Punto y Coma: ;
+                                                                                                          Consumed token: <<SEMICOLON>: ";" at line 32 column 10>
+                                                                                                        Return: varDeclarationPrime
+                                                                                                      Return: varDeclaration
+                                                                                                      Call:   localDeclarationsPrime
 No. linea: 34 Identificador: i
+                                                                                                      Return: localDeclarationsPrime
                                                                                                     Return: localDeclarationsPrime
                                                                                                   Return: localDeclarationsPrime
                                                                                                 Return: localDeclarations
@@ -2597,20 +2619,22 @@ No. linea: 36 Llave incial: {
                                                                                                                         Call:   compoundStmt
                                                                                                                           Consumed token: <<CURLYBRACKETOPEN>: "{" at line 36 column 5>
                                                                                                                           Call:   localDeclarations
-No. linea: 37 Declaracion int: int
-                                                                                                                            Call:   varDeclaration
-                                                                                                                              Call:   typeSpecifier
-                                                                                                                                Consumed token: <"int" at line 37 column 9>
-                                                                                                                              Return: typeSpecifier
-No. linea: 37 Identificador: t
-                                                                                                                              Consumed token: <<ID>: "t" at line 37 column 13>
-                                                                                                                              Call:   varDeclarationPrime
-No. linea: 37 Punto y Coma: ;
-                                                                                                                                Consumed token: <<SEMICOLON>: ";" at line 37 column 14>
-                                                                                                                              Return: varDeclarationPrime
-                                                                                                                            Return: varDeclaration
                                                                                                                             Call:   localDeclarationsPrime
+No. linea: 37 Declaracion int: int
+                                                                                                                              Call:   varDeclaration
+                                                                                                                                Call:   typeSpecifier
+                                                                                                                                  Consumed token: <"int" at line 37 column 9>
+                                                                                                                                Return: typeSpecifier
+No. linea: 37 Identificador: t
+                                                                                                                                Consumed token: <<ID>: "t" at line 37 column 13>
+                                                                                                                                Call:   varDeclarationPrime
+No. linea: 37 Punto y Coma: ;
+                                                                                                                                  Consumed token: <<SEMICOLON>: ";" at line 37 column 14>
+                                                                                                                                Return: varDeclarationPrime
+                                                                                                                              Return: varDeclaration
+                                                                                                                              Call:   localDeclarationsPrime
 No. linea: 38 Identificador: k
+                                                                                                                              Return: localDeclarationsPrime
                                                                                                                             Return: localDeclarationsPrime
                                                                                                                           Return: localDeclarations
                                                                                                                           Call:   statementList
@@ -3115,9 +3139,10 @@ No. linea: 39 Corchete final: ]
                                                                                                                                                                                                   Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                 Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                 Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 39 column 16>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 39 Punto y Coma: ;
+                                                                                                                                                                                                Visited token: <<SEMICOLON>: ";" at line 39 column 17>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                               Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                             Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 39 Punto y Coma: ;
                                                                                                                                                                                             Visited token: <<SEMICOLON>: ";" at line 39 column 17>; Expected token: <<EQUIVALENCE>>
                                                                                                                                                                                             Call:   simpleExpression(LOOKING AHEAD...)
                                                                                                                                                                                               Call:   additiveExpression(LOOKING AHEAD...)
@@ -3186,6 +3211,7 @@ No. linea: 39 Punto y Coma: ;
                                                                                                                                                                                                           Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                         Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                         Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 39 column 16>; Expected token: <<SQUAREBRACKETCLOSE>>
+                                                                                                                                                                                                        Visited token: <<SEMICOLON>: ";" at line 39 column 17>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                       Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                     Return: var(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                   Return: factor(LOOKAHEAD SUCCEEDED)
@@ -3399,9 +3425,10 @@ No. linea: 40 Corchete final: ]
                                                                                                                                                                                                       Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                     Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                     Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 40 column 12>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 40 Operador igual: =
+                                                                                                                                                                                                    Visited token: <<EQUIVALENCE>: "=" at line 40 column 14>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                   Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                 Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 40 Operador igual: =
                                                                                                                                                                                                 Visited token: <<EQUIVALENCE>: "=" at line 40 column 14>; Expected token: <<EQUIVALENCE>>
                                                                                                                                                                                                 Call:   var
                                                                                                                                                                                                   Consumed token: <<ID>: "a" at line 40 column 9>
@@ -3556,9 +3583,10 @@ No. linea: 40 Corchete final: ]
                                                                                                                                                                                                         Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                       Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                       Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 40 column 19>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 40 Punto y Coma: ;
+                                                                                                                                                                                                      Visited token: <<SEMICOLON>: ";" at line 40 column 20>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                     Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                   Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 40 Punto y Coma: ;
                                                                                                                                                                                                   Visited token: <<SEMICOLON>: ";" at line 40 column 20>; Expected token: <<EQUIVALENCE>>
                                                                                                                                                                                                   Call:   simpleExpression(LOOKING AHEAD...)
                                                                                                                                                                                                     Call:   additiveExpression(LOOKING AHEAD...)
@@ -3627,6 +3655,7 @@ No. linea: 40 Punto y Coma: ;
                                                                                                                                                                                                                 Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                               Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                               Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 40 column 19>; Expected token: <<SQUAREBRACKETCLOSE>>
+                                                                                                                                                                                                              Visited token: <<SEMICOLON>: ";" at line 40 column 20>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                             Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                           Return: var(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                         Return: factor(LOOKAHEAD SUCCEEDED)
@@ -3840,9 +3869,10 @@ No. linea: 41 Corchete final: ]
                                                                                                                                                                                                             Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                           Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                           Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 41 column 12>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 41 Operador igual: =
+                                                                                                                                                                                                          Visited token: <<EQUIVALENCE>: "=" at line 41 column 14>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                         Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                       Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 41 Operador igual: =
                                                                                                                                                                                                       Visited token: <<EQUIVALENCE>: "=" at line 41 column 14>; Expected token: <<EQUIVALENCE>>
                                                                                                                                                                                                       Call:   var
                                                                                                                                                                                                         Consumed token: <<ID>: "a" at line 41 column 9>
@@ -4308,20 +4338,22 @@ No. linea: 47 Parentesis final: )
 No. linea: 48 Llave incial: {
                                                                                                                                                                                         Consumed token: <<CURLYBRACKETOPEN>: "{" at line 48 column 1>
                                                                                                                                                                                         Call:   localDeclarations
-No. linea: 49 Declaracion int: int
-                                                                                                                                                                                          Call:   varDeclaration
-                                                                                                                                                                                            Call:   typeSpecifier
-                                                                                                                                                                                              Consumed token: <"int" at line 49 column 5>
-                                                                                                                                                                                            Return: typeSpecifier
-No. linea: 49 Identificador: i
-                                                                                                                                                                                            Consumed token: <<ID>: "i" at line 49 column 9>
-                                                                                                                                                                                            Call:   varDeclarationPrime
-No. linea: 49 Punto y Coma: ;
-                                                                                                                                                                                              Consumed token: <<SEMICOLON>: ";" at line 49 column 10>
-                                                                                                                                                                                            Return: varDeclarationPrime
-                                                                                                                                                                                          Return: varDeclaration
                                                                                                                                                                                           Call:   localDeclarationsPrime
+No. linea: 49 Declaracion int: int
+                                                                                                                                                                                            Call:   varDeclaration
+                                                                                                                                                                                              Call:   typeSpecifier
+                                                                                                                                                                                                Consumed token: <"int" at line 49 column 5>
+                                                                                                                                                                                              Return: typeSpecifier
+No. linea: 49 Identificador: i
+                                                                                                                                                                                              Consumed token: <<ID>: "i" at line 49 column 9>
+                                                                                                                                                                                              Call:   varDeclarationPrime
+No. linea: 49 Punto y Coma: ;
+                                                                                                                                                                                                Consumed token: <<SEMICOLON>: ";" at line 49 column 10>
+                                                                                                                                                                                              Return: varDeclarationPrime
+                                                                                                                                                                                            Return: varDeclaration
+                                                                                                                                                                                            Call:   localDeclarationsPrime
 No. linea: 51 Identificador: i
+                                                                                                                                                                                            Return: localDeclarationsPrime
                                                                                                                                                                                           Return: localDeclarationsPrime
                                                                                                                                                                                         Return: localDeclarations
                                                                                                                                                                                         Call:   statementList
@@ -4549,6 +4581,14 @@ No. linea: 52 Parentesis final: )
                                                                                                                                                                                                             Return: addop(LOOKAHEAD FAILED)
                                                                                                                                                                                                           Return: additiveExpressionPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                         Return: additiveExpression(LOOKAHEAD SUCCEEDED)
+                                                                                                                                                                                                        Call:   relop(LOOKING AHEAD...)
+                                                                                                                                                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 52 column 18>; Expected token: <"==">
+                                                                                                                                                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 52 column 18>; Expected token: <"<=">
+                                                                                                                                                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 52 column 18>; Expected token: <">=">
+                                                                                                                                                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 52 column 18>; Expected token: <<ANGLEBRACKETOPEN>>
+                                                                                                                                                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 52 column 18>; Expected token: <<ANGLEBRACKETCLOSE>>
+                                                                                                                                                                                                          Visited token: <<BRACKETCLOSE>: ")" at line 52 column 18>; Expected token: <"!=">
+                                                                                                                                                                                                        Return: relop(LOOKAHEAD FAILED)
                                                                                                                                                                                                       Return: simpleExpressionPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                     Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                     Call:   simpleExpression
@@ -4612,7 +4652,9 @@ No. linea: 53 Llave incial: {
                                                                                                                                                                                                     Call:   compoundStmt
                                                                                                                                                                                                       Consumed token: <<CURLYBRACKETOPEN>: "{" at line 53 column 5>
                                                                                                                                                                                                       Call:   localDeclarations
+                                                                                                                                                                                                        Call:   localDeclarationsPrime
 No. linea: 54 Identificador: x
+                                                                                                                                                                                                        Return: localDeclarationsPrime
                                                                                                                                                                                                       Return: localDeclarations
                                                                                                                                                                                                       Call:   statementList
                                                                                                                                                                                                         Call:   statementListPrime
@@ -4679,9 +4721,10 @@ No. linea: 54 Corchete final: ]
                                                                                                                                                                                                                       Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                     Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                     Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 54 column 12>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 54 Operador igual: =
+                                                                                                                                                                                                                    Visited token: <<EQUIVALENCE>: "=" at line 54 column 14>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                                   Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                 Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 54 Operador igual: =
                                                                                                                                                                                                                 Visited token: <<EQUIVALENCE>: "=" at line 54 column 14>; Expected token: <<EQUIVALENCE>>
                                                                                                                                                                                                                 Call:   var
                                                                                                                                                                                                                   Consumed token: <<ID>: "x" at line 54 column 9>
@@ -5613,6 +5656,14 @@ No. linea: 61 Parentesis final: )
                                                                                                                                                                                                                                                           Return: addop(LOOKAHEAD FAILED)
                                                                                                                                                                                                                                                         Return: additiveExpressionPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                       Return: additiveExpression(LOOKAHEAD SUCCEEDED)
+                                                                                                                                                                                                                                                      Call:   relop(LOOKING AHEAD...)
+                                                                                                                                                                                                                                                        Visited token: <<BRACKETCLOSE>: ")" at line 61 column 18>; Expected token: <"==">
+                                                                                                                                                                                                                                                        Visited token: <<BRACKETCLOSE>: ")" at line 61 column 18>; Expected token: <"<=">
+                                                                                                                                                                                                                                                        Visited token: <<BRACKETCLOSE>: ")" at line 61 column 18>; Expected token: <">=">
+                                                                                                                                                                                                                                                        Visited token: <<BRACKETCLOSE>: ")" at line 61 column 18>; Expected token: <<ANGLEBRACKETOPEN>>
+                                                                                                                                                                                                                                                        Visited token: <<BRACKETCLOSE>: ")" at line 61 column 18>; Expected token: <<ANGLEBRACKETCLOSE>>
+                                                                                                                                                                                                                                                        Visited token: <<BRACKETCLOSE>: ")" at line 61 column 18>; Expected token: <"!=">
+                                                                                                                                                                                                                                                      Return: relop(LOOKAHEAD FAILED)
                                                                                                                                                                                                                                                     Return: simpleExpressionPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                   Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                   Call:   simpleExpression
@@ -5676,7 +5727,9 @@ No. linea: 62 Llave incial: {
                                                                                                                                                                                                                                                   Call:   compoundStmt
                                                                                                                                                                                                                                                     Consumed token: <<CURLYBRACKETOPEN>: "{" at line 62 column 5>
                                                                                                                                                                                                                                                     Call:   localDeclarations
+                                                                                                                                                                                                                                                      Call:   localDeclarationsPrime
 No. linea: 63 Sentencia output: output
+                                                                                                                                                                                                                                                      Return: localDeclarationsPrime
                                                                                                                                                                                                                                                     Return: localDeclarations
                                                                                                                                                                                                                                                     Call:   statementList
                                                                                                                                                                                                                                                       Call:   statementListPrime
@@ -5782,9 +5835,10 @@ No. linea: 63 Corchete final: ]
                                                                                                                                                                                                                                                                                                               Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                                                                             Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                                                                             Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 63 column 19>; Expected token: <<SQUAREBRACKETCLOSE>>
+No. linea: 63 Parentesis final: )
+                                                                                                                                                                                                                                                                                                            Visited token: <<BRACKETCLOSE>: ")" at line 63 column 20>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                                                                                                                           Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                                                                         Return: var(LOOKAHEAD SUCCEEDED)
-No. linea: 63 Parentesis final: )
                                                                                                                                                                                                                                                                                                         Visited token: <<BRACKETCLOSE>: ")" at line 63 column 20>; Expected token: <<EQUIVALENCE>>
                                                                                                                                                                                                                                                                                                         Call:   simpleExpression(LOOKING AHEAD...)
                                                                                                                                                                                                                                                                                                           Call:   additiveExpression(LOOKING AHEAD...)
@@ -5853,6 +5907,7 @@ No. linea: 63 Parentesis final: )
                                                                                                                                                                                                                                                                                                                       Return: simpleExpression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                                                                                     Return: expression(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                                                                                     Visited token: <<SQUAREBRACKETCLOSE>: "]" at line 63 column 19>; Expected token: <<SQUAREBRACKETCLOSE>>
+                                                                                                                                                                                                                                                                                                                    Visited token: <<BRACKETCLOSE>: ")" at line 63 column 20>; Expected token: <<SQUAREBRACKETOPEN>>
                                                                                                                                                                                                                                                                                                                   Return: varPrime(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                                                                                 Return: var(LOOKAHEAD SUCCEEDED)
                                                                                                                                                                                                                                                                                                               Return: factor(LOOKAHEAD SUCCEEDED)
