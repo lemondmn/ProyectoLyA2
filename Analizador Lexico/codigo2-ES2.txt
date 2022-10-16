@@ -1,9 +1,9 @@
 /* A program to perform selection sort on a 10
    element array */
 
-int x[low];
+int x[10];
 
-int minloc(int a[], int low, int high)
+while minloc(int a[], int low, int high) //ES2 PALABRA RESERVADA INCORRECTA
 {
     int i; int x; int k;
 

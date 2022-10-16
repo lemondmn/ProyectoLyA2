@@ -1,3 +1,10 @@
+options {
+	Ignore_Case = false;
+	STATIC=false;
+	DEBUG_PARSER=true;
+	DEBUG_LOOKAHEAD=true;
+}
+
 PARSER_BEGIN (Lexico)
 	public class Lexico {
 		public static void main (String[] args) throws ParseException {
@@ -8,7 +15,6 @@ PARSER_BEGIN (Lexico)
 		}
 	}
 	PARSER_END (Lexico)
-
 
 // Keywords
 
@@ -215,7 +221,9 @@ void varDeclaration() : {}
 
 void varDeclarationPrime() : {}
 {
-	<SEMICOLON> | <NUMENT> <SEMICOLON>
+	LOOKAHEAD(2) <SEMICOLON> | LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON> 
+	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>
+	| LOOKAHEAD(2) (<COMMA><ID>)* <SEMICOLON>
 }
 
 // 5
@@ -249,7 +257,7 @@ void paramList() : {}
 
 void paramListPrime() : {}
 {
-	<COMMA> param() paramListPrime() | {}
+	<COMMA> param() paramListPrime() |{}
 }
 
 // 9
@@ -261,21 +269,23 @@ void param() : {}
 
 void paramPrime() : {}
 {
-	<SQUAREBRACKETOPEN> <SQUAREBRACKETCLOSE> | {}
+	(<SQUAREBRACKETOPEN> <SQUAREBRACKETCLOSE>)*
 }
 
 // 10
 
 void compoundStmt() : {}
 {
+	//<CURLYBRACKETOPEN> localDeclarations() statementList() <CURLYBRACKETCLOSE>
 	<CURLYBRACKETOPEN> localDeclarations() statementList() <CURLYBRACKETCLOSE>
+	
 }
 
 // 11
 
 void localDeclarations() : {}
 {
-	varDeclaration() localDeclarations() {}
+	localDeclarationsPrime()
 }
 
 void localDeclarationsPrime() : {}
@@ -287,7 +297,7 @@ void localDeclarationsPrime() : {}
 
 void statementList() : {}
 {
-	{} statementListPrime()
+	statementListPrime()
 }
 
 void statementListPrime() : {}
@@ -344,7 +354,11 @@ void returnStmtPrime() : {}
 
 void expression() : {}
 {
-	(LOOKAHEAD(3) var() <EQUIVALENCE> expression() | LOOKAHEAD(3) simpleExpression())
+	(LOOKAHEAD(5) var() <EQUIVALENCE> expression()
+	|
+	LOOKAHEAD(5) simpleExpression() 
+	|
+	LOOKAHEAD(5) <INPUT> <BRACKETOPEN> <BRACKETCLOSE>)
 }
 
 // 19
@@ -356,7 +370,7 @@ void var() : {}
 
 void varPrime() : {}
 {
-	<SQUAREBRACKETOPEN> expression() <SQUAREBRACKETCLOSE> | {}
+	(<SQUAREBRACKETOPEN> expression() <SQUAREBRACKETCLOSE>)*
 }
 
 // 20
@@ -368,7 +382,7 @@ void simpleExpression() : {}
 
 void simpleExpressionPrime() : {}
 {
-	relop() additiveExpression() | {}
+	(relop() additiveExpression())*
 }
 
 // 21
@@ -420,7 +434,7 @@ void mulop() : {}
 
 void factor() : {}
 {
-	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) var() | LOOKAHEAD(2) call() | 
+	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) call() | LOOKAHEAD(2) var() |
 	 LOOKAHEAD(2) <NUMENT> | LOOKAHEAD(2) <NUMREAL> | LOOKAHEAD(2) <SIMPLECHAR>)
 }
 
@@ -428,14 +442,14 @@ void factor() : {}
 
 void call() : {}
 {
-	<ID> <BRACKETOPEN> args() <BRACKETCLOSE>
+	<ID> <BRACKETOPEN> args() <BRACKETCLOSE> | <OUTPUT> <BRACKETOPEN> args() <BRACKETCLOSE>
 }
 
 // 28
 
 void args() : {}
 {
-	argList() | {}
+	(argList())*
 }
 
 // 29
