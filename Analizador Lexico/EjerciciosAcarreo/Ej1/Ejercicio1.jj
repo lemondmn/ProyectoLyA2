@@ -1,0 +1,60 @@
+PARSER_BEGIN (Lexico)
+
+	import java.util.*;
+
+	public class Lexico {
+		public static void main (String[] args) throws ParseException {
+			Lexico anLex = new Lexico(System.in);
+			//anLex.analizar();
+			anLex.sintactico();
+
+			System.out.println("\nAnalisis terminado!");
+		}
+	}
+
+PARSER_END (Lexico)
+
+TOKEN:
+{
+    <SUM : ["+"]>
+    |
+    <SUB : ["-"]>
+    |
+    <MULT : ["*"]>
+    |
+    <PAREOP : ["("]>
+    |
+    <PARECL : [")"]>
+    |
+    <NUMENT: ["0"-"9"](["0"-"9"])*>
+}
+
+void sintactico() : {}
+{
+    (exp()) + EOF
+}
+
+void exp() : {}
+{
+    term() exprime()
+}
+
+void exprime() : {}
+{
+    (<SUM> term() exprime() | <SUB> term() exprime())*
+}
+
+void term() : {}
+{
+    factor() termprime()
+}
+
+void exprime() : {}
+{
+    (<MULT> factor() termprime())*
+}
+
+void factor() : {}
+{
+    <PAREOP> exp() <PARECL> | <NUMENT>
+}

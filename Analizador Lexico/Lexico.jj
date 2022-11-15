@@ -31,35 +31,35 @@ PARSER_BEGIN (Lexico)
 
 			// getters y setters
 
-			public String getLexema() {
+			public String getLexema () {
 				return lexema;
 			}
 
-			public void setLexema(String lexema) {
+			public void setLexema (String lexema) {
 				this.lexema = lexema;
 			}
 
-			public String getTipoDato() {
+			public String getTipoDato () {
 				return tipoDato;
 			}
 
-			public void setTipoDato(String tipoDato) {
+			public void setTipoDato (String tipoDato) {
 				this.tipoDato = tipoDato;
 			}
 
-			public String getCategoria() {
+			public String getCategoria () {
 				return categoria;
 			}
 
-			public void setCategoria(String categoria) {
+			public void setCategoria (String categoria) {
 				this.categoria = categoria;
 			}
 
-			public int getSize() {
+			public int getSize () {
 				return size;
 			}
 
-			public void setSize(int size) {
+			public void setSize (int size) {
 				this.size = size;
 			}
 
@@ -69,9 +69,9 @@ PARSER_BEGIN (Lexico)
 
 		// HashMap Functions
 
-		static void search(String key)
+		static void search (String key)
 		{
-			if(map.containsKey(key))
+			if (map.containsKey(key))
 			{
 				DataObject d = map.get(key);
 				System.out.println("Lexema: " + d.getLexema() + " Tipo Dato: " + d.getTipoDato() + " Categoria: " + d.getCategoria() + " tamano: " + d.getSize());
@@ -84,7 +84,7 @@ PARSER_BEGIN (Lexico)
 
 		static void insert(String key, DataObject d)
 		{
-			if(map.containsKey(key))
+			if (map.containsKey(key))
 			{
 				System.out.println("Lexema ya existe");
 			}
@@ -109,7 +109,7 @@ PARSER_BEGIN (Lexico)
 
 		static void delete(String key)
 		{
-			if(map.containsKey(key))
+			if (map.containsKey(key))
 			{
 				map.remove(key);
 			}
@@ -144,34 +144,34 @@ PARSER_BEGIN (Lexico)
 
 TOKEN:
 	{
-		< INT : "int" >
+		<INT : "int">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion int: " + image );}
 		|
-		< FLOAT : "float" >
+		<FLOAT : "float">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion float: " + image );}
 		|
-		< CHAR : "char" >
+		<CHAR : "char">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion char: " + image );}
 		|
-		< RETURN : "return" >
+		<RETURN : "return">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion return: " + image );}
 		|
-		< VOID : "void" >
+		<VOID : "void">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion void: " + image );}
 		|
-		< IF : "if" >
+		<IF : "if">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion if: " + image );}
 		|
-		< ELSE : "else" >
+		<ELSE : "else">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion else: " + image );}
 		|
-		< WHILE : "while" >
+		<WHILE : "while">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Declaracion while: " + image );}
 		|
-		< INPUT : "input" >
+		<INPUT : "input">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Sentencia input: " + image );}
 		|
-		< OUTPUT : "output" >
+		<OUTPUT : "output">
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Sentencia output: " + image );}
 	}
 
@@ -179,64 +179,64 @@ TOKEN:
 
 TOKEN:
 	{
-	    <	SUM : ["+"] >
+	    <SUM : ["+"]>
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador suma: " + image );}
 	    |
-	    <	SUB : ["-"] >
+	    <SUB : ["-"]>
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador resta: " + image );}
 	    |
-	    <	MULT : ["*"] >
+	    <MULT : ["*"]>
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador multiplicacion: " + image );}
 	    |
-	    <	DIV : ["/"] >
+	    <DIV : ["/"]>
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador division: " + image );}
 	    |
-		<	MOD : ["%"] >
+		<MOD : ["%"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador modulo: " + image );}
 		|
-		<	BRACKETOPEN : ["("] >
+		<BRACKETOPEN : ["("]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Parentesis incial: " + image );}
 		|
-		<	BRACKETCLOSE : [")"] >
+		<BRACKETCLOSE : [")"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Parentesis final: " + image );}
 		|
-		<	SQUAREBRACKETOPEN : ["["] >
+		<SQUAREBRACKETOPEN : ["["]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Corchete incial: " + image );}
 		|
-		<	SQUAREBRACKETCLOSE : ["]"] >
+		<SQUAREBRACKETCLOSE : ["]"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Corchete final: " + image );}
 		|
-		<	CURLYBRACKETOPEN : ["{"] >
+		<CURLYBRACKETOPEN : ["{"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Llave incial: " + image );}
 		|
-		<	CURLYBRACKETCLOSE : ["}"] >
+		<CURLYBRACKETCLOSE : ["}"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Llave final: " + image );}
 		|
-		<	LESSEQUAL : "<=" >
+		<LESSEQUAL : "<=">
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador menor o igual: " + image );}
 		|
-		<	MOREEQUAL : ">=" >
+		<MOREEQUAL : ">=">
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador mayor o igual: " + image );}
 		|
-		<	EQUALS : "==" >
+		<EQUALS : "==">
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador igual igual: " + image );}
 		|
-		<	NOTEQUALS : "!=" >
+		<NOTEQUALS : "!=">
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador desigualdad: " + image );}
 		|
-		<	ANGLEBRACKETOPEN : ["<"] >
+		<ANGLEBRACKETOPEN : ["<"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador menor que: " + image );}
 		|
-		<	ANGLEBRACKETCLOSE : [">"] >
+		<ANGLEBRACKETCLOSE : [">"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador mayor que: " + image );}
 		|
-		<	EQUIVALENCE : ["="] >
+		<EQUIVALENCE : ["="] >
 	    	{System.out.println( "No. linea: " + matchedToken.beginLine + " Operador igual: " + image );}
 		|
-		<	SEMICOLON : [";"] >
+		<SEMICOLON : [";"]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Punto y Coma: " + image );}
 		|
-		<	COMMA : [","] >
+		<COMMA : [","]>
 			{System.out.println( "No. linea: " + matchedToken.beginLine + " Coma: " + image );}
 	}
 
