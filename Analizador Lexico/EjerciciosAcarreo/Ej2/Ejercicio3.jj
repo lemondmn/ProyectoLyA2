@@ -4,46 +4,6 @@ PARSER_BEGIN (Lexico)
 
 	public class Lexico {
 
-		class Valores {
-			int valor;
-			int exp;
-			int base;
-
-			public Valores (int valor, int exp, int base) {
-				this.valor = valor;
-				this.exp = exp;
-				this.base = base;
-			}
-
-			public Valores () {
-				this.exp = 1;
-			}
-
-			public void setValor (int val) {
-				this.valor = val;
-			}
-
-			public int getValor() {
-				return val;
-			}
-
-			public void setExp (int exp) {
-				this.exp = exp;
-			}
-
-			public int getExp () {
-				return exp;
-			}
-			
-			public void setBase (int b) {
-				this.base = b;
-			}
-
-			public int getBase () {
-				return base;
-			} 
-		}
-
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
 			//anLex.analizar();
@@ -87,9 +47,9 @@ void sintactico() : {}
     (numbase()) + EOF
 }
 
-void numbase() : { Valores valores; }
+void numbase() : { int base; }
 {
-    num(valores.getBase()) valores = carbase()
+    num(base) base = carbase()
 }
 
 int carbase() : { int base; }
@@ -101,39 +61,43 @@ int carbase() : { int base; }
 		{base = 10; return base;}
 }
 
-void num(int base) : { Valores valores; }
+void num(int base) : { int[] valores; }
 {
-    valores = digito(base) num(base) | valores = digito(base)
+    (valores = digito(base, 8) num(base) | valores = digito(base, 8))
+	{
+		if (valores[0] == -1) {
+			System.out.println("Error: El numero no es valido");
+		} else {
+			System.out.println("El numero es valido");
+		}
+	}
 }
 
-Valores digito(int base) : { 
-	Valores val;
-	val.setBase(base);
-}
+int digito(int base, int exp) : { int[] val; val[1]; val[1] = val[1] base * exp; }
 {
-    <ZERO> {val.setValor(0); return val;}
+    <ZERO> {val[0] = 0; return val;}
 	|
-	<ONE> {val.setValor(1); return val;}
+	<ONE> {val[0] = 1; return val;}
 	|
-	<TWO> {val.setValor(2); return val;}
+	<TWO> {val[0] = 2; return val;}
 	|
-	<THREE> {val.setValor(3); return val;}
+	<THREE> {val[0] = 3; return val;}
 	|
-	<FOUR> {val.setValor(4); return val;}
+	<FOUR> {val[0] = 4; return val;}
 	|
-	<FIVE> {val.setValor(5); return val;}
+	<FIVE> {val[0] = 5; return val;}
 	|
-	<SIX> {val.setValor(6); return val;}
+	<SIX> {val[0] = 6; return val;}
 	|
-	<SEVEN> {val.setValor(7); return val;}
+	<SEVEN> {val[0] = 7; return val;}
 	|
 	<EIGHT> 
 		{
 			if (base == 8) {
-				val.setValor(-1)
+				val[0] = -1;
 				return val;
 			} else {
-				val.setValor(8)
+				val[0] = 8;
 				return val;
 			}
 		}
@@ -141,10 +105,10 @@ Valores digito(int base) : {
 	<NINE>
 		{
 			if (base == 8) {
-				val.setValor(-1)
+				val[0] = -1;
 				return val;
 			} else {
-				val.setValor(9)
+				val[0] = 9;
 				return val;
 			}
 		}

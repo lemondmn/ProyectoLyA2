@@ -27,34 +27,101 @@ TOKEN:
     <PARECL : [")"]>
     |
     <NUMENT: ["0"-"9"](["0"-"9"])*>
+    |
+    <EPSILON: "">
 }
 
-void sintactico() : {}
+SKIP:
+	{
+		<"/*" (~["*"])* "*" (~["*","/"] (~["*"])* "*" | "*")* "/">
+		|
+		<["/"]["/"](~["\n"])*>
+		|
+		" " | "\t" | "\n" | "\r"
+	}
+
+void sintactico() : {Integer valor;}
 {
-    (exp()) + EOF
+    (valor = exp()) + <EOF>
+    {System.out.println("Valor :" + valor);}
 }
 
-void exp() : {}
+Integer exp() :
 {
-    term() exprime()
+    Integer expVal, termVal, exprimeVal;
 }
 
-void exprime() : {}
 {
-    (<SUM> term() exprime() | <SUB> term() exprime())*
+    termVal = term()
+    exprimeVal = exprime()
+
+    {if (exprimeVal == null){
+        expVal = termVal;
+        return expVal;
+    } else {
+        return (termVal + exprimeVal);
+    }
+    }
 }
 
-void term() : {}
+Integer exprime() : {Integer termVal, exprimeVal;}
 {
-    factor() termprime()
+    LOOKAHEAD(2) (<SUM> termVal = term() exprimeVal = exprime())
+    {if (exprimeVal == null){
+        exprimeVal = termVal;
+        return exprimeVal;
+    } else {
+        return (termVal + exprimeVal);
+    }}
+    | 
+    LOOKAHEAD(2) (<SUB> termVal = term() exprimeVal = exprime())
+    {if (exprimeVal == null){
+        exprimeVal = termVal;
+        return exprimeVal;
+    } else {
+        return (-1*(termVal + exprimeVal));
+    }}
+    |
+    LOOKAHEAD(2) (<EPSILON>)
 }
 
-void exprime() : {}
+Integer term() : {Integer factorVal, termprimeVal, termVal;}
 {
-    (<MULT> factor() termprime())*
+    factorVal = factor() termprimeVal = termprime()
+    {if (termprimeVal == null){
+        termVal = factorVal;
+        return termVal;
+    } else {
+        return (factorVal * termprimeVal);
+    }}
 }
 
-void factor() : {}
+Integer termprime() :
 {
-    <PAREOP> exp() <PARECL> | <NUMENT>
+    Integer factorVal = null;
+    Integer termprime2Val = null;
+}
+{
+    (LOOKAHEAD(2) <MULT> factorVal = factor() termprime2Val = termprime())*
+    {
+        if(termprime2Val == null) 
+        {
+            return factorVal;
+        }
+        else {
+            return factorVal * termprime2Val; 
+        }
+    }
+}
+
+Integer factor() :
+{
+    Integer factorVal = 0;
+}
+{
+    <PAREOP> factorVal = exp() <PARECL>
+    {return factorVal;}
+    |
+    <NUMENT>
+    {factorVal = Integer.parseInt(token.image); return factorVal;}
 }
