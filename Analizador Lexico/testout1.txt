@@ -1,0 +1,116 @@
+No. linea: 6 Declaracion float: float
+No. linea: 6 Identificador: a
+No. linea: 6 Coma: ,
+Declaracion tipo: float
+typeSpecifier:float
+No. linea: 6 Identificador: b
+Tipo acarreado: float
+No. linea: 6 Coma: ,
+No. linea: 6 Identificador: c
+Tipo acarreado: float
+No. linea: 6 Punto y Coma: ;
+varDeclarationPrime: ;
+No. linea: 7 Declaracion int: int
+No. linea: 7 Identificador: gcd
+No. linea: 7 Parentesis incial: (
+Declaracion tipo: int
+No. linea: 7 Declaracion int: int
+No. linea: 7 Identificador: u
+Declaracion tipo: int
+No. linea: 7 Coma: ,
+No. linea: 7 Declaracion int: int
+Declaracion tipo: int
+No. linea: 7 Identificador: v
+No. linea: 7 Parentesis final: )
+No. linea: 8 Llave incial: {
+No. linea: 9 Declaracion if: if
+No. linea: 9 Parentesis incial: (
+No. linea: 9 Identificador: v
+No. linea: 9 Operador igual igual: ==
+No. linea: 9 Numero entero: 0
+No. linea: 9 Parentesis final: )
+Lexema ya existe
+No. linea: 9 Declaracion return: return
+No. linea: 9 Identificador: u
+No. linea: 9 Punto y Coma: ;
+Lexema ya existe
+No. linea: 10 Declaracion else: else
+No. linea: 10 Declaracion return: return
+No. linea: 10 Identificador: gcd
+No. linea: 10 Parentesis incial: (
+No. linea: 10 Identificador: v
+No. linea: 10 Coma: ,
+No. linea: 10 Identificador: u
+Lexema ya existe
+No. linea: 10 Operador resta: -
+No. linea: 10 Identificador: u
+No. linea: 10 Operador division: /
+No. linea: 10 Identificador: v
+Lexema ya existe
+Lexema ya existe
+No. linea: 10 Operador multiplicacion: *
+Lexema ya existe
+No. linea: 10 Identificador: v
+No. linea: 10 Parentesis final: )
+Lexema ya existe
+No. linea: 10 Punto y Coma: ;
+No. linea: 12 Llave final: }
+No. linea: 14 Declaracion void: void
+No. linea: 14 Identificador: main
+No. linea: 14 Parentesis incial: (
+Declaracion tipo: void
+No. linea: 14 Declaracion void: void
+No. linea: 14 Parentesis final: )
+No. linea: 15 Llave incial: {
+No. linea: 16 Declaracion int: int
+Declaracion tipo: int
+typeSpecifier:int
+No. linea: 16 Identificador: x
+No. linea: 16 Punto y Coma: ;
+varDeclarationPrime: ;
+No. linea: 16 Declaracion int: int
+Declaracion tipo: int
+typeSpecifier:int
+No. linea: 16 Identificador: y
+No. linea: 16 Punto y Coma: ;
+varDeclarationPrime: ;
+No. linea: 17 Identificador: x
+No. linea: 17 Operador igual: =
+No. linea: 17 Sentencia input: input
+No. linea: 17 Parentesis incial: (
+No. linea: 17 Parentesis final: )
+Lexema ya existe
+No. linea: 17 Punto y Coma: ;
+No. linea: 17 Identificador: y
+No. linea: 17 Operador igual: =
+No. linea: 17 Sentencia input: input
+No. linea: 17 Parentesis incial: (
+No. linea: 17 Parentesis final: )
+Lexema ya existe
+No. linea: 17 Punto y Coma: ;
+No. linea: 18 Sentencia output: output
+No. linea: 18 Parentesis incial: (
+No. linea: 18 Identificador: gcd
+No. linea: 18 Parentesis incial: (
+No. linea: 18 Identificador: x
+No. linea: 18 Coma: ,
+No. linea: 18 Identificador: y
+Lexema ya existe
+No. linea: 18 Parentesis final: )
+Lexema ya existe
+No. linea: 18 Parentesis final: )
+No. linea: 18 Punto y Coma: ;
+No. linea: 19 Llave final: }
+Tabla hash: 
+Lexema  Tipo Dato 	 Categoria 	 Tamano
+a	float	variable	0
+b	float	variable	0
+c	float	variable	0
+u	int	funcion	0
+v	int	funcion	0
+x	int	variable	0
+gcd	int	funcion	0
+y	int	variable	0
+main	void	funcion	0
+
+Analisis terminado!

@@ -3,7 +3,7 @@
 * A program to perform Euclid's algorithm to computer
 * the greates common denominator (GCD) of a pair of integers.
 */
-
+float a, b, c;
 int gcd(int u, int v)
 {
 	if(v==0) return u;

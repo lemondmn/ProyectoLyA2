@@ -1,10 +1,9 @@
 options {
 	Ignore_Case = false;
 	STATIC=false;
-	DEBUG_PARSER=true;
-	DEBUG_LOOKAHEAD=true;
+	//DEBUG_PARSER=true;
+	//DEBUG_LOOKAHEAD=true;
 }
-
 PARSER_BEGIN (Lexico)
 
 	import java.util.*;
@@ -127,7 +126,7 @@ PARSER_BEGIN (Lexico)
 
 			System.out.println("Tabla hash: ");
 			
-			System.out.println("Lexema \t Tipo de dato \t Categoria \t Tamano");
+			System.out.println("Lexema  Tipo Dato \t Categoria \t Tamano");
 			
 			for (String key : map.keySet()) {
 				System.out.println(map.get(key).getLexema() + "\t" + map.get(key).getTipoDato() + "\t" + map.get(key).getCategoria() + "\t" + map.get(key).getSize());
@@ -338,26 +337,44 @@ void declaration() : {}
 
 // 4
 
-void varDeclaration() : {}
+void varDeclaration() : {String typevar; String actualkey;}
 {
-	typeSpecifier() 
+	typeSpecifier(){
+		System.out.println("typeSpecifier:" + token.image);
+		typevar = token.image;
+	} 
 	<ID> 
 	{
-		DataObject d = new DataObject(token.image, "null", "variable", 0);
-		insert(token.image, d);
+		actualkey = token.image;
+		//DataObject d = new DataObject(token.image, typevar, "variable", 0);
+		//insert(token.image, d);
 	}
-	 varDeclarationPrime()
+	varDeclarationPrime(typevar, actualkey){System.out.println("varDeclarationPrime: " + token.image);}
 }
 
-void varDeclarationPrime() : {}
+void varDeclarationPrime(String typevar, String lastkey) : {}
 {
-	LOOKAHEAD(2) <SEMICOLON> | LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON> 
-	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>
+	LOOKAHEAD(2) <SEMICOLON>{
+		System.out.println("var " + typevar + " " + lastkey + " " + token.image);
+		DataObject d = new DataObject(lastkey, typevar, "variable", 0);
+		insert(lastkey, d);
+	} 
+	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON>{
+		System.out.println("var arr" + typevar + " " + lastkey + " " + token.image);
+		DataObject d = new DataObject(lastkey, typevar, "variable arreglo", 0);
+		insert(lastkey, d);
+	} 
+	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>{
+		System.out.println("var arr" + typevar + " " + lastkey + " " + token.image);
+		DataObject d = new DataObject(lastkey, typevar, "variable arreglo", 0);
+		insert(lastkey, d);
+	}
 	| LOOKAHEAD(2) 
 	  (<COMMA><ID>
 
 	  {
-		DataObject d = new DataObject(token.image, "null", "variable", 0);
+	  	System.out.println("var " + typevar + " " + token.image + " " + token.image);
+		DataObject d = new DataObject(token.image, typevar, "variable", 0);
 		insert(token.image, d);
 	  }
 
@@ -369,18 +386,21 @@ void varDeclarationPrime() : {}
 void typeSpecifier() : {}
 {
 	(
-		<INT> | <FLOAT> | <CHAR> | <VOID>
+		<INT> {System.out.println("Declaracion tipo: " + token.image);}
+		| <FLOAT> {System.out.println("Declaracion tipo: " + token.image);}
+		| <CHAR> {System.out.println("Declaracion tipo: " + token.image);}
+		| <VOID>{System.out.println("Declaracion tipo: " + token.image);}
 	)
 }
 
 // 6
 
-void funDeclaration() : {}
+void funDeclaration() : {String typevar;}
 {
-	typeSpecifier() 
+	typeSpecifier(){typevar = token.image;} 
 	<ID> 
 	{
-		DataObject d = new DataObject(token.image, "null", "funcion", 0);
+		DataObject d = new DataObject(token.image, typevar, "funcion", 0);
 		insert(token.image, d);
 	} 
 	<BRACKETOPEN> params() <BRACKETCLOSE> compoundStmt()
@@ -407,9 +427,15 @@ void paramListPrime() : {}
 
 // 9
 
-void param() : {}
+void param() : {String typevar;}
 {
-	typeSpecifier() <ID> paramPrime()
+	typeSpecifier(){typevar = token.image;} 
+	<ID> 
+	{
+		DataObject d = new DataObject(token.image, typevar, "parametro", 0);
+		insert(token.image, d);
+	}
+	paramPrime()
 }
 
 void paramPrime() : {}
@@ -512,8 +538,8 @@ void var() : {}
 	<ID>
 	
 	{
-		DataObject d = new DataObject(token.image, "null", "variable", 0);
-		insert(token.image, d);
+		//DataObject d = new DataObject(token.image, "null", "variable", 0);
+		//insert(token.image, d);
 	}
 
 	varPrime()
