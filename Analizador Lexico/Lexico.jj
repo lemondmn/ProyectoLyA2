@@ -28,6 +28,20 @@ PARSER_BEGIN (Lexico)
 				this.size = size;
 			}
 
+			public DataObject (String lexema, String tipoDato, String categoria) {
+				this.lexema = lexema;
+				this.tipoDato = tipoDato;
+				this.categoria = categoria;
+				size = 0;
+				
+				if(tipoDato == "float"){
+					size = 8;
+				}
+				if(tipoDato == "int"){
+					size = 4;
+				}
+			}
+
 			// getters y setters
 
 			public String getLexema () {
@@ -118,6 +132,20 @@ PARSER_BEGIN (Lexico)
 			}
 		}
 
+		static void sizePlusOne(String key){
+			if (map.containsKey(key))
+			{
+				DataObject d = map.get(key);
+				d.setSize(d.getSize() + 1);
+				map.remove(key);
+				map.put(key, d);
+			}
+			else
+			{
+				System.out.println("No Encontrado");
+			}	
+		}
+
 
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
@@ -126,10 +154,17 @@ PARSER_BEGIN (Lexico)
 
 			System.out.println("Tabla hash: ");
 			
-			System.out.println("Lexema  Tipo Dato \t Categoria \t Tamano");
+			System.out.println("Lexema\tTipo\tCategoria\tTamano");
 			
 			for (String key : map.keySet()) {
-				System.out.println(map.get(key).getLexema() + "\t" + map.get(key).getTipoDato() + "\t" + map.get(key).getCategoria() + "\t" + map.get(key).getSize());
+				String fixedSpacing = "\t";
+				String categ = map.get(key).getCategoria();
+				if(categ == "funcion" || categ == "arreglo"){
+					fixedSpacing = "\t\t";
+				}
+				System.out.println(map.get(key).getLexema() + "\t" + 
+					map.get(key).getTipoDato() + "\t" + 
+					categ + fixedSpacing + map.get(key).getSize());
 			}
 
 			System.out.println("\nAnalisis terminado!");
@@ -346,39 +381,38 @@ void varDeclaration() : {String typevar; String actualkey;}
 	<ID> 
 	{
 		actualkey = token.image;
-		//DataObject d = new DataObject(token.image, typevar, "variable", 0);
-		//insert(token.image, d);
 	}
 	varDeclarationPrime(typevar, actualkey){System.out.println("varDeclarationPrime: " + token.image);}
 }
 
-void varDeclarationPrime(String typevar, String lastkey) : {}
+void varDeclarationPrime(String typevar, String lastkey) : {int varsize;}
 {
 	LOOKAHEAD(2) <SEMICOLON>{
-		System.out.println("var " + typevar + " " + lastkey + " " + token.image);
-		DataObject d = new DataObject(lastkey, typevar, "variable", 0);
+		DataObject d = new DataObject(lastkey, typevar, "variable");
 		insert(lastkey, d);
 	} 
 	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON>{
-		System.out.println("var arr" + typevar + " " + lastkey + " " + token.image);
-		DataObject d = new DataObject(lastkey, typevar, "variable arreglo", 0);
+		DataObject d = new DataObject(lastkey, typevar, "arreglo");
 		insert(lastkey, d);
 	} 
-	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> <NUMENT> <SQUAREBRACKETCLOSE> <SEMICOLON>{
-		System.out.println("var arr" + typevar + " " + lastkey + " " + token.image);
-		DataObject d = new DataObject(lastkey, typevar, "variable arreglo", 0);
+	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> 
+	<NUMENT> {varsize = Integer.parseInt(token.image);}
+	<SQUAREBRACKETCLOSE> <SEMICOLON>{
+		DataObject d = new DataObject(lastkey, typevar, "arreglo", varsize);
 		insert(lastkey, d);
 	}
 	| LOOKAHEAD(2) 
 	  (<COMMA><ID>
 
 	  {
-	  	System.out.println("var " + typevar + " " + token.image + " " + token.image);
-		DataObject d = new DataObject(token.image, typevar, "variable", 0);
+		DataObject d = new DataObject(token.image, typevar, "variable");
 		insert(token.image, d);
 	  }
 
-	  )* <SEMICOLON>
+	  )* <SEMICOLON>{
+	  	DataObject d = new DataObject(lastkey, typevar, "variable");
+		insert(lastkey, d);
+	  }
 }
 
 // 5
@@ -386,54 +420,56 @@ void varDeclarationPrime(String typevar, String lastkey) : {}
 void typeSpecifier() : {}
 {
 	(
-		<INT> {System.out.println("Declaracion tipo: " + token.image);}
-		| <FLOAT> {System.out.println("Declaracion tipo: " + token.image);}
-		| <CHAR> {System.out.println("Declaracion tipo: " + token.image);}
-		| <VOID>{System.out.println("Declaracion tipo: " + token.image);}
+		<INT>
+		| <FLOAT>
+		| <CHAR>
+		| <VOID>
 	)
 }
 
 // 6
 
-void funDeclaration() : {String typevar;}
+void funDeclaration() : {String typevar; String actualkey;}
 {
 	typeSpecifier(){typevar = token.image;} 
 	<ID> 
 	{
+		actualkey = token.image;
 		DataObject d = new DataObject(token.image, typevar, "funcion", 0);
 		insert(token.image, d);
 	} 
-	<BRACKETOPEN> params() <BRACKETCLOSE> compoundStmt()
+	<BRACKETOPEN> params(actualkey) <BRACKETCLOSE> compoundStmt()
 }
 
 // 7
 
-void params() : {}
+void params(String actualkey) : {}
 {
-	(LOOKAHEAD(2) paramList() | LOOKAHEAD(2) <VOID>)
+	(LOOKAHEAD(2) paramList(actualkey) | LOOKAHEAD(2) <VOID>)
 }
 
 // 8
 
-void paramList() : {}
+void paramList(String actualkey) : {}
 {
-	param() paramListPrime()
+	param(actualkey) paramListPrime(actualkey)
 }
 
-void paramListPrime() : {}
+void paramListPrime(String actualkey) : {}
 {
-	<COMMA> param() paramListPrime() |{}
+	<COMMA> param(actualkey) paramListPrime(actualkey) |{}
 }
 
 // 9
 
-void param() : {String typevar;}
+void param(String actualkey) : {String typevar;}
 {
 	typeSpecifier(){typevar = token.image;} 
 	<ID> 
 	{
-		DataObject d = new DataObject(token.image, typevar, "parametro", 0);
+		DataObject d = new DataObject(token.image, typevar, "parametro");
 		insert(token.image, d);
+		sizePlusOne(actualkey);
 	}
 	paramPrime()
 }
