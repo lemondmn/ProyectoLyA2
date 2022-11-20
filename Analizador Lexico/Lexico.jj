@@ -170,9 +170,18 @@ PARSER_BEGIN (Lexico)
 		//Recibe el tipo aceptado, el recibido y el dato
 		//Devuelve error si no coinciden los tipos y son diferentes a cadena vacia
 		static void errorAsignation(String typeAsignation, String typeReceived, String asignation){
-			if(typeReceived != "typeAsignation" && typeReceived != ""){
-				System.out.println("\nERROR SEMANTICO!");
-				System.out.println("Variable de tipo incorrecto: " + asignation + "\n");
+			if(typeReceived != typeAsignation && typeReceived != ""){
+				System.out.println("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+				System.out.println("ERROR SEMANTICO!");
+				if(typeReceived == "null"){
+					System.out.println("Variable a asignar no delarada");
+				}
+				else {					
+					System.out.println("Variable de tipo incorrecto: " + asignation);
+					System.out.println("Tipo recibido: " + typeReceived);
+					System.out.println("Tipo correcto: " + typeAsignation);
+				}
+				System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 			}
 		}
 
@@ -426,8 +435,10 @@ void varDeclarationPrime(String typevar, String lastkey) : {int varsize;}
 	var() {
 		//System.out.println("arreglo variable: " + token.image);
 		if(!search(token.image)) {
-			System.out.println("\nERROR SEMANTICO!");
-			System.out.println("Variable " + token.image + " no declarada\n");
+			System.out.println("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+			System.out.println("ERROR SEMANTICO!");
+			System.out.println("Variable " + token.image + " no declarada");
+			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 		}
 	}
 	<SQUAREBRACKETCLOSE> <SEMICOLON>{
@@ -597,16 +608,19 @@ void returnStmtPrime() : {}
 
 // 18
 
-void expression(String type) : {String typevar;}
+void expression(String type) : {String varID; String typevar;}
 {
-	(LOOKAHEAD(5) var() {
-		if(!search(token.image)) {
+	(LOOKAHEAD(5) varID = var() {
+		System.out.println("expression -> varID: " + varID);
+		if(!search(varID)) {
 			typevar = "null";
-			System.out.println("\nERROR SEMANTICO!");
-			System.out.println("Variable " + token.image + " no declarada\n");
+			System.out.println("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+			System.out.println("ERROR SEMANTICO!");
+			System.out.println("Variable " + varID + " no declarada");
+			System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
 		}
 		else {
-			typevar = getObject(token.image).getTipoDato();
+			typevar = getObject(varID).getTipoDato();
 		}
 		System.out.println("tipo heredado: " + type);
 		System.out.println("tipo creado: " + typevar);
@@ -620,15 +634,17 @@ void expression(String type) : {String typevar;}
 
 // 19
 
-void var() : {}
+String var() : {String varID;}
 {
-	<ID>
-	varPrime()
+	<ID> {varID = token.image;}
+	varPrime() {
+		return varID;
+	}
 }
 
 void varPrime() : {}
 {
-	(<SQUAREBRACKETOPEN> expression("") <SQUAREBRACKETCLOSE>)*
+	(<SQUAREBRACKETOPEN> expression("int") <SQUAREBRACKETCLOSE>)*
 }
 
 // 20
@@ -690,26 +706,22 @@ void mulop() : {}
 
 // 26
 
-void factor(String type) : {}
+void factor(String type) : {String varID;}
 {
-	(LOOKAHEAD(2) <BRACKETOPEN> expression("") <BRACKETCLOSE> | LOOKAHEAD(2) call() 
-		| LOOKAHEAD(2) var() {
-			//System.out.println("Follow Var: " + token.image);
-			if(!search(token.image)) {
+	(LOOKAHEAD(2) <BRACKETOPEN> expression(type) <BRACKETCLOSE> 
+		| LOOKAHEAD(2) call() 
+		| LOOKAHEAD(2) varID = var() {
+			if(!search(varID)) {
 				System.out.println("\nERROR SEMANTICO!");
 				System.out.println("Variable " + token.image + " no declarada\n");
+			}
+			else{
+				errorAsignation(type, getObject(varID).getTipoDato(), varID);
 			}
 		}  
 		| LOOKAHEAD(2) <NUMENT> {errorAsignation("int", type, token.image);}
 		| LOOKAHEAD(2) <NUMREAL> {errorAsignation("float", type, token.image);}
-		| LOOKAHEAD(2) <SIMPLECHAR> {
-			errorAsignation("char", type, token.image);
-			/*if(type != "char" && type != ""){
-				System.out.println("\nERROR SEMANTICO!");
-				System.out.println("Variable de tipo incorrecto: " + token.image + "\n");
-			}*/
-			//System.out.println(token.image + "factor SIMPLECHAR: " + type);
-		})
+		| LOOKAHEAD(2) <SIMPLECHAR> {errorAsignation("char", type, token.image);})
 }
 
 // 27

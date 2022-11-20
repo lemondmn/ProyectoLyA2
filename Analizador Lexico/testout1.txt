@@ -18,8 +18,10 @@ No. linea: 8 Identificador: gft
 No. linea: 8 Corchete final: ]
 No Encontrado
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
 Variable gft no declarada
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 No. linea: 8 Punto y Coma: ;
 No. linea: 9 Declaracion int: int
@@ -38,147 +40,346 @@ No. linea: 9 Declaracion int: int
 No. linea: 9 Identificador: w1
 No. linea: 9 Parentesis final: )
 No. linea: 10 Llave incial: {
-No. linea: 11 Identificador: a
+No. linea: 11 Identificador: asd
+No. linea: 11 Corchete incial: [
+No. linea: 11 Numero entero: 0
+No. linea: 11 Corchete final: ]
 No. linea: 11 Operador igual: =
-No. linea: 11 Numero entero: 8
-No. linea: 11 Operador suma: +
-No. linea: 11 Numero entero: 6
+tipo heredado: int
+expression -> varID: asd
+Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+tipo heredado: 
+tipo creado: int
+No. linea: 11 Identificador: a
+No. linea: 11 Punto y Coma: ;
+Lexema: a Tipo Dato: float Categoria: variable tamano: 8
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: a
+Tipo recibido: float
+Tipo correcto: int
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+tipo heredado: int
+...= : a
+No. linea: 12 Identificador: asd
+No. linea: 12 Corchete incial: [
+No. linea: 12 Identificador: v
+No. linea: 12 Corchete final: ]
+No. linea: 12 Operador igual: =
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: int
+expression -> varID: asd
+Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+tipo heredado: 
+tipo creado: int
+No. linea: 12 Numero real: 34.9
+No. linea: 12 Operador suma: +
+No. linea: 12 Numero entero: 8
+No. linea: 12 Operador suma: +
+No. linea: 12 Numero real: 5.3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 34.9
+Tipo recibido: int
+Tipo correcto: float
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 5.3
+Tipo recibido: int
+Tipo correcto: float
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+No. linea: 12 Operador suma: +
+No. linea: 12 Numero entero: 46
+No. linea: 12 Operador resta: -
+No. linea: 12 Identificador: b
+No. linea: 12 Operador multiplicacion: *
+Lexema: b Tipo Dato: float Categoria: variable tamano: 8
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: b
+Tipo recibido: float
+Tipo correcto: int
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+No. linea: 12 Identificador: c
+No. linea: 12 Operador resta: -
+Lexema: c Tipo Dato: float Categoria: variable tamano: 8
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: c
+Tipo recibido: float
+Tipo correcto: int
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+No. linea: 12 Identificador: w
+No. linea: 12 Punto y Coma: ;
+Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: int
+...= : w
+No. linea: 13 Identificador: asd
+No. linea: 13 Corchete incial: [
+No. linea: 13 Identificador: w
+No. linea: 13 Corchete final: ]
+No. linea: 13 Operador igual: =
+Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: int
+expression -> varID: asd
+Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+tipo heredado: 
+tipo creado: int
+No. linea: 13 Numero entero: 9
+No. linea: 13 Punto y Coma: ;
+tipo heredado: int
+...= : 9
+No. linea: 14 Identificador: asd
+No. linea: 14 Corchete incial: [
+No. linea: 14 Numero entero: 3
+No. linea: 14 Corchete final: ]
+No. linea: 14 Operador igual: =
+tipo heredado: int
+expression -> varID: asd
+Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+tipo heredado: 
+tipo creado: int
+No. linea: 14 Identificador: u
+No. linea: 14 Punto y Coma: ;
+Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: int
+...= : u
+No. linea: 15 Identificador: a
+No. linea: 15 Operador igual: =
+No. linea: 15 Numero entero: 8
+No. linea: 15 Operador suma: +
+No. linea: 15 Numero real: 6.7
+expression -> varID: a
 Lexema: a Tipo Dato: float Categoria: variable tamano: 8
 tipo heredado: 
 tipo creado: float
-No. linea: 11 Operador suma: +
-No. linea: 11 Numero entero: 23
+No. linea: 15 Operador suma: +
+No. linea: 15 Numero entero: 23
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
 Variable de tipo incorrecto: 8
+Tipo recibido: float
+Tipo correcto: int
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
-ERROR SEMANTICO!
-Variable de tipo incorrecto: 6
-
-
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
 Variable de tipo incorrecto: 23
+Tipo recibido: float
+Tipo correcto: int
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-No. linea: 11 Punto y Coma: ;
+No. linea: 15 Punto y Coma: ;
 tipo heredado: float
 ...= : 23
-No. linea: 12 Identificador: aa
-No. linea: 12 Operador igual: =
-No. linea: 12 Numero entero: 6
-No. linea: 12 Punto y Coma: ;
+No. linea: 16 Identificador: aa
+No. linea: 16 Operador igual: =
+No. linea: 16 Numero entero: 6
+No. linea: 16 Punto y Coma: ;
+expression -> varID: aa
 No Encontrado
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
 Variable aa no declarada
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 tipo heredado: 
 tipo creado: null
 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
-Variable de tipo incorrecto: 6
+Variable a asignar no delarada
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 tipo heredado: null
 ...= : 6
-No. linea: 13 Declaracion if: if
-No. linea: 13 Parentesis incial: (
-No. linea: 13 Identificador: v
-No. linea: 13 Operador igual igual: ==
-No. linea: 13 Numero entero: 0
-No. linea: 13 Parentesis final: )
+No. linea: 17 Declaracion if: if
+No. linea: 17 Parentesis incial: (
+No. linea: 17 Identificador: v
+No. linea: 17 Operador igual igual: ==
+No. linea: 17 Numero entero: 0
+No. linea: 17 Parentesis final: )
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: v
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 tipo heredado: 
-No. linea: 13 Declaracion return: return
-No. linea: 13 Identificador: u
-No. linea: 13 Punto y Coma: ;
+No. linea: 17 Declaracion return: return
+No. linea: 17 Identificador: u
+No. linea: 17 Punto y Coma: ;
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: u
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 tipo heredado: 
-No. linea: 14 Declaracion else: else
-No. linea: 14 Declaracion return: return
-No. linea: 14 Identificador: gcd
-No. linea: 14 Parentesis incial: (
-No. linea: 14 Identificador: v
-No. linea: 14 Coma: ,
-No. linea: 14 Identificador: u
-Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
-tipo heredado: 
-No. linea: 14 Operador resta: -
-No. linea: 14 Identificador: u
-No. linea: 14 Operador division: /
-No. linea: 14 Identificador: v
-Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
-Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
-No. linea: 14 Operador multiplicacion: *
-Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
-No. linea: 14 Identificador: v
-No. linea: 14 Parentesis final: )
-Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
-tipo heredado: 
-No. linea: 14 Punto y Coma: ;
-tipo heredado: 
-No. linea: 16 Llave final: }
-No. linea: 18 Declaracion void: void
-No. linea: 18 Identificador: main
+No. linea: 18 Declaracion else: else
+No. linea: 18 Declaracion return: return
+No. linea: 18 Identificador: gcd
 No. linea: 18 Parentesis incial: (
-No. linea: 18 Declaracion float: float
-No. linea: 18 Identificador: m1
+No. linea: 18 Identificador: v
 No. linea: 18 Coma: ,
-No. linea: 18 Declaracion float: float
-No. linea: 18 Identificador: m2
-No. linea: 18 Coma: ,
-No. linea: 18 Declaracion float: float
-No. linea: 18 Identificador: m3
-No. linea: 18 Coma: ,
-No. linea: 18 Declaracion int: int
-No. linea: 18 Identificador: m4
-No. linea: 18 Coma: ,
-No. linea: 18 Declaracion int: int
-No. linea: 18 Identificador: m5
+No. linea: 18 Identificador: u
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: v
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+tipo heredado: 
+No. linea: 18 Operador resta: -
+No. linea: 18 Identificador: u
+No. linea: 18 Operador division: /
+No. linea: 18 Identificador: v
+Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: u
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: u
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+No. linea: 18 Operador multiplicacion: *
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: v
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+No. linea: 18 Identificador: v
 No. linea: 18 Parentesis final: )
-No. linea: 19 Llave incial: {
-No. linea: 20 Declaracion int: int
-No. linea: 20 Identificador: x
-No. linea: 20 Punto y Coma: ;
-No. linea: 20 Declaracion int: int
-No. linea: 20 Identificador: y
-No. linea: 20 Punto y Coma: ;
-No. linea: 21 Identificador: x
-No. linea: 21 Operador igual: =
-No. linea: 21 Sentencia input: input
-No. linea: 21 Parentesis incial: (
-No. linea: 21 Parentesis final: )
-Lexema: x Tipo Dato: int Categoria: variable tamano: 4
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: v
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 tipo heredado: 
-tipo creado: int
-...= : )
-No. linea: 21 Punto y Coma: ;
-No. linea: 21 Identificador: y
-No. linea: 21 Operador igual: =
-No. linea: 21 Sentencia input: input
-No. linea: 21 Parentesis incial: (
-No. linea: 21 Parentesis final: )
-Lexema: y Tipo Dato: int Categoria: variable tamano: 4
+No. linea: 18 Punto y Coma: ;
 tipo heredado: 
-tipo creado: int
-...= : )
-No. linea: 21 Punto y Coma: ;
-No. linea: 22 Sentencia output: output
+No. linea: 20 Llave final: }
+No. linea: 22 Declaracion void: void
+No. linea: 22 Identificador: main
 No. linea: 22 Parentesis incial: (
-No. linea: 22 Identificador: gcd
-No. linea: 22 Parentesis incial: (
-No. linea: 22 Identificador: x
+No. linea: 22 Declaracion float: float
+No. linea: 22 Identificador: m1
 No. linea: 22 Coma: ,
-No. linea: 22 Identificador: y
+No. linea: 22 Declaracion float: float
+No. linea: 22 Identificador: m2
+No. linea: 22 Coma: ,
+No. linea: 22 Declaracion float: float
+No. linea: 22 Identificador: m3
+No. linea: 22 Coma: ,
+No. linea: 22 Declaracion int: int
+No. linea: 22 Identificador: m4
+No. linea: 22 Coma: ,
+No. linea: 22 Declaracion int: int
+No. linea: 22 Identificador: m5
+No. linea: 22 Parentesis final: )
+No. linea: 23 Llave incial: {
+No. linea: 24 Declaracion int: int
+No. linea: 24 Identificador: x
+No. linea: 24 Punto y Coma: ;
+No. linea: 24 Declaracion int: int
+No. linea: 24 Identificador: y
+No. linea: 24 Punto y Coma: ;
+No. linea: 25 Identificador: x
+No. linea: 25 Operador igual: =
+No. linea: 25 Sentencia input: input
+No. linea: 25 Parentesis incial: (
+No. linea: 25 Parentesis final: )
+expression -> varID: x
 Lexema: x Tipo Dato: int Categoria: variable tamano: 4
 tipo heredado: 
-No. linea: 22 Parentesis final: )
+tipo creado: int
+...= : )
+No. linea: 25 Punto y Coma: ;
+No. linea: 25 Identificador: y
+No. linea: 25 Operador igual: =
+No. linea: 25 Sentencia input: input
+No. linea: 25 Parentesis incial: (
+No. linea: 25 Parentesis final: )
+expression -> varID: y
 Lexema: y Tipo Dato: int Categoria: variable tamano: 4
 tipo heredado: 
-No. linea: 22 Parentesis final: )
+tipo creado: int
+...= : )
+No. linea: 25 Punto y Coma: ;
+No. linea: 26 Sentencia output: output
+No. linea: 26 Parentesis incial: (
+No. linea: 26 Identificador: gcd
+No. linea: 26 Parentesis incial: (
+No. linea: 26 Identificador: x
+No. linea: 26 Coma: ,
+No. linea: 26 Identificador: y
+Lexema: x Tipo Dato: int Categoria: variable tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: x
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 tipo heredado: 
-No. linea: 22 Punto y Coma: ;
+No. linea: 26 Parentesis final: )
+Lexema: y Tipo Dato: int Categoria: variable tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: y
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 tipo heredado: 
-No. linea: 23 Llave final: }
+No. linea: 26 Parentesis final: )
+tipo heredado: 
+No. linea: 26 Punto y Coma: ;
+tipo heredado: 
+No. linea: 27 Llave final: }
 Tabla hash: 
 Lexema	Tipo	Categoria	Tamano	Valor
 a	float	variable	8	null
