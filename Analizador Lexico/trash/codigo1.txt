@@ -5,9 +5,11 @@
 */
 float a, b, c;
 int asd[3];
-float dsa[34];
+float dsa[gft];
 int gcd(int u, int v, int w, int w1)
 {
+	a=8+6+23;
+	aa=6;
 	if(v==0) return u;
 	else return gcd(v,u-u/v*v);
 	/* u-u/v*v == u mod v */

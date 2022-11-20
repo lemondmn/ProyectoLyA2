@@ -18,14 +18,24 @@ PARSER_BEGIN (Lexico)
 			String tipoDato;
 			String categoria;
 			int size;
+			String valor;
 
 			// constructor
+
+			public DataObject (String lexema, String tipoDato, String categoria, int size, String valor) {
+				this.lexema = lexema;
+				this.tipoDato = tipoDato;
+				this.categoria = categoria;
+				this.size = size;
+				this.valor = valor;
+			}
 
 			public DataObject (String lexema, String tipoDato, String categoria, int size) {
 				this.lexema = lexema;
 				this.tipoDato = tipoDato;
 				this.categoria = categoria;
 				this.size = size;
+				valor = "null";
 			}
 
 			public DataObject (String lexema, String tipoDato, String categoria) {
@@ -33,6 +43,7 @@ PARSER_BEGIN (Lexico)
 				this.tipoDato = tipoDato;
 				this.categoria = categoria;
 				size = 0;
+				valor = "null";
 				
 				if(tipoDato == "float"){
 					size = 8;
@@ -76,23 +87,33 @@ PARSER_BEGIN (Lexico)
 				this.size = size;
 			}
 
+			public String getValor () {
+				return valor;
+			}
+
+			public void setValor (String valor) {
+				this.valor = valor;
+			}
+
 		}
 
 		static HashMap<String, DataObject> map = new HashMap<String, DataObject>();
 
 		// HashMap Functions
 
-		static void search (String key)
+		static boolean search (String key)
 		{
 			if (map.containsKey(key))
 			{
 				DataObject d = map.get(key);
 				System.out.println("Lexema: " + d.getLexema() + " Tipo Dato: " + d.getTipoDato() + " Categoria: " + d.getCategoria() + " tamano: " + d.getSize());
+				return true;
 			}
 			else
 			{
 				System.out.println("No Encontrado");
 			}
+			return false;
 		}
 
 		static void insert(String key, DataObject d)
@@ -146,6 +167,15 @@ PARSER_BEGIN (Lexico)
 			}	
 		}
 
+		//Recibe el tipo aceptado, el recibido y el dato
+		//Devuelve error si no coinciden los tipos y son diferentes a cadena vacia
+		static void errorAsignation(String typeAsignation, String typeReceived, String asignation){
+			if(typeReceived != "typeAsignation" && typeReceived != ""){
+				System.out.println("\nERROR SEMANTICO!");
+				System.out.println("Variable de tipo incorrecto: " + asignation + "\n");
+			}
+		}
+
 
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
@@ -154,7 +184,7 @@ PARSER_BEGIN (Lexico)
 
 			System.out.println("Tabla hash: ");
 			
-			System.out.println("Lexema\tTipo\tCategoria\tTamano");
+			System.out.println("Lexema\tTipo\tCategoria\tTamano\tValor");
 			
 			for (String key : map.keySet()) {
 				String fixedSpacing = "\t";
@@ -164,7 +194,8 @@ PARSER_BEGIN (Lexico)
 				}
 				System.out.println(map.get(key).getLexema() + "\t" + 
 					map.get(key).getTipoDato() + "\t" + 
-					categ + fixedSpacing + map.get(key).getSize());
+					categ + fixedSpacing + map.get(key).getSize() + "\t" +
+					map.get(key).getValor());
 			}
 
 			System.out.println("\nAnalisis terminado!");
@@ -375,14 +406,14 @@ void declaration() : {}
 void varDeclaration() : {String typevar; String actualkey;}
 {
 	typeSpecifier(){
-		System.out.println("typeSpecifier:" + token.image);
+		//System.out.println("typeSpecifier:" + token.image);
 		typevar = token.image;
 	} 
 	<ID> 
 	{
 		actualkey = token.image;
 	}
-	varDeclarationPrime(typevar, actualkey){System.out.println("varDeclarationPrime: " + token.image);}
+	varDeclarationPrime(typevar, actualkey)
 }
 
 void varDeclarationPrime(String typevar, String lastkey) : {int varsize;}
@@ -391,7 +422,15 @@ void varDeclarationPrime(String typevar, String lastkey) : {int varsize;}
 		DataObject d = new DataObject(lastkey, typevar, "variable");
 		insert(lastkey, d);
 	} 
-	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> var() <SQUAREBRACKETCLOSE> <SEMICOLON>{
+	| LOOKAHEAD(2) <SQUAREBRACKETOPEN> 
+	var() {
+		//System.out.println("arreglo variable: " + token.image);
+		if(!search(token.image)) {
+			System.out.println("\nERROR SEMANTICO!");
+			System.out.println("Variable " + token.image + " no declarada\n");
+		}
+	}
+	<SQUAREBRACKETCLOSE> <SEMICOLON>{
 		DataObject d = new DataObject(lastkey, typevar, "arreglo");
 		insert(lastkey, d);
 	} 
@@ -522,14 +561,14 @@ void statement() : {}
 
 void expressionStmt() : {}
 {
-	expression() <SEMICOLON> | <SEMICOLON>
+	expression("") <SEMICOLON> | <SEMICOLON>
 }
 
 // 15
 
 void selectionStmt() : {}
 {
-	<IF> <BRACKETOPEN> expression() <BRACKETCLOSE> statement() selectionStmtPrime()
+	<IF> <BRACKETOPEN> expression("") <BRACKETCLOSE> statement() selectionStmtPrime()
 }
 
 void selectionStmtPrime() : {}
@@ -541,7 +580,7 @@ void selectionStmtPrime() : {}
 
 void iterationStmt() : {}
 {
-	<WHILE> <BRACKETOPEN> expression() <BRACKETCLOSE> statement()
+	<WHILE> <BRACKETOPEN> expression("") <BRACKETCLOSE> statement()
 }
 
 // 17
@@ -553,16 +592,28 @@ void returnStmt() : {}
 
 void returnStmtPrime() : {}
 {
-	<SEMICOLON> | expression() <SEMICOLON>
+	<SEMICOLON> | expression("") <SEMICOLON>
 }
 
 // 18
 
-void expression() : {}
+void expression(String type) : {String typevar;}
 {
-	(LOOKAHEAD(5) var() <EQUIVALENCE> expression()
+	(LOOKAHEAD(5) var() {
+		if(!search(token.image)) {
+			typevar = "null";
+			System.out.println("\nERROR SEMANTICO!");
+			System.out.println("Variable " + token.image + " no declarada\n");
+		}
+		else {
+			typevar = getObject(token.image).getTipoDato();
+		}
+		System.out.println("tipo heredado: " + type);
+		System.out.println("tipo creado: " + typevar);
+	} 
+		<EQUIVALENCE> expression(typevar) {System.out.println("...= : " + token.image);}
 	|
-	LOOKAHEAD(5) simpleExpression() 
+	LOOKAHEAD(5) simpleExpression(type) {System.out.println("tipo heredado: " + type);}
 	|
 	LOOKAHEAD(5) <INPUT> <BRACKETOPEN> <BRACKETCLOSE>)
 }
@@ -572,30 +623,24 @@ void expression() : {}
 void var() : {}
 {
 	<ID>
-	
-	{
-		//DataObject d = new DataObject(token.image, "null", "variable", 0);
-		//insert(token.image, d);
-	}
-
 	varPrime()
 }
 
 void varPrime() : {}
 {
-	(<SQUAREBRACKETOPEN> expression() <SQUAREBRACKETCLOSE>)*
+	(<SQUAREBRACKETOPEN> expression("") <SQUAREBRACKETCLOSE>)*
 }
 
 // 20
 
-void simpleExpression() : {}
+void simpleExpression(String type) : {}
 {
-	additiveExpression() simpleExpressionPrime()
+	additiveExpression(type) simpleExpressionPrime(type)
 }
 
-void simpleExpressionPrime() : {}
+void simpleExpressionPrime(String type) : {}
 {
-	(relop() additiveExpression())*
+	(relop() additiveExpression(type))*
 }
 
 // 21
@@ -607,14 +652,14 @@ void relop() : {}
 
 // 22
 
-void additiveExpression() : {}
+void additiveExpression(String type) : {}
 {
-	term() additiveExpressionPrime()
+	term(type) additiveExpressionPrime(type)
 }
 
-void additiveExpressionPrime() : {}
+void additiveExpressionPrime(String type) : {}
 {
-	addop() term() additiveExpressionPrime() | {}
+	addop() term(type) additiveExpressionPrime(type) | {}
 }
 
 // 23
@@ -626,14 +671,14 @@ void addop() : {}
 
 // 24
 
-void term() : {}
+void term(String type) : {}
 {
-	factor() termPrime()
+	factor(type) termPrime(type)
 }
 
-void termPrime() : {}
+void termPrime(String type) : {}
 {
-	mulop() factor() termPrime() | {}
+	mulop() factor(type) termPrime(type) | {}
 }
 
 // 25
@@ -645,10 +690,26 @@ void mulop() : {}
 
 // 26
 
-void factor() : {}
+void factor(String type) : {}
 {
-	(LOOKAHEAD(2) <BRACKETOPEN> expression() <BRACKETCLOSE> | LOOKAHEAD(2) call() | LOOKAHEAD(2) var() |
-	 LOOKAHEAD(2) <NUMENT> | LOOKAHEAD(2) <NUMREAL> | LOOKAHEAD(2) <SIMPLECHAR>)
+	(LOOKAHEAD(2) <BRACKETOPEN> expression("") <BRACKETCLOSE> | LOOKAHEAD(2) call() 
+		| LOOKAHEAD(2) var() {
+			//System.out.println("Follow Var: " + token.image);
+			if(!search(token.image)) {
+				System.out.println("\nERROR SEMANTICO!");
+				System.out.println("Variable " + token.image + " no declarada\n");
+			}
+		}  
+		| LOOKAHEAD(2) <NUMENT> {errorAsignation("int", type, token.image);}
+		| LOOKAHEAD(2) <NUMREAL> {errorAsignation("float", type, token.image);}
+		| LOOKAHEAD(2) <SIMPLECHAR> {
+			errorAsignation("char", type, token.image);
+			/*if(type != "char" && type != ""){
+				System.out.println("\nERROR SEMANTICO!");
+				System.out.println("Variable de tipo incorrecto: " + token.image + "\n");
+			}*/
+			//System.out.println(token.image + "factor SIMPLECHAR: " + type);
+		})
 }
 
 // 27
@@ -669,10 +730,10 @@ void args() : {}
 
 void argList() : {}
 {
-	expression() argListPrime()
+	expression("") argListPrime()
 }
 
 void argListPrime() : {}
 {
-	<COMMA> expression() argListPrime() | {}
+	<COMMA> expression("") argListPrime() | {}
 }

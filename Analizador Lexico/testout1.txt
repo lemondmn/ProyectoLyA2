@@ -1,28 +1,27 @@
 No. linea: 6 Declaracion float: float
 No. linea: 6 Identificador: a
 No. linea: 6 Coma: ,
-typeSpecifier:float
 No. linea: 6 Identificador: b
 No. linea: 6 Coma: ,
 No. linea: 6 Identificador: c
 No. linea: 6 Punto y Coma: ;
-varDeclarationPrime: ;
 No. linea: 7 Declaracion int: int
 No. linea: 7 Identificador: asd
 No. linea: 7 Corchete incial: [
-typeSpecifier:int
 No. linea: 7 Numero entero: 3
 No. linea: 7 Corchete final: ]
 No. linea: 7 Punto y Coma: ;
-varDeclarationPrime: ;
 No. linea: 8 Declaracion float: float
 No. linea: 8 Identificador: dsa
 No. linea: 8 Corchete incial: [
-typeSpecifier:float
-No. linea: 8 Numero entero: 34
+No. linea: 8 Identificador: gft
 No. linea: 8 Corchete final: ]
+No Encontrado
+
+ERROR SEMANTICO!
+Variable gft no declarada
+
 No. linea: 8 Punto y Coma: ;
-varDeclarationPrime: ;
 No. linea: 9 Declaracion int: int
 No. linea: 9 Identificador: gcd
 No. linea: 9 Parentesis incial: (
@@ -39,102 +38,166 @@ No. linea: 9 Declaracion int: int
 No. linea: 9 Identificador: w1
 No. linea: 9 Parentesis final: )
 No. linea: 10 Llave incial: {
-No. linea: 11 Declaracion if: if
-No. linea: 11 Parentesis incial: (
-No. linea: 11 Identificador: v
-No. linea: 11 Operador igual igual: ==
-No. linea: 11 Numero entero: 0
-No. linea: 11 Parentesis final: )
-No. linea: 11 Declaracion return: return
-No. linea: 11 Identificador: u
+No. linea: 11 Identificador: a
+No. linea: 11 Operador igual: =
+No. linea: 11 Numero entero: 8
+No. linea: 11 Operador suma: +
+No. linea: 11 Numero entero: 6
+Lexema: a Tipo Dato: float Categoria: variable tamano: 8
+tipo heredado: 
+tipo creado: float
+No. linea: 11 Operador suma: +
+No. linea: 11 Numero entero: 23
+
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 8
+
+
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 6
+
+
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 23
+
 No. linea: 11 Punto y Coma: ;
-No. linea: 12 Declaracion else: else
-No. linea: 12 Declaracion return: return
-No. linea: 12 Identificador: gcd
-No. linea: 12 Parentesis incial: (
-No. linea: 12 Identificador: v
-No. linea: 12 Coma: ,
-No. linea: 12 Identificador: u
-No. linea: 12 Operador resta: -
-No. linea: 12 Identificador: u
-No. linea: 12 Operador division: /
-No. linea: 12 Identificador: v
-No. linea: 12 Operador multiplicacion: *
-No. linea: 12 Identificador: v
-No. linea: 12 Parentesis final: )
+tipo heredado: float
+...= : 23
+No. linea: 12 Identificador: aa
+No. linea: 12 Operador igual: =
+No. linea: 12 Numero entero: 6
 No. linea: 12 Punto y Coma: ;
-No. linea: 14 Llave final: }
-No. linea: 16 Declaracion void: void
-No. linea: 16 Identificador: main
-No. linea: 16 Parentesis incial: (
-No. linea: 16 Declaracion float: float
-No. linea: 16 Identificador: m1
-No. linea: 16 Coma: ,
-No. linea: 16 Declaracion float: float
-No. linea: 16 Identificador: m2
-No. linea: 16 Coma: ,
-No. linea: 16 Declaracion float: float
-No. linea: 16 Identificador: m3
-No. linea: 16 Coma: ,
-No. linea: 16 Declaracion int: int
-No. linea: 16 Identificador: m4
-No. linea: 16 Coma: ,
-No. linea: 16 Declaracion int: int
-No. linea: 16 Identificador: m5
-No. linea: 16 Parentesis final: )
-No. linea: 17 Llave incial: {
+No Encontrado
+
+ERROR SEMANTICO!
+Variable aa no declarada
+
+tipo heredado: 
+tipo creado: null
+
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 6
+
+tipo heredado: null
+...= : 6
+No. linea: 13 Declaracion if: if
+No. linea: 13 Parentesis incial: (
+No. linea: 13 Identificador: v
+No. linea: 13 Operador igual igual: ==
+No. linea: 13 Numero entero: 0
+No. linea: 13 Parentesis final: )
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: 
+No. linea: 13 Declaracion return: return
+No. linea: 13 Identificador: u
+No. linea: 13 Punto y Coma: ;
+Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: 
+No. linea: 14 Declaracion else: else
+No. linea: 14 Declaracion return: return
+No. linea: 14 Identificador: gcd
+No. linea: 14 Parentesis incial: (
+No. linea: 14 Identificador: v
+No. linea: 14 Coma: ,
+No. linea: 14 Identificador: u
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: 
+No. linea: 14 Operador resta: -
+No. linea: 14 Identificador: u
+No. linea: 14 Operador division: /
+No. linea: 14 Identificador: v
+Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+No. linea: 14 Operador multiplicacion: *
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+No. linea: 14 Identificador: v
+No. linea: 14 Parentesis final: )
+Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+tipo heredado: 
+No. linea: 14 Punto y Coma: ;
+tipo heredado: 
+No. linea: 16 Llave final: }
+No. linea: 18 Declaracion void: void
+No. linea: 18 Identificador: main
+No. linea: 18 Parentesis incial: (
+No. linea: 18 Declaracion float: float
+No. linea: 18 Identificador: m1
+No. linea: 18 Coma: ,
+No. linea: 18 Declaracion float: float
+No. linea: 18 Identificador: m2
+No. linea: 18 Coma: ,
+No. linea: 18 Declaracion float: float
+No. linea: 18 Identificador: m3
+No. linea: 18 Coma: ,
 No. linea: 18 Declaracion int: int
-typeSpecifier:int
-No. linea: 18 Identificador: x
-No. linea: 18 Punto y Coma: ;
-varDeclarationPrime: ;
+No. linea: 18 Identificador: m4
+No. linea: 18 Coma: ,
 No. linea: 18 Declaracion int: int
-typeSpecifier:int
-No. linea: 18 Identificador: y
-No. linea: 18 Punto y Coma: ;
-varDeclarationPrime: ;
-No. linea: 19 Identificador: x
-No. linea: 19 Operador igual: =
-No. linea: 19 Sentencia input: input
-No. linea: 19 Parentesis incial: (
-No. linea: 19 Parentesis final: )
-No. linea: 19 Punto y Coma: ;
-No. linea: 19 Identificador: y
-No. linea: 19 Operador igual: =
-No. linea: 19 Sentencia input: input
-No. linea: 19 Parentesis incial: (
-No. linea: 19 Parentesis final: )
-No. linea: 19 Punto y Coma: ;
-No. linea: 20 Sentencia output: output
-No. linea: 20 Parentesis incial: (
-No. linea: 20 Identificador: gcd
-No. linea: 20 Parentesis incial: (
+No. linea: 18 Identificador: m5
+No. linea: 18 Parentesis final: )
+No. linea: 19 Llave incial: {
+No. linea: 20 Declaracion int: int
 No. linea: 20 Identificador: x
-No. linea: 20 Coma: ,
-No. linea: 20 Identificador: y
-No. linea: 20 Parentesis final: )
-No. linea: 20 Parentesis final: )
 No. linea: 20 Punto y Coma: ;
-No. linea: 21 Llave final: }
+No. linea: 20 Declaracion int: int
+No. linea: 20 Identificador: y
+No. linea: 20 Punto y Coma: ;
+No. linea: 21 Identificador: x
+No. linea: 21 Operador igual: =
+No. linea: 21 Sentencia input: input
+No. linea: 21 Parentesis incial: (
+No. linea: 21 Parentesis final: )
+Lexema: x Tipo Dato: int Categoria: variable tamano: 4
+tipo heredado: 
+tipo creado: int
+...= : )
+No. linea: 21 Punto y Coma: ;
+No. linea: 21 Identificador: y
+No. linea: 21 Operador igual: =
+No. linea: 21 Sentencia input: input
+No. linea: 21 Parentesis incial: (
+No. linea: 21 Parentesis final: )
+Lexema: y Tipo Dato: int Categoria: variable tamano: 4
+tipo heredado: 
+tipo creado: int
+...= : )
+No. linea: 21 Punto y Coma: ;
+No. linea: 22 Sentencia output: output
+No. linea: 22 Parentesis incial: (
+No. linea: 22 Identificador: gcd
+No. linea: 22 Parentesis incial: (
+No. linea: 22 Identificador: x
+No. linea: 22 Coma: ,
+No. linea: 22 Identificador: y
+Lexema: x Tipo Dato: int Categoria: variable tamano: 4
+tipo heredado: 
+No. linea: 22 Parentesis final: )
+Lexema: y Tipo Dato: int Categoria: variable tamano: 4
+tipo heredado: 
+No. linea: 22 Parentesis final: )
+tipo heredado: 
+No. linea: 22 Punto y Coma: ;
+tipo heredado: 
+No. linea: 23 Llave final: }
 Tabla hash: 
-Lexema	Tipo	Categoria	Tamano
-a	float	variable	8
-b	float	variable	8
-c	float	variable	8
-m1	float	parametro	8
-m2	float	parametro	8
-m3	float	parametro	8
-m4	int	parametro	4
-m5	int	parametro	4
-gcd	int	funcion		4
-main	void	funcion		5
-asd	int	arreglo		3
-dsa	float	arreglo		34
-u	int	parametro	4
-v	int	parametro	4
-w	int	parametro	4
-x	int	variable	4
-y	int	variable	4
-w1	int	parametro	4
+Lexema	Tipo	Categoria	Tamano	Valor
+a	float	variable	8	null
+b	float	variable	8	null
+c	float	variable	8	null
+m1	float	parametro	8	null
+m2	float	parametro	8	null
+m3	float	parametro	8	null
+m4	int	parametro	4	null
+m5	int	parametro	4	null
+gcd	int	funcion		4	null
+main	void	funcion		5	null
+asd	int	arreglo		3	null
+dsa	float	arreglo		8	null
+u	int	parametro	4	null
+v	int	parametro	4	null
+w	int	parametro	4	null
+x	int	variable	4	null
+y	int	variable	4	null
+w1	int	parametro	4	null
 
 Analisis terminado!
