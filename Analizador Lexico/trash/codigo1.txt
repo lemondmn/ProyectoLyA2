@@ -5,10 +5,10 @@
 */
 float a, b, c;
 int asd[3];
-float dsa[gft];
+int dsa[gft];
 int gcd(int u, int v, int w, int w1)
 {
-	asd [0] = a;
+	dsa [0] = a;
 	asd [v] = 34.9 + 8 + 5.3 + 46 - b * c - w;
 	asd [w] = 9;
 	asd [3] = u;

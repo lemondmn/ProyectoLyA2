@@ -11,10 +11,12 @@ No. linea: 7 Corchete incial: [
 No. linea: 7 Numero entero: 3
 No. linea: 7 Corchete final: ]
 No. linea: 7 Punto y Coma: ;
-No. linea: 8 Declaracion float: float
+No. linea: 8 Declaracion int: int
 No. linea: 8 Identificador: dsa
 No. linea: 8 Corchete incial: [
 No. linea: 8 Identificador: gft
+No Encontrado
+Array size: -1
 No. linea: 8 Corchete final: ]
 No Encontrado
 
@@ -40,18 +42,25 @@ No. linea: 9 Declaracion int: int
 No. linea: 9 Identificador: w1
 No. linea: 9 Parentesis final: )
 No. linea: 10 Llave incial: {
-No. linea: 11 Identificador: asd
+No. linea: 11 Identificador: dsa
 No. linea: 11 Corchete incial: [
 No. linea: 11 Numero entero: 0
 No. linea: 11 Corchete final: ]
 No. linea: 11 Operador igual: =
+Array existe...
+d.getCategoria(): arreglo
+Array tamaño: 4
+Array size: 4
 tipo heredado: int
-expression -> varID: asd
-Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+expression -> varID: dsa
+Lexema: dsa Tipo Dato: int Categoria: arreglo tamano: 4
 tipo heredado: 
 tipo creado: int
 No. linea: 11 Identificador: a
 No. linea: 11 Punto y Coma: ;
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 Lexema: a Tipo Dato: float Categoria: variable tamano: 8
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -68,6 +77,13 @@ No. linea: 12 Corchete incial: [
 No. linea: 12 Identificador: v
 No. linea: 12 Corchete final: ]
 No. linea: 12 Operador igual: =
+Array existe...
+d.getCategoria(): arreglo
+Array tamaño: 3
+Array size: 3
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
 tipo heredado: int
 expression -> varID: asd
@@ -100,6 +116,9 @@ No. linea: 12 Numero entero: 46
 No. linea: 12 Operador resta: -
 No. linea: 12 Identificador: b
 No. linea: 12 Operador multiplicacion: *
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 Lexema: b Tipo Dato: float Categoria: variable tamano: 8
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -111,6 +130,9 @@ Tipo correcto: int
 
 No. linea: 12 Identificador: c
 No. linea: 12 Operador resta: -
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 Lexema: c Tipo Dato: float Categoria: variable tamano: 8
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -122,6 +144,9 @@ Tipo correcto: int
 
 No. linea: 12 Identificador: w
 No. linea: 12 Punto y Coma: ;
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
 tipo heredado: int
 ...= : w
@@ -130,6 +155,13 @@ No. linea: 13 Corchete incial: [
 No. linea: 13 Identificador: w
 No. linea: 13 Corchete final: ]
 No. linea: 13 Operador igual: =
+Array existe...
+d.getCategoria(): arreglo
+Array tamaño: 3
+Array size: 3
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
 tipo heredado: int
 expression -> varID: asd
@@ -145,6 +177,10 @@ No. linea: 14 Corchete incial: [
 No. linea: 14 Numero entero: 3
 No. linea: 14 Corchete final: ]
 No. linea: 14 Operador igual: =
+Array existe...
+d.getCategoria(): arreglo
+Array tamaño: 3
+Array size: 3
 tipo heredado: int
 expression -> varID: asd
 Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
@@ -152,6 +188,9 @@ tipo heredado:
 tipo creado: int
 No. linea: 14 Identificador: u
 No. linea: 14 Punto y Coma: ;
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
 tipo heredado: int
 ...= : u
@@ -160,6 +199,9 @@ No. linea: 15 Operador igual: =
 No. linea: 15 Numero entero: 8
 No. linea: 15 Operador suma: +
 No. linea: 15 Numero real: 6.7
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 expression -> varID: a
 Lexema: a Tipo Dato: float Categoria: variable tamano: 8
 tipo heredado: 
@@ -189,6 +231,8 @@ No. linea: 16 Identificador: aa
 No. linea: 16 Operador igual: =
 No. linea: 16 Numero entero: 6
 No. linea: 16 Punto y Coma: ;
+No Encontrado
+Array size: -1
 expression -> varID: aa
 No Encontrado
 
@@ -213,6 +257,9 @@ No. linea: 17 Identificador: v
 No. linea: 17 Operador igual igual: ==
 No. linea: 17 Numero entero: 0
 No. linea: 17 Parentesis final: )
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -226,6 +273,9 @@ tipo heredado:
 No. linea: 17 Declaracion return: return
 No. linea: 17 Identificador: u
 No. linea: 17 Punto y Coma: ;
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -243,6 +293,9 @@ No. linea: 18 Parentesis incial: (
 No. linea: 18 Identificador: v
 No. linea: 18 Coma: ,
 No. linea: 18 Identificador: u
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -257,6 +310,9 @@ No. linea: 18 Operador resta: -
 No. linea: 18 Identificador: u
 No. linea: 18 Operador division: /
 No. linea: 18 Identificador: v
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -266,6 +322,9 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -276,6 +335,9 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 No. linea: 18 Operador multiplicacion: *
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -287,6 +349,9 @@ Tipo correcto:
 
 No. linea: 18 Identificador: v
 No. linea: 18 Parentesis final: )
+Array existe...
+d.getCategoria(): parametro
+Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -330,6 +395,9 @@ No. linea: 25 Operador igual: =
 No. linea: 25 Sentencia input: input
 No. linea: 25 Parentesis incial: (
 No. linea: 25 Parentesis final: )
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 expression -> varID: x
 Lexema: x Tipo Dato: int Categoria: variable tamano: 4
 tipo heredado: 
@@ -341,6 +409,9 @@ No. linea: 25 Operador igual: =
 No. linea: 25 Sentencia input: input
 No. linea: 25 Parentesis incial: (
 No. linea: 25 Parentesis final: )
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 expression -> varID: y
 Lexema: y Tipo Dato: int Categoria: variable tamano: 4
 tipo heredado: 
@@ -354,6 +425,9 @@ No. linea: 26 Parentesis incial: (
 No. linea: 26 Identificador: x
 No. linea: 26 Coma: ,
 No. linea: 26 Identificador: y
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 Lexema: x Tipo Dato: int Categoria: variable tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -365,6 +439,9 @@ Tipo correcto:
 
 tipo heredado: 
 No. linea: 26 Parentesis final: )
+Array existe...
+d.getCategoria(): variable
+Array size: -1
 Lexema: y Tipo Dato: int Categoria: variable tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -393,7 +470,7 @@ m5	int	parametro	4	null
 gcd	int	funcion		4	null
 main	void	funcion		5	null
 asd	int	arreglo		3	null
-dsa	float	arreglo		8	null
+dsa	int	arreglo		4	null
 u	int	parametro	4	null
 v	int	parametro	4	null
 w	int	parametro	4	null

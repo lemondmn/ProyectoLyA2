@@ -185,6 +185,27 @@ PARSER_BEGIN (Lexico)
 			}
 		}
 
+		//Si la variable es un arreglo devulve su tamaño, si no devuleve -1
+		static int getArraySize(String key){
+			if (map.containsKey(key))
+			{
+				System.out.println("Array existe...");
+				DataObject d = getObject(key);
+				System.out.println("d.getCategoria(): " + d.getCategoria());
+				if (d.getCategoria() == "arreglo"){
+					System.out.println("Array tamaño: " + d.getSize());
+					int arraySize = d.getSize();
+					return arraySize;
+				}
+			}
+			else
+			{
+				System.out.println("No Encontrado");
+			}
+			//System.out.println("No es array");
+			return -1;
+		}
+
 
 		public static void main (String[] args) throws ParseException {
 			Lexico anLex = new Lexico(System.in);
@@ -636,7 +657,10 @@ void expression(String type) : {String varID; String typevar;}
 
 String var() : {String varID;}
 {
-	<ID> {varID = token.image;}
+	<ID> {
+		varID = token.image;
+		System.out.println("Array size: " + getArraySize(varID));
+	}
 	varPrime() {
 		return varID;
 	}
