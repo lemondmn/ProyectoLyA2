@@ -53,6 +53,14 @@ PARSER_BEGIN (Lexico)
 				}
 			}
 
+			public DataObject () {
+				this.lexema = "null";
+				this.tipoDato = "null";
+				this.categoria = "null";
+				size = 0;
+				valor = "null";
+			}
+
 			// getters y setters
 
 			public String getLexema () {
@@ -167,6 +175,70 @@ PARSER_BEGIN (Lexico)
 			}	
 		}
 
+		static void overwriteValor(String key, String newVal){
+			if (map.containsKey(key))
+			{
+				DataObject d = map.get(key);
+				d.setValor(newVal);
+				map.remove(key);
+				map.put(key, d);
+			}
+			else
+			{
+				System.out.println("No Encontrado");
+			}
+		}
+
+		//Crea un burrito que acarrea los valores obtenidos en una expresion
+		static void createBurrito(DataObject burrito, String tipoBurrito){
+			if (!search("0")) {
+				burrito.setLexema("0");
+				burrito.setTipoDato(tipoBurrito);
+				burrito.setCategoria("burrito");
+				burrito.setSize(16);
+				burrito.setValor("0");
+				insert(burrito.getLexema(), burrito);
+				System.out.println("Un burrito a nacido");
+			}
+			else {
+				System.out.println("En este establo solo cabe 1 burrito");
+			}
+		}
+
+		//Asesina a sangre fria al burrito
+		static void killBurrito(){
+			if (search("0")) {
+				System.out.println("Valor burrito: " + getObject("0").getValor());
+				delete("0");
+				System.out.println("Un burrito a muerto");
+			}
+			else {
+				System.out.println("Usted no tiene burritos");
+			}	
+		}
+
+		//Realiza una operacion y actualiza el valor del burrito
+		static void operacionBurrito(String operationVar, int operation, String typevar){
+			if (search("0")) {
+				int valuevar = Integer.parseInt(operationVar);
+				int total = Integer.parseInt(getObject("0").getValor());
+				if(operationVar == "null"){
+					valuevar = 0;
+				}
+				switch(operation){
+				case 1: //suma
+					total = total + valuevar;
+					break;
+				case 2: //resta
+					total = total - valuevar;
+					break;
+				default:
+					break;
+				}
+				overwriteValor("0", "" + total);
+			}
+		}
+
 		//Recibe el tipo aceptado, el recibido y el dato
 		//Devuelve error si no coinciden los tipos y son diferentes a cadena vacia
 		static void errorAsignation(String typeAsignation, String typeReceived, String asignation){
@@ -189,7 +261,7 @@ PARSER_BEGIN (Lexico)
 		static int getArraySize(String key){
 			if (map.containsKey(key))
 			{
-				System.out.println("Array existe...");
+				System.out.println("Posible array existe...");
 				DataObject d = getObject(key);
 				System.out.println("d.getCategoria(): " + d.getCategoria());
 				if (d.getCategoria() == "arreglo"){
@@ -202,8 +274,33 @@ PARSER_BEGIN (Lexico)
 			{
 				System.out.println("No Encontrado");
 			}
-			//System.out.println("No es array");
 			return -1;
+		}
+
+		//Revisa si el valor que lleva el burrito cabe en el arreglo dado
+		static boolean checzkOversizeBurrito(String key){
+			if (map.containsKey(key))
+			{
+				int valorBurrito = Integer.parseInt(getObject("0").getValor());
+				int arraySize = getArraySize(key);
+				if(valorBurrito >= 0 && valorBurrito < arraySize){
+					System.out.println("Posicion " + valorBurrito + " del arreglo valida");
+					System.out.println("Tamaño Maximo del Arreglo: " + (arraySize-1));
+					return true;
+				}
+				else {
+					System.out.println("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("ERROR SEMANTICO!");
+					System.out.println("Posicion " + valorBurrito + " del arreglo invalida");
+					System.out.println("Tamaño Maximo del Arreglo: " + (arraySize-1));
+					System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+				}
+			}
+			else
+			{
+				System.out.println("No Encontrado");
+			}
+			return false;
 		}
 
 
@@ -219,7 +316,7 @@ PARSER_BEGIN (Lexico)
 			for (String key : map.keySet()) {
 				String fixedSpacing = "\t";
 				String categ = map.get(key).getCategoria();
-				if(categ == "funcion" || categ == "arreglo"){
+				if(categ == "funcion" || categ == "arreglo" || categ == "burrito"){
 					fixedSpacing = "\t\t";
 				}
 				System.out.println(map.get(key).getLexema() + "\t" + 
@@ -593,7 +690,7 @@ void statement() : {}
 
 void expressionStmt() : {}
 {
-	expression("") <SEMICOLON> | <SEMICOLON>
+	expression("")  <SEMICOLON> | <SEMICOLON>
 }
 
 // 15
@@ -659,16 +756,23 @@ String var() : {String varID;}
 {
 	<ID> {
 		varID = token.image;
+		createBurrito(new DataObject(), "int");
 		System.out.println("Array size: " + getArraySize(varID));
 	}
-	varPrime() {
+	varPrime(varID) {
 		return varID;
 	}
 }
 
-void varPrime() : {}
+void varPrime(String varID) : {}
 {
-	(<SQUAREBRACKETOPEN> expression("int") <SQUAREBRACKETCLOSE>)*
+	(<SQUAREBRACKETOPEN>
+		expression("int") {
+			//System.out.println("[this] " + token.image);
+			checzkOversizeBurrito(varID);
+			killBurrito();
+		} 
+		<SQUAREBRACKETCLOSE>)*
 }
 
 // 20
@@ -742,10 +846,21 @@ void factor(String type) : {String varID;}
 			else{
 				errorAsignation(type, getObject(varID).getTipoDato(), varID);
 			}
+			System.out.println("factor: " + token.image);
 		}  
-		| LOOKAHEAD(2) <NUMENT> {errorAsignation("int", type, token.image);}
-		| LOOKAHEAD(2) <NUMREAL> {errorAsignation("float", type, token.image);}
-		| LOOKAHEAD(2) <SIMPLECHAR> {errorAsignation("char", type, token.image);})
+		| LOOKAHEAD(2) <NUMENT> {
+			operacionBurrito(token.image, 1, "int");
+			errorAsignation("int", type, token.image);
+			System.out.println("factor: " + token.image);
+		}
+		| LOOKAHEAD(2) <NUMREAL> {
+			errorAsignation("float", type, token.image);
+			System.out.println("factor: " + token.image);
+		}
+		| LOOKAHEAD(2) <SIMPLECHAR> {
+			errorAsignation("char", type, token.image);
+			System.out.println("factor: " + token.image);
+		})
 }
 
 // 27

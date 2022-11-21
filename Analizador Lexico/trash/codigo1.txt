@@ -8,10 +8,10 @@ int asd[3];
 int dsa[gft];
 int gcd(int u, int v, int w, int w1)
 {
-	dsa [0] = a;
-	asd [v] = 34.9 + 8 + 5.3 + 46 - b * c - w;
-	asd [w] = 9;
-	asd [3] = u;
+	asd [0] = a;
+	asd [v + 7 - 4 +5+3-7] = 34.9 + 8 + 5.3 + 46 - b * c - w;
+	asd [w + 9 - 3 + 1] = 9;
+	asd [2] = u;
 	a=8+6.7+23;
 	aa=6;
 	if(v==0) return u;

@@ -16,6 +16,8 @@ No. linea: 8 Identificador: dsa
 No. linea: 8 Corchete incial: [
 No. linea: 8 Identificador: gft
 No Encontrado
+Un burrito a nacido
+No Encontrado
 Array size: -1
 No. linea: 8 Corchete final: ]
 No Encontrado
@@ -42,23 +44,37 @@ No. linea: 9 Declaracion int: int
 No. linea: 9 Identificador: w1
 No. linea: 9 Parentesis final: )
 No. linea: 10 Llave incial: {
-No. linea: 11 Identificador: dsa
+No. linea: 11 Identificador: asd
 No. linea: 11 Corchete incial: [
 No. linea: 11 Numero entero: 0
 No. linea: 11 Corchete final: ]
 No. linea: 11 Operador igual: =
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): arreglo
-Array tamaño: 4
-Array size: 4
+Array tamaño: 3
+Array size: 3
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 0
 tipo heredado: int
-expression -> varID: dsa
-Lexema: dsa Tipo Dato: int Categoria: arreglo tamano: 4
+Posible array existe...
+d.getCategoria(): arreglo
+Array tamaño: 3
+Posicion 0 del arreglo valida
+Tamaño Maximo del Arreglo: 2
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+Valor burrito: 0
+Un burrito a muerto
+expression -> varID: asd
+Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
 tipo heredado: 
 tipo creado: int
 No. linea: 11 Identificador: a
 No. linea: 11 Punto y Coma: ;
-Array existe...
+No Encontrado
+Un burrito a nacido
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 Lexema: a Tipo Dato: float Categoria: variable tamano: 8
@@ -70,22 +86,61 @@ Tipo recibido: float
 Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: a
 tipo heredado: int
 ...= : a
 No. linea: 12 Identificador: asd
 No. linea: 12 Corchete incial: [
 No. linea: 12 Identificador: v
-No. linea: 12 Corchete final: ]
-No. linea: 12 Operador igual: =
-Array existe...
+No. linea: 12 Operador suma: +
+No. linea: 12 Numero entero: 7
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): arreglo
 Array tamaño: 3
 Array size: 3
-Array existe...
+No. linea: 12 Operador resta: -
+No. linea: 12 Numero entero: 4
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
+factor: v
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 7
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 4
+No. linea: 12 Operador suma: +
+No. linea: 12 Numero entero: 5
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 5
+No. linea: 12 Operador suma: +
+No. linea: 12 Numero entero: 3
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 3
+No. linea: 12 Operador resta: -
+No. linea: 12 Numero entero: 7
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 7
+No. linea: 12 Corchete final: ]
 tipo heredado: int
+Posible array existe...
+d.getCategoria(): arreglo
+Array tamaño: 3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Posicion 26 del arreglo invalida
+Tamaño Maximo del Arreglo: 2
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+Valor burrito: 26
+Un burrito a muerto
+No. linea: 12 Operador igual: =
 expression -> varID: asd
 Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
 tipo heredado: 
@@ -103,6 +158,9 @@ Tipo recibido: int
 Tipo correcto: float
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: 34.9
+No Encontrado
+factor: 8
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
@@ -111,12 +169,17 @@ Tipo recibido: int
 Tipo correcto: float
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: 5.3
 No. linea: 12 Operador suma: +
 No. linea: 12 Numero entero: 46
+No Encontrado
+factor: 46
 No. linea: 12 Operador resta: -
 No. linea: 12 Identificador: b
 No. linea: 12 Operador multiplicacion: *
-Array existe...
+No Encontrado
+Un burrito a nacido
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 Lexema: b Tipo Dato: float Categoria: variable tamano: 8
@@ -128,9 +191,12 @@ Tipo recibido: float
 Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: b
 No. linea: 12 Identificador: c
 No. linea: 12 Operador resta: -
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 Lexema: c Tipo Dato: float Categoria: variable tamano: 8
@@ -142,34 +208,70 @@ Tipo recibido: float
 Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: c
 No. linea: 12 Identificador: w
 No. linea: 12 Punto y Coma: ;
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
+factor: w
 tipo heredado: int
 ...= : w
 No. linea: 13 Identificador: asd
 No. linea: 13 Corchete incial: [
 No. linea: 13 Identificador: w
-No. linea: 13 Corchete final: ]
-No. linea: 13 Operador igual: =
-Array existe...
+No. linea: 13 Operador suma: +
+No. linea: 13 Numero entero: 9
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): arreglo
 Array tamaño: 3
 Array size: 3
-Array existe...
+No. linea: 13 Operador resta: -
+No. linea: 13 Numero entero: 3
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
+factor: w
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 9
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 3
+No. linea: 13 Operador suma: +
+No. linea: 13 Numero entero: 1
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 1
+No. linea: 13 Corchete final: ]
 tipo heredado: int
+Posible array existe...
+d.getCategoria(): arreglo
+Array tamaño: 3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Posicion 13 del arreglo invalida
+Tamaño Maximo del Arreglo: 2
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+Valor burrito: 13
+Un burrito a muerto
+No. linea: 13 Operador igual: =
 expression -> varID: asd
 Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
 tipo heredado: 
 tipo creado: int
 No. linea: 13 Numero entero: 9
 No. linea: 13 Punto y Coma: ;
+No Encontrado
+factor: 9
 tipo heredado: int
 ...= : 9
 No. linea: 14 Identificador: asd
@@ -177,21 +279,41 @@ No. linea: 14 Corchete incial: [
 No. linea: 14 Numero entero: 3
 No. linea: 14 Corchete final: ]
 No. linea: 14 Operador igual: =
-Array existe...
+No Encontrado
+Un burrito a nacido
+Posible array existe...
 d.getCategoria(): arreglo
 Array tamaño: 3
 Array size: 3
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 3
 tipo heredado: int
+Posible array existe...
+d.getCategoria(): arreglo
+Array tamaño: 3
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Posicion 3 del arreglo invalida
+Tamaño Maximo del Arreglo: 2
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+Valor burrito: 3
+Un burrito a muerto
 expression -> varID: asd
 Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
 tipo heredado: 
 tipo creado: int
 No. linea: 14 Identificador: u
 No. linea: 14 Punto y Coma: ;
-Array existe...
+No Encontrado
+Un burrito a nacido
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
+factor: u
 tipo heredado: int
 ...= : u
 No. linea: 15 Identificador: a
@@ -199,7 +321,9 @@ No. linea: 15 Operador igual: =
 No. linea: 15 Numero entero: 8
 No. linea: 15 Operador suma: +
 No. linea: 15 Numero real: 6.7
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 expression -> varID: a
@@ -208,6 +332,7 @@ tipo heredado:
 tipo creado: float
 No. linea: 15 Operador suma: +
 No. linea: 15 Numero entero: 23
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
@@ -216,6 +341,9 @@ Tipo recibido: float
 Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: 8
+factor: 6.7
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
@@ -224,6 +352,7 @@ Tipo recibido: float
 Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: 23
 No. linea: 15 Punto y Coma: ;
 tipo heredado: float
 ...= : 23
@@ -231,6 +360,8 @@ No. linea: 16 Identificador: aa
 No. linea: 16 Operador igual: =
 No. linea: 16 Numero entero: 6
 No. linea: 16 Punto y Coma: ;
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
 No Encontrado
 Array size: -1
 expression -> varID: aa
@@ -243,12 +374,14 @@ Variable aa no declarada
 
 tipo heredado: 
 tipo creado: null
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
 Variable a asignar no delarada
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: 6
 tipo heredado: null
 ...= : 6
 No. linea: 17 Declaracion if: if
@@ -257,7 +390,9 @@ No. linea: 17 Identificador: v
 No. linea: 17 Operador igual igual: ==
 No. linea: 17 Numero entero: 0
 No. linea: 17 Parentesis final: )
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -269,11 +404,16 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: v
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+factor: 0
 tipo heredado: 
 No. linea: 17 Declaracion return: return
 No. linea: 17 Identificador: u
 No. linea: 17 Punto y Coma: ;
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
@@ -285,6 +425,7 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: u
 tipo heredado: 
 No. linea: 18 Declaracion else: else
 No. linea: 18 Declaracion return: return
@@ -293,7 +434,9 @@ No. linea: 18 Parentesis incial: (
 No. linea: 18 Identificador: v
 No. linea: 18 Coma: ,
 No. linea: 18 Identificador: u
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -305,12 +448,15 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: v
 tipo heredado: 
 No. linea: 18 Operador resta: -
 No. linea: 18 Identificador: u
 No. linea: 18 Operador division: /
 No. linea: 18 Identificador: v
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
@@ -322,7 +468,10 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-Array existe...
+factor: u
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
@@ -334,8 +483,11 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: u
 No. linea: 18 Operador multiplicacion: *
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -347,9 +499,12 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: v
 No. linea: 18 Identificador: v
 No. linea: 18 Parentesis final: )
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): parametro
 Array size: -1
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -361,6 +516,7 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: v
 tipo heredado: 
 No. linea: 18 Punto y Coma: ;
 tipo heredado: 
@@ -395,7 +551,9 @@ No. linea: 25 Operador igual: =
 No. linea: 25 Sentencia input: input
 No. linea: 25 Parentesis incial: (
 No. linea: 25 Parentesis final: )
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 expression -> varID: x
@@ -409,7 +567,9 @@ No. linea: 25 Operador igual: =
 No. linea: 25 Sentencia input: input
 No. linea: 25 Parentesis incial: (
 No. linea: 25 Parentesis final: )
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 expression -> varID: y
@@ -425,7 +585,9 @@ No. linea: 26 Parentesis incial: (
 No. linea: 26 Identificador: x
 No. linea: 26 Coma: ,
 No. linea: 26 Identificador: y
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 Lexema: x Tipo Dato: int Categoria: variable tamano: 4
@@ -437,9 +599,12 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: x
 tipo heredado: 
 No. linea: 26 Parentesis final: )
-Array existe...
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
+En este establo solo cabe 1 burrito
+Posible array existe...
 d.getCategoria(): variable
 Array size: -1
 Lexema: y Tipo Dato: int Categoria: variable tamano: 4
@@ -451,6 +616,7 @@ Tipo recibido: int
 Tipo correcto: 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+factor: y
 tipo heredado: 
 No. linea: 26 Parentesis final: )
 tipo heredado: 
@@ -469,6 +635,7 @@ m4	int	parametro	4	null
 m5	int	parametro	4	null
 gcd	int	funcion		4	null
 main	void	funcion		5	null
+0	int	burrito		16	37
 asd	int	arreglo		3	null
 dsa	int	arreglo		4	null
 u	int	parametro	4	null
