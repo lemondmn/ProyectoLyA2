@@ -38,11 +38,17 @@
                                 size = 0;
                                 valor = "null";
 
-                                if(tipoDato == "float"){
+                                if(categoria == "variable" || categoria == "parametro"){
+                                        if(tipoDato == "float"){
                                         size = 8;
+                                        }
+                                        if(tipoDato == "int"){
+                                                size = 4;
+                                        }
                                 }
-                                if(tipoDato == "int"){
-                                        size = 4;
+
+                                if(categoria == "arreglo" || categoria == "funcion"){
+                                        size = 0;
                                 }
                         }
 
@@ -1142,30 +1148,6 @@ void analizar() : {}
     finally { jj_save(16, xla); }
   }
 
-  private boolean jj_3_11() {
-    if (jj_scan_token(INPUT)) return true;
-    if (jj_scan_token(BRACKETOPEN)) return true;
-    if (jj_scan_token(BRACKETCLOSE)) return true;
-    return false;
-  }
-
-  private boolean jj_3_8() {
-    if (jj_scan_token(VOID)) return true;
-    return false;
-  }
-
-  private boolean jj_3_10() {
-    if (jj_3R_13()) return true;
-    return false;
-  }
-
-  private boolean jj_3_12() {
-    if (jj_scan_token(BRACKETOPEN)) return true;
-    if (jj_3R_12()) return true;
-    if (jj_scan_token(BRACKETCLOSE)) return true;
-    return false;
-  }
-
   private boolean jj_3R_27() {
     Token xsp;
     xsp = jj_scanpos;
@@ -1543,6 +1525,30 @@ void analizar() : {}
 
   private boolean jj_3_2() {
     if (jj_3R_8()) return true;
+    return false;
+  }
+
+  private boolean jj_3_11() {
+    if (jj_scan_token(INPUT)) return true;
+    if (jj_scan_token(BRACKETOPEN)) return true;
+    if (jj_scan_token(BRACKETCLOSE)) return true;
+    return false;
+  }
+
+  private boolean jj_3_8() {
+    if (jj_scan_token(VOID)) return true;
+    return false;
+  }
+
+  private boolean jj_3_10() {
+    if (jj_3R_13()) return true;
+    return false;
+  }
+
+  private boolean jj_3_12() {
+    if (jj_scan_token(BRACKETOPEN)) return true;
+    if (jj_3R_12()) return true;
+    if (jj_scan_token(BRACKETCLOSE)) return true;
     return false;
   }
 

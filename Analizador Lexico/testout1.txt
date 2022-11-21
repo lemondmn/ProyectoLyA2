@@ -276,7 +276,7 @@ tipo heredado: int
 ...= : 9
 No. linea: 14 Identificador: asd
 No. linea: 14 Corchete incial: [
-No. linea: 14 Numero entero: 3
+No. linea: 14 Numero entero: 2
 No. linea: 14 Corchete final: ]
 No. linea: 14 Operador igual: =
 No Encontrado
@@ -286,20 +286,15 @@ d.getCategoria(): arreglo
 Array tamaño: 3
 Array size: 3
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
-factor: 3
+factor: 2
 tipo heredado: int
 Posible array existe...
 d.getCategoria(): arreglo
 Array tamaño: 3
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-ERROR SEMANTICO!
-Posicion 3 del arreglo invalida
+Posicion 2 del arreglo valida
 Tamaño Maximo del Arreglo: 2
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 16
-Valor burrito: 3
+Valor burrito: 2
 Un burrito a muerto
 expression -> varID: asd
 Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
@@ -637,7 +632,7 @@ gcd	int	funcion		4	null
 main	void	funcion		5	null
 0	int	burrito		16	37
 asd	int	arreglo		3	null
-dsa	int	arreglo		4	null
+dsa	int	arreglo		0	null
 u	int	parametro	4	null
 v	int	parametro	4	null
 w	int	parametro	4	null

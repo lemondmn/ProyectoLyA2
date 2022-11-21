@@ -44,12 +44,18 @@ PARSER_BEGIN (Lexico)
 				this.categoria = categoria;
 				size = 0;
 				valor = "null";
-				
-				if(tipoDato == "float"){
+
+				if(categoria == "variable" || categoria == "parametro"){
+					if(tipoDato == "float"){
 					size = 8;
+					}
+					if(tipoDato == "int"){
+						size = 4;
+					}
 				}
-				if(tipoDato == "int"){
-					size = 4;
+
+				if(categoria == "arreglo" || categoria == "funcion"){
+					size = 0;
 				}
 			}
 
