@@ -14,6 +14,8 @@ int gcd(int u, int v, int w, int w1)
 	asd [2] = u;
 	a=8+6.7+23;
 	aa=6;
+	gcd(u, v, w, 8);
+	gcd(1, v, 3, 7 + r, 9, w1, 2);
 	if(v==0) return u;
 	else return gcd(v,u-u/v*v);
 	/* u-u/v*v == u mod v */

@@ -195,13 +195,35 @@ PARSER_BEGIN (Lexico)
 			}
 		}
 
+		static void errorNumParameters(String key, int numRecieved){
+			if (search(key)) {
+				int arraySize = getObject(key).getSize();
+				if(arraySize == numRecieved){
+					System.out.print("Cantidad de parametros para ");
+					System.out.println(key + "() correcta");
+				}
+				else {
+					System.out.println("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+					System.out.println("ERROR SEMANTICO!");
+					System.out.print("Cantidad de parametros para ");
+					System.out.println(key + "() incorrecta");
+					System.out.println("Cantidad esperada: " + arraySize);
+					System.out.println("Cantidad recibida: " + numRecieved);
+					System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n");
+				}
+			}
+			else {
+				System.out.println("Comprobacion fallida");
+			}
+		}
+
 		//Crea un burrito que acarrea los valores obtenidos en una expresion
 		static void createBurrito(DataObject burrito, String tipoBurrito){
 			if (!search("0")) {
 				burrito.setLexema("0");
 				burrito.setTipoDato(tipoBurrito);
 				burrito.setCategoria("burrito");
-				burrito.setSize(16);
+				burrito.setSize(0);
 				burrito.setValor("0");
 				insert(burrito.getLexema(), burrito);
 				System.out.println("Un burrito a nacido");
@@ -244,6 +266,27 @@ PARSER_BEGIN (Lexico)
 				overwriteValor("0", "" + total);
 			}
 		}
+
+		//Devuelve el valor de size del burrito a 0
+		static void resetSizeBurrito(){
+			if (map.containsKey("0"))
+			{
+				DataObject d = map.get("0");
+				d.setSize(0);
+				map.remove("0");
+				map.put("0", d);
+			}
+			else
+			{
+				System.out.println("No Encontrado");
+			}
+		}
+
+		//
+		/*static void sizePlusOneBurrito(){
+			if (!search("0")) { createBurrito(); }
+			sizePlusOne("0");
+		}*/
 
 		//Recibe el tipo aceptado, el recibido y el dato
 		//Devuelve error si no coinciden los tipos y son diferentes a cadena vacia
@@ -539,7 +582,6 @@ void declaration() : {}
 void varDeclaration() : {String typevar; String actualkey;}
 {
 	typeSpecifier(){
-		//System.out.println("typeSpecifier:" + token.image);
 		typevar = token.image;
 	} 
 	<ID> 
@@ -746,12 +788,12 @@ void expression(String type) : {String varID; String typevar;}
 		else {
 			typevar = getObject(varID).getTipoDato();
 		}
-		System.out.println("tipo heredado: " + type);
-		System.out.println("tipo creado: " + typevar);
+		//System.out.println("tipo heredado: " + type);
+		//System.out.println("tipo creado: " + typevar);
 	} 
-		<EQUIVALENCE> expression(typevar) {System.out.println("...= : " + token.image);}
+		<EQUIVALENCE> expression(typevar) //{System.out.println("...= : " + token.image);}
 	|
-	LOOKAHEAD(5) simpleExpression(type) {System.out.println("tipo heredado: " + type);}
+	LOOKAHEAD(5) simpleExpression(type) //{System.out.println("tipo heredado: " + type);}
 	|
 	LOOKAHEAD(5) <INPUT> <BRACKETOPEN> <BRACKETCLOSE>)
 }
@@ -763,7 +805,7 @@ String var() : {String varID;}
 	<ID> {
 		varID = token.image;
 		createBurrito(new DataObject(), "int");
-		System.out.println("Array size: " + getArraySize(varID));
+		//System.out.println("Array size: " + getArraySize(varID));
 	}
 	varPrime(varID) {
 		return varID;
@@ -857,23 +899,28 @@ void factor(String type) : {String varID;}
 		| LOOKAHEAD(2) <NUMENT> {
 			operacionBurrito(token.image, 1, "int");
 			errorAsignation("int", type, token.image);
-			System.out.println("factor: " + token.image);
+			//System.out.println("factor: " + token.image);
 		}
 		| LOOKAHEAD(2) <NUMREAL> {
 			errorAsignation("float", type, token.image);
-			System.out.println("factor: " + token.image);
+			//System.out.println("factor: " + token.image);
 		}
 		| LOOKAHEAD(2) <SIMPLECHAR> {
 			errorAsignation("char", type, token.image);
-			System.out.println("factor: " + token.image);
+			//System.out.println("factor: " + token.image);
 		})
 }
 
 // 27
 
-void call() : {}
+void call() : {String varID;}
 {
-	<ID> <BRACKETOPEN> args() <BRACKETCLOSE> | <OUTPUT> <BRACKETOPEN> args() <BRACKETCLOSE>
+	<ID> {varID = token.image;System.out.println("\nInicio conteo ->");resetSizeBurrito();}
+	<BRACKETOPEN> args() <BRACKETCLOSE> {
+		errorNumParameters(varID, getObject("0").getSize());
+		System.out.println("<- Fin conteo\n");
+	}
+	| <OUTPUT> <BRACKETOPEN> args() <BRACKETCLOSE>
 }
 
 // 28
@@ -887,10 +934,18 @@ void args() : {}
 
 void argList() : {}
 {
-	expression("") argListPrime()
+	expression("") {
+		//System.out.println("+ 1 parametro");
+		sizePlusOne("0");
+	}
+	argListPrime()
 }
 
 void argListPrime() : {}
 {
-	<COMMA> expression("") argListPrime() | {}
+	<COMMA> expression("") argListPrime() {
+		//System.out.println("+ 1 parametro");
+		sizePlusOne("0");
+	}
+	| {}
 }
