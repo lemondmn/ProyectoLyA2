@@ -4,7 +4,7 @@
 * the greates common denominator (GCD) of a pair of integers.
 */
 float a, b, c;
-int asd[3];
+float asd[3];
 int dsa[gft];
 int gcd(int u, int v, int w, int w1)
 {

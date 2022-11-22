@@ -899,7 +899,16 @@ void mulop() : {}
 void factor(String type) : {String varID;}
 {
 	(LOOKAHEAD(2) <BRACKETOPEN> expression(type) <BRACKETCLOSE> 
-		| LOOKAHEAD(2) call() {System.out.println("factor -> call()");}
+		| LOOKAHEAD(2) varID = call() {
+			//System.out.println("factor -> call()");
+			if(!search(varID)) {
+				System.out.println("\nERROR SEMANTICO!");
+				System.out.println("Funcion " + token.image + " no declarada\n");
+			}
+			else{
+				errorAsignation(type, getObject(varID).getTipoDato(), varID);
+			}
+		}
 		| LOOKAHEAD(2) varID = var() {
 			if(!search(varID)) {
 				System.out.println("\nERROR SEMANTICO!");
@@ -927,7 +936,7 @@ void factor(String type) : {String varID;}
 
 // 27
 
-void call() : {String varID;}
+String call() : {String varID;}
 {
 	<ID> {
 		varID = token.image;
@@ -940,8 +949,9 @@ void call() : {String varID;}
 		System.out.println("args(): " + varID);
 		errorNumParameters(varID, getObject("0").getSize());
 		System.out.println("<- Fin conteo\n");
+		return varID;
 	}
-	| <OUTPUT> <BRACKETOPEN> args() <BRACKETCLOSE>
+	| <OUTPUT> <BRACKETOPEN> args() <BRACKETCLOSE> { return null; }
 }
 
 // 28

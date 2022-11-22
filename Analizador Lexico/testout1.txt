@@ -5,7 +5,7 @@ No. linea: 6 Identificador: b
 No. linea: 6 Coma: ,
 No. linea: 6 Identificador: c
 No. linea: 6 Punto y Coma: ;
-No. linea: 7 Declaracion int: int
+No. linea: 7 Declaracion float: float
 No. linea: 7 Identificador: asd
 No. linea: 7 Corchete incial: [
 No. linea: 7 Numero entero: 3
@@ -61,20 +61,12 @@ Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 Valor burrito: 0
 Un burrito a muerto
 expression -> varID: asd
-Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+Lexema: asd Tipo Dato: float Categoria: arreglo tamano: 3
 No. linea: 11 Identificador: a
 No. linea: 11 Punto y Coma: ;
 No Encontrado
 Un burrito a nacido
 Lexema: a Tipo Dato: float Categoria: variable tamano: 8
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-ERROR SEMANTICO!
-Variable de tipo incorrecto: a
-Tipo recibido: float
-Tipo correcto: int
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 factor: a
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 Valor burrito: 0
@@ -118,66 +110,58 @@ Valor burrito: 26
 Un burrito a muerto
 No. linea: 12 Operador igual: =
 expression -> varID: asd
-Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+Lexema: asd Tipo Dato: float Categoria: arreglo tamano: 3
 No. linea: 12 Numero real: 34.9
 No. linea: 12 Operador suma: +
 No. linea: 12 Numero entero: 8
 No. linea: 12 Operador suma: +
 No. linea: 12 Numero real: 5.3
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-ERROR SEMANTICO!
-Variable de tipo incorrecto: 34.9
-Tipo recibido: int
-Tipo correcto: float
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 No Encontrado
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ERROR SEMANTICO!
-Variable de tipo incorrecto: 5.3
-Tipo recibido: int
-Tipo correcto: float
+Variable de tipo incorrecto: 8
+Tipo recibido: float
+Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 No. linea: 12 Operador suma: +
 No. linea: 12 Numero entero: 46
 No Encontrado
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 46
+Tipo recibido: float
+Tipo correcto: int
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 No. linea: 12 Operador resta: -
 No. linea: 12 Identificador: b
 No. linea: 12 Operador multiplicacion: *
 No Encontrado
 Un burrito a nacido
 Lexema: b Tipo Dato: float Categoria: variable tamano: 8
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-ERROR SEMANTICO!
-Variable de tipo incorrecto: b
-Tipo recibido: float
-Tipo correcto: int
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 factor: b
 No. linea: 12 Identificador: c
 No. linea: 12 Operador resta: -
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 En este establo solo cabe 1 burrito
 Lexema: c Tipo Dato: float Categoria: variable tamano: 8
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-ERROR SEMANTICO!
-Variable de tipo incorrecto: c
-Tipo recibido: float
-Tipo correcto: int
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 factor: c
 No. linea: 12 Identificador: w
 No. linea: 12 Punto y Coma: ;
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 En este establo solo cabe 1 burrito
 Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: w
+Tipo recibido: int
+Tipo correcto: float
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 factor: w
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 Valor burrito: 0
@@ -215,10 +199,18 @@ Valor burrito: 13
 Un burrito a muerto
 No. linea: 13 Operador igual: =
 expression -> varID: asd
-Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+Lexema: asd Tipo Dato: float Categoria: arreglo tamano: 3
 No. linea: 13 Numero entero: 9
 No. linea: 13 Punto y Coma: ;
 No Encontrado
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: 9
+Tipo recibido: float
+Tipo correcto: int
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 No Encontrado
 Usted no tiene burritos
 No. linea: 14 Identificador: a
@@ -335,7 +327,15 @@ Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
 Cantidad de parametros para gcd() correcta
 <- Fin conteo
 
-factor -> call()
+Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: gcd
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 No. linea: 16 Punto y Coma: ;
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 4
 Valor burrito: 8
@@ -412,7 +412,15 @@ Cantidad recibida: 7
 
 <- Fin conteo
 
-factor -> call()
+Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: gcd
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 No. linea: 17 Punto y Coma: ;
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 7
 Valor burrito: 22
@@ -539,7 +547,15 @@ Cantidad recibida: 2
 
 <- Fin conteo
 
-factor -> call()
+Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: gcd
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 No. linea: 19 Punto y Coma: ;
 No. linea: 21 Llave final: }
 No. linea: 23 Declaracion void: void
@@ -586,7 +602,7 @@ Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 Valor burrito: 2
 Un burrito a muerto
 expression -> varID: asd
-Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+Lexema: asd Tipo Dato: float Categoria: arreglo tamano: 3
 No. linea: 26 Identificador: gcd
 No. linea: 26 Parentesis incial: (
 No. linea: 26 Numero entero: 1
@@ -611,7 +627,15 @@ Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
 Cantidad de parametros para gcd() correcta
 <- Fin conteo
 
-factor -> call()
+Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: gcd
+Tipo recibido: int
+Tipo correcto: float
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 No. linea: 26 Punto y Coma: ;
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 4
 Valor burrito: 10
@@ -691,9 +715,21 @@ Cantidad recibida: 2
 
 <- Fin conteo
 
-factor -> call()
+Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ERROR SEMANTICO!
+Variable de tipo incorrecto: gcd
+Tipo recibido: int
+Tipo correcto: 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 No. linea: 28 Parentesis final: )
-factor -> call()
+No Encontrado
+
+ERROR SEMANTICO!
+Funcion ) no declarada
+
 No. linea: 28 Punto y Coma: ;
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 3
 Valor burrito: 0
@@ -711,7 +747,7 @@ m4	int	parametro	4	null
 m5	int	parametro	4	null
 gcd	int	funcion		4	null
 main	void	funcion		5	null
-asd	int	arreglo		3	null
+asd	float	arreglo		3	null
 dsa	int	arreglo		0	null
 u	int	parametro	4	null
 v	int	parametro	4	null
