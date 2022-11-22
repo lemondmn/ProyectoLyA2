@@ -163,7 +163,7 @@ PARSER_BEGIN (Lexico)
 			}
 			else
 			{
-				System.out.println("No Encontrado");
+				System.out.println("Variable A Eliminar No Encontrado");
 			}
 		}
 
@@ -177,7 +177,7 @@ PARSER_BEGIN (Lexico)
 			}
 			else
 			{
-				System.out.println("No Encontrado");
+				System.out.println("Variable A Crecer No Encontrada");
 			}	
 		}
 
@@ -191,7 +191,7 @@ PARSER_BEGIN (Lexico)
 			}
 			else
 			{
-				System.out.println("No Encontrado");
+				System.out.println("Sobreescritura No Encontrado");
 			}
 		}
 
@@ -268,18 +268,20 @@ PARSER_BEGIN (Lexico)
 		}
 
 		//Devuelve el valor de size del burrito a 0
-		static void resetSizeBurrito(){
+		static boolean resetSizeBurrito(){
 			if (map.containsKey("0"))
 			{
 				DataObject d = map.get("0");
 				d.setSize(0);
 				map.remove("0");
 				map.put("0", d);
+				return true;
 			}
 			else
 			{
-				System.out.println("No Encontrado");
+				System.out.println("No hay burrito para resetear");
 			}
+			return false;
 		}
 
 		//
@@ -310,7 +312,6 @@ PARSER_BEGIN (Lexico)
 		static int getArraySize(String key){
 			if (map.containsKey(key))
 			{
-				System.out.println("Posible array existe...");
 				DataObject d = getObject(key);
 				System.out.println("d.getCategoria(): " + d.getCategoria());
 				if (d.getCategoria() == "arreglo"){
@@ -352,12 +353,7 @@ PARSER_BEGIN (Lexico)
 			return false;
 		}
 
-
-		public static void main (String[] args) throws ParseException {
-			Lexico anLex = new Lexico(System.in);
-			//anLex.analizar();
-			anLex.sintactico();
-
+		static void printHashTable(){
 			System.out.println("Tabla hash: ");
 			
 			System.out.println("Lexema\tTipo\tCategoria\tTamano\tValor");
@@ -373,6 +369,15 @@ PARSER_BEGIN (Lexico)
 					categ + fixedSpacing + map.get(key).getSize() + "\t" +
 					map.get(key).getValor());
 			}
+		}
+
+
+		public static void main (String[] args) throws ParseException {
+			Lexico anLex = new Lexico(System.in);
+			//anLex.analizar();
+			anLex.sintactico();
+
+			printHashTable();
 
 			System.out.println("\nAnalisis terminado!");
 		}
@@ -654,7 +659,9 @@ void funDeclaration() : {String typevar; String actualkey;}
 		DataObject d = new DataObject(token.image, typevar, "funcion", 0);
 		insert(token.image, d);
 	} 
-	<BRACKETOPEN> params(actualkey) <BRACKETCLOSE> compoundStmt()
+	<BRACKETOPEN> params(actualkey) 
+	<BRACKETCLOSE> { killBurrito(); }
+	compoundStmt()
 }
 
 // 7
@@ -731,7 +738,11 @@ void statementListPrime() : {}
 
 void statement() : {}
 {
-	expressionStmt() | compoundStmt() | selectionStmt() | iterationStmt() | returnStmt()
+	expressionStmt() { killBurrito(); }
+	| compoundStmt() //{ System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n"); }
+	| selectionStmt() //{ System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n"); }
+	| iterationStmt() //{ System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n"); }
+	| returnStmt() //{ System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n"); }
 }
 
 // 14
@@ -791,7 +802,10 @@ void expression(String type) : {String varID; String typevar;}
 		//System.out.println("tipo heredado: " + type);
 		//System.out.println("tipo creado: " + typevar);
 	} 
-		<EQUIVALENCE> expression(typevar) //{System.out.println("...= : " + token.image);}
+		<EQUIVALENCE> expression(typevar) {
+			//killBurrito();
+			//System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n");
+		}
 	|
 	LOOKAHEAD(5) simpleExpression(type) //{System.out.println("tipo heredado: " + type);}
 	|
@@ -804,8 +818,8 @@ String var() : {String varID;}
 {
 	<ID> {
 		varID = token.image;
+		//System.out.println("\nAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 		createBurrito(new DataObject(), "int");
-		//System.out.println("Array size: " + getArraySize(varID));
 	}
 	varPrime(varID) {
 		return varID;
@@ -885,7 +899,7 @@ void mulop() : {}
 void factor(String type) : {String varID;}
 {
 	(LOOKAHEAD(2) <BRACKETOPEN> expression(type) <BRACKETCLOSE> 
-		| LOOKAHEAD(2) call() 
+		| LOOKAHEAD(2) call() {System.out.println("factor -> call()");}
 		| LOOKAHEAD(2) varID = var() {
 			if(!search(varID)) {
 				System.out.println("\nERROR SEMANTICO!");
@@ -915,8 +929,15 @@ void factor(String type) : {String varID;}
 
 void call() : {String varID;}
 {
-	<ID> {varID = token.image;System.out.println("\nInicio conteo ->");resetSizeBurrito();}
+	<ID> {
+		varID = token.image;
+		System.out.println("\nInicio conteo ->");
+		if(!resetSizeBurrito()){
+			createBurrito(new DataObject(), "int");
+		}
+	}
 	<BRACKETOPEN> args() <BRACKETCLOSE> {
+		System.out.println("args(): " + varID);
 		errorNumParameters(varID, getObject("0").getSize());
 		System.out.println("<- Fin conteo\n");
 	}
@@ -944,7 +965,7 @@ void argList() : {}
 void argListPrime() : {}
 {
 	<COMMA> expression("") argListPrime() {
-		//System.out.println("+ 1 parametro");
+		//System.out.println("++ 1 parametro");
 		sizePlusOne("0");
 	}
 	| {}

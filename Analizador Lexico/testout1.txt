@@ -41,16 +41,18 @@ No. linea: 9 Coma: ,
 No. linea: 9 Declaracion int: int
 No. linea: 9 Identificador: w1
 No. linea: 9 Parentesis final: )
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+Valor burrito: 0
+Un burrito a muerto
 No. linea: 10 Llave incial: {
 No. linea: 11 Identificador: asd
 No. linea: 11 Corchete incial: [
 No. linea: 11 Numero entero: 0
 No. linea: 11 Corchete final: ]
 No. linea: 11 Operador igual: =
+No Encontrado
+Un burrito a nacido
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-En este establo solo cabe 1 burrito
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-Posible array existe...
 d.getCategoria(): arreglo
 Array tamaño: 3
 Posicion 0 del arreglo valida
@@ -74,13 +76,16 @@ Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: a
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+Valor burrito: 0
+Un burrito a muerto
 No. linea: 12 Identificador: asd
 No. linea: 12 Corchete incial: [
 No. linea: 12 Identificador: v
 No. linea: 12 Operador suma: +
 No. linea: 12 Numero entero: 7
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-En este establo solo cabe 1 burrito
+No Encontrado
+Un burrito a nacido
 No. linea: 12 Operador resta: -
 No. linea: 12 Numero entero: 4
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
@@ -99,7 +104,6 @@ No. linea: 12 Operador resta: -
 No. linea: 12 Numero entero: 7
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 No. linea: 12 Corchete final: ]
-Posible array existe...
 d.getCategoria(): arreglo
 Array tamaño: 3
 
@@ -175,13 +179,16 @@ Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 En este establo solo cabe 1 burrito
 Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
 factor: w
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+Valor burrito: 0
+Un burrito a muerto
 No. linea: 13 Identificador: asd
 No. linea: 13 Corchete incial: [
 No. linea: 13 Identificador: w
 No. linea: 13 Operador suma: +
 No. linea: 13 Numero entero: 9
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-En este establo solo cabe 1 burrito
+No Encontrado
+Un burrito a nacido
 No. linea: 13 Operador resta: -
 No. linea: 13 Numero entero: 3
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
@@ -194,7 +201,6 @@ No. linea: 13 Operador suma: +
 No. linea: 13 Numero entero: 1
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 No. linea: 13 Corchete final: ]
-Posible array existe...
 d.getCategoria(): arreglo
 Array tamaño: 3
 
@@ -213,41 +219,19 @@ Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
 No. linea: 13 Numero entero: 9
 No. linea: 13 Punto y Coma: ;
 No Encontrado
-No. linea: 14 Identificador: asd
-No. linea: 14 Corchete incial: [
-No. linea: 14 Numero entero: 2
-No. linea: 14 Corchete final: ]
+No Encontrado
+Usted no tiene burritos
+No. linea: 14 Identificador: a
 No. linea: 14 Operador igual: =
+No. linea: 14 Numero entero: 8
+No. linea: 14 Operador suma: +
+No. linea: 14 Numero real: 6.7
 No Encontrado
 Un burrito a nacido
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-Posible array existe...
-d.getCategoria(): arreglo
-Array tamaño: 3
-Posicion 2 del arreglo valida
-Tamaño Maximo del Arreglo: 2
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-Valor burrito: 2
-Un burrito a muerto
-expression -> varID: asd
-Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
-No. linea: 14 Identificador: u
-No. linea: 14 Punto y Coma: ;
-No Encontrado
-Un burrito a nacido
-Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
-factor: u
-No. linea: 15 Identificador: a
-No. linea: 15 Operador igual: =
-No. linea: 15 Numero entero: 8
-No. linea: 15 Operador suma: +
-No. linea: 15 Numero real: 6.7
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-En este establo solo cabe 1 burrito
 expression -> varID: a
 Lexema: a Tipo Dato: float Categoria: variable tamano: 8
-No. linea: 15 Operador suma: +
-No. linea: 15 Numero entero: 23
+No. linea: 14 Operador suma: +
+No. linea: 14 Numero entero: 23
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -266,13 +250,16 @@ Tipo recibido: float
 Tipo correcto: int
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-No. linea: 15 Punto y Coma: ;
-No. linea: 16 Identificador: aa
-No. linea: 16 Operador igual: =
-No. linea: 16 Numero entero: 6
-No. linea: 16 Punto y Coma: ;
+No. linea: 14 Punto y Coma: ;
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-En este establo solo cabe 1 burrito
+Valor burrito: 31
+Un burrito a muerto
+No. linea: 15 Identificador: aa
+No. linea: 15 Operador igual: =
+No. linea: 15 Numero entero: 6
+No. linea: 15 Punto y Coma: ;
+No Encontrado
+Un burrito a nacido
 expression -> varID: aa
 No Encontrado
 
@@ -288,13 +275,19 @@ ERROR SEMANTICO!
 Variable a asignar no delarada
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-No. linea: 17 Identificador: gcd
-No. linea: 17 Parentesis incial: (
-No. linea: 17 Identificador: u
-No. linea: 17 Coma: ,
-No. linea: 17 Identificador: v
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+Valor burrito: 6
+Un burrito a muerto
+No. linea: 16 Identificador: gcd
+No. linea: 16 Parentesis incial: (
+No. linea: 16 Identificador: u
+No. linea: 16 Coma: ,
+No. linea: 16 Identificador: v
 
 Inicio conteo ->
+No hay burrito para resetear
+No Encontrado
+Un burrito a nacido
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 En este establo solo cabe 1 burrito
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
@@ -307,7 +300,7 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: u
-No. linea: 17 Coma: ,
+No. linea: 16 Coma: ,
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -320,8 +313,8 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: v
-No. linea: 17 Identificador: w
-No. linea: 17 Coma: ,
+No. linea: 16 Identificador: w
+No. linea: 16 Coma: ,
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
 Lexema: w Tipo Dato: int Categoria: parametro tamano: 4
@@ -334,23 +327,31 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: w
-No. linea: 17 Numero entero: 8
-No. linea: 17 Parentesis final: )
+No. linea: 16 Numero entero: 8
+No. linea: 16 Parentesis final: )
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
+args(): gcd
 Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
 Cantidad de parametros para gcd() correcta
 <- Fin conteo
 
-No. linea: 17 Punto y Coma: ;
-No. linea: 18 Identificador: gcd
-No. linea: 18 Parentesis incial: (
-No. linea: 18 Numero entero: 1
-No. linea: 18 Coma: ,
-No. linea: 18 Identificador: v
+factor -> call()
+No. linea: 16 Punto y Coma: ;
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 4
+Valor burrito: 8
+Un burrito a muerto
+No. linea: 17 Identificador: gcd
+No. linea: 17 Parentesis incial: (
+No. linea: 17 Numero entero: 1
+No. linea: 17 Coma: ,
+No. linea: 17 Identificador: v
 
 Inicio conteo ->
+No hay burrito para resetear
+No Encontrado
+Un burrito a nacido
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
-No. linea: 18 Coma: ,
+No. linea: 17 Coma: ,
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -363,13 +364,13 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: v
-No. linea: 18 Numero entero: 3
-No. linea: 18 Coma: ,
+No. linea: 17 Numero entero: 3
+No. linea: 17 Coma: ,
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
-No. linea: 18 Numero entero: 7
-No. linea: 18 Operador suma: +
-No. linea: 18 Identificador: r
-No. linea: 18 Coma: ,
+No. linea: 17 Numero entero: 7
+No. linea: 17 Operador suma: +
+No. linea: 17 Identificador: r
+No. linea: 17 Coma: ,
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
@@ -379,11 +380,11 @@ ERROR SEMANTICO!
 Variable r no declarada
 
 factor: r
-No. linea: 18 Numero entero: 9
-No. linea: 18 Coma: ,
+No. linea: 17 Numero entero: 9
+No. linea: 17 Coma: ,
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
-No. linea: 18 Identificador: w1
-No. linea: 18 Coma: ,
+No. linea: 17 Identificador: w1
+No. linea: 17 Coma: ,
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
 Lexema: w1 Tipo Dato: int Categoria: parametro tamano: 4
@@ -396,9 +397,10 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: w1
-No. linea: 18 Numero entero: 2
-No. linea: 18 Parentesis final: )
+No. linea: 17 Numero entero: 2
+No. linea: 17 Parentesis final: )
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
+args(): gcd
 Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -410,15 +412,19 @@ Cantidad recibida: 7
 
 <- Fin conteo
 
-No. linea: 18 Punto y Coma: ;
-No. linea: 19 Declaracion if: if
-No. linea: 19 Parentesis incial: (
-No. linea: 19 Identificador: v
-No. linea: 19 Operador igual igual: ==
-No. linea: 19 Numero entero: 0
-No. linea: 19 Parentesis final: )
+factor -> call()
+No. linea: 17 Punto y Coma: ;
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 7
-En este establo solo cabe 1 burrito
+Valor burrito: 22
+Un burrito a muerto
+No. linea: 18 Declaracion if: if
+No. linea: 18 Parentesis incial: (
+No. linea: 18 Identificador: v
+No. linea: 18 Operador igual igual: ==
+No. linea: 18 Numero entero: 0
+No. linea: 18 Parentesis final: )
+No Encontrado
+Un burrito a nacido
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -429,11 +435,11 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: v
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 7
-No. linea: 19 Declaracion return: return
-No. linea: 19 Identificador: u
-No. linea: 19 Punto y Coma: ;
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 7
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+No. linea: 18 Declaracion return: return
+No. linea: 18 Identificador: u
+No. linea: 18 Punto y Coma: ;
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 En este establo solo cabe 1 burrito
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
 
@@ -445,13 +451,13 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: u
-No. linea: 20 Declaracion else: else
-No. linea: 20 Declaracion return: return
-No. linea: 20 Identificador: gcd
-No. linea: 20 Parentesis incial: (
-No. linea: 20 Identificador: v
-No. linea: 20 Coma: ,
-No. linea: 20 Identificador: u
+No. linea: 19 Declaracion else: else
+No. linea: 19 Declaracion return: return
+No. linea: 19 Identificador: gcd
+No. linea: 19 Parentesis incial: (
+No. linea: 19 Identificador: v
+No. linea: 19 Coma: ,
+No. linea: 19 Identificador: u
 
 Inicio conteo ->
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
@@ -466,10 +472,10 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: v
-No. linea: 20 Operador resta: -
-No. linea: 20 Identificador: u
-No. linea: 20 Operador division: /
-No. linea: 20 Identificador: v
+No. linea: 19 Operador resta: -
+No. linea: 19 Identificador: u
+No. linea: 19 Operador division: /
+No. linea: 19 Identificador: v
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
 Lexema: u Tipo Dato: int Categoria: parametro tamano: 4
@@ -494,7 +500,7 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: u
-No. linea: 20 Operador multiplicacion: *
+No. linea: 19 Operador multiplicacion: *
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -507,8 +513,8 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: v
-No. linea: 20 Identificador: v
-No. linea: 20 Parentesis final: )
+No. linea: 19 Identificador: v
+No. linea: 19 Parentesis final: )
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
 En este establo solo cabe 1 burrito
 Lexema: v Tipo Dato: int Categoria: parametro tamano: 4
@@ -521,6 +527,7 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: v
+args(): gcd
 Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -532,53 +539,109 @@ Cantidad recibida: 2
 
 <- Fin conteo
 
-No. linea: 20 Punto y Coma: ;
-No. linea: 22 Llave final: }
-No. linea: 24 Declaracion void: void
-No. linea: 24 Identificador: main
-No. linea: 24 Parentesis incial: (
-No. linea: 24 Declaracion float: float
-No. linea: 24 Identificador: m1
-No. linea: 24 Coma: ,
-No. linea: 24 Declaracion float: float
-No. linea: 24 Identificador: m2
-No. linea: 24 Coma: ,
-No. linea: 24 Declaracion float: float
-No. linea: 24 Identificador: m3
-No. linea: 24 Coma: ,
-No. linea: 24 Declaracion int: int
-No. linea: 24 Identificador: m4
-No. linea: 24 Coma: ,
-No. linea: 24 Declaracion int: int
-No. linea: 24 Identificador: m5
-No. linea: 24 Parentesis final: )
-No. linea: 25 Llave incial: {
-No. linea: 26 Declaracion int: int
-No. linea: 26 Identificador: x
+factor -> call()
+No. linea: 19 Punto y Coma: ;
+No. linea: 21 Llave final: }
+No. linea: 23 Declaracion void: void
+No. linea: 23 Identificador: main
+No. linea: 23 Parentesis incial: (
+No. linea: 23 Declaracion float: float
+No. linea: 23 Identificador: m1
+No. linea: 23 Coma: ,
+No. linea: 23 Declaracion float: float
+No. linea: 23 Identificador: m2
+No. linea: 23 Coma: ,
+No. linea: 23 Declaracion float: float
+No. linea: 23 Identificador: m3
+No. linea: 23 Coma: ,
+No. linea: 23 Declaracion int: int
+No. linea: 23 Identificador: m4
+No. linea: 23 Coma: ,
+No. linea: 23 Declaracion int: int
+No. linea: 23 Identificador: m5
+No. linea: 23 Parentesis final: )
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 2
+Valor burrito: 0
+Un burrito a muerto
+No. linea: 24 Llave incial: {
+No. linea: 25 Declaracion int: int
+No. linea: 25 Identificador: x
+No. linea: 25 Punto y Coma: ;
+No. linea: 25 Declaracion int: int
+No. linea: 25 Identificador: y
+No. linea: 25 Punto y Coma: ;
+No. linea: 26 Identificador: asd
+No. linea: 26 Corchete incial: [
+No. linea: 26 Numero entero: 2
+No. linea: 26 Corchete final: ]
+No. linea: 26 Operador igual: =
+No Encontrado
+Un burrito a nacido
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+d.getCategoria(): arreglo
+Array tamaño: 3
+Posicion 2 del arreglo valida
+Tamaño Maximo del Arreglo: 2
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+Valor burrito: 2
+Un burrito a muerto
+expression -> varID: asd
+Lexema: asd Tipo Dato: int Categoria: arreglo tamano: 3
+No. linea: 26 Identificador: gcd
+No. linea: 26 Parentesis incial: (
+No. linea: 26 Numero entero: 1
+No. linea: 26 Coma: ,
+No. linea: 26 Numero entero: 2
+
+Inicio conteo ->
+No hay burrito para resetear
+No Encontrado
+Un burrito a nacido
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+No. linea: 26 Coma: ,
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
+No. linea: 26 Numero entero: 3
+No. linea: 26 Coma: ,
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
+No. linea: 26 Numero entero: 4
+No. linea: 26 Parentesis final: )
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 1
+args(): gcd
+Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
+Cantidad de parametros para gcd() correcta
+<- Fin conteo
+
+factor -> call()
 No. linea: 26 Punto y Coma: ;
-No. linea: 26 Declaracion int: int
-No. linea: 26 Identificador: y
-No. linea: 26 Punto y Coma: ;
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 4
+Valor burrito: 10
+Un burrito a muerto
 No. linea: 27 Identificador: x
 No. linea: 27 Operador igual: =
 No. linea: 27 Sentencia input: input
 No. linea: 27 Parentesis incial: (
 No. linea: 27 Parentesis final: )
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 2
-En este establo solo cabe 1 burrito
+No Encontrado
+Un burrito a nacido
 expression -> varID: x
 Lexema: x Tipo Dato: int Categoria: variable tamano: 4
 No. linea: 27 Punto y Coma: ;
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+Valor burrito: 0
+Un burrito a muerto
 No. linea: 27 Identificador: y
 No. linea: 27 Operador igual: =
 No. linea: 27 Sentencia input: input
 No. linea: 27 Parentesis incial: (
 No. linea: 27 Parentesis final: )
-Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 2
-En este establo solo cabe 1 burrito
+No Encontrado
+Un burrito a nacido
 expression -> varID: y
 Lexema: y Tipo Dato: int Categoria: variable tamano: 4
 No. linea: 27 Punto y Coma: ;
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
+Valor burrito: 0
+Un burrito a muerto
 No. linea: 28 Sentencia output: output
 No. linea: 28 Parentesis incial: (
 No. linea: 28 Identificador: gcd
@@ -588,6 +651,9 @@ No. linea: 28 Coma: ,
 No. linea: 28 Identificador: y
 
 Inicio conteo ->
+No hay burrito para resetear
+No Encontrado
+Un burrito a nacido
 Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 0
 En este establo solo cabe 1 burrito
 Lexema: x Tipo Dato: int Categoria: variable tamano: 4
@@ -613,6 +679,7 @@ Tipo correcto:
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 factor: y
+args(): gcd
 Lexema: gcd Tipo Dato: int Categoria: funcion tamano: 4
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -624,8 +691,13 @@ Cantidad recibida: 2
 
 <- Fin conteo
 
+factor -> call()
 No. linea: 28 Parentesis final: )
+factor -> call()
 No. linea: 28 Punto y Coma: ;
+Lexema: 0 Tipo Dato: int Categoria: burrito tamano: 3
+Valor burrito: 0
+Un burrito a muerto
 No. linea: 29 Llave final: }
 Tabla hash: 
 Lexema	Tipo	Categoria	Tamano	Valor
@@ -639,7 +711,6 @@ m4	int	parametro	4	null
 m5	int	parametro	4	null
 gcd	int	funcion		4	null
 main	void	funcion		5	null
-0	int	burrito		3	67
 asd	int	arreglo		3	null
 dsa	int	arreglo		0	null
 u	int	parametro	4	null
